@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Logic.Bread" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Bread.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.ApplicationLogic">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>MAAAAIAAAAIACAAAAEAAABAAAAEACAABggJAAAAAAQA=</HashCode>
+      <FileName>Logic\ApplicationLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Alchohol" Collapsed="true">
+    <Position X="6.75" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Alchohol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Cereals" Collapsed="true">
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Cereals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Drink" Collapsed="true">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Drink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Fish" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Fish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Food" Collapsed="true">
+    <Position X="4.75" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Food.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Fruits" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Fruits.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Meat" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Meat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Nutrition">
+    <Position X="4.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAIAAgAAAAABQECAAIAAAAAAAAFAgEQAQAAAAAAAA=</HashCode>
+      <FileName>Logic\Nutrition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.SoftDrinks" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\SoftDrinks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Nuts" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Nuts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.User" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ICICAAAEAAAEAAAAAAAAAAQAAAAFAAAAAAAAgGACAgA=</HashCode>
+      <FileName>Logic\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Logic.Vegetables" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Vegetables.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.TypeFoodException">
+    <Position X="0.5" Y="10" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\TypeFoodException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Logic.NutritionData">
+    <Position X="6.75" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAACAACAAAAA=</HashCode>
+      <FileName>Logic\NutritionData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Interface Name="Logic.ILoadable">
+    <Position X="2.75" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\ILoadable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.ISavable">
+    <Position X="2.75" Y="8.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\ISavable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.IUserActions">
+    <Position X="0.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAACAAA=</HashCode>
+      <FileName>Logic\IUserActions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Logic.TypeFood">
+    <Position X="4.75" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAIAAAAAAAAAAAAAAAIAAGQAAABAAAAACIAAAA=</HashCode>
+      <FileName>Logic\TypeFood.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

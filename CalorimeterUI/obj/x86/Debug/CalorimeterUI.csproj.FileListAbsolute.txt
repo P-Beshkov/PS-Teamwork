@@ -1,0 +1,66 @@
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\bin\Debug\CalorimeterUI.exe.config
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\bin\Debug\CalorimeterUI.exe
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\bin\Debug\CalorimeterUI.pdb
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\bin\Debug\Test.exe
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\bin\Debug\Test.pdb
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csprojResolveAssemblyReference.cache
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\obj\x86\Debug\CalorimeterUI.CalorimeterUI.resources
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\obj\x86\Debug\CalorimeterUI.Properties.Resources.resources
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csproj.GenerateResource.Cache
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\obj\x86\Debug\CalorimeterUI.exe
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\obj\x86\Debug\CalorimeterUI.pdb
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\bin\Debug\BackEnd.exe
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\CalorimeterUI\bin\Debug\BackEnd.pdb
+D:\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.exe.config
+D:\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.exe
+D:\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.pdb
+D:\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csprojResolveAssemblyReference.cache
+D:\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.CalorimeterUI.resources
+D:\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.Properties.Resources.resources
+D:\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csproj.GenerateResource.Cache
+D:\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.exe
+D:\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.pdb
+D:\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterDB.mdf
+D:\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterDB_log.ldf
+D:\PS - Teamwork\CalorimeterUI\bin\Debug\EntityFramework.dll
+D:\PS - Teamwork\CalorimeterUI\bin\Debug\EntityFramework.xml
+D:\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterLocal.sdf
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.exe.config
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.exe
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.pdb
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterLocal.sdf
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterDB.mdf
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterDB_log.ldf
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.exe
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.pdb
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\bin\Debug\EntityFramework.dll
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\bin\Debug\EntityFramework.xml
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csprojResolveAssemblyReference.cache
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.CalorimeterUI.resources
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.Properties.Resources.resources
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csproj.GenerateResource.Cache
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.LoginForm.resources
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.RegisterForm.resources
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.g.resources
+E:\TU\III kurs\II semestyr\Програмни среди\PS - Teamwork\PS - Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.AboutBox.resources
+D:\School\PS - Teamwork Viktor\CalorimeterUI\bin\Debug\CalorimeterUI.exe.config
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.exe
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.pdb
+D:\School\PS - Teamwork Viktor\CalorimeterUI\bin\Debug\CalorimeterLocal.sdf
+D:\School\PS - Teamwork Viktor\CalorimeterUI\bin\Debug\CalorimeterDB.mdf
+D:\School\PS - Teamwork Viktor\CalorimeterUI\bin\Debug\CalorimeterDB_log.ldf
+D:\School\PS - Teamwork Viktor\CalorimeterUI\bin\Debug\CalorimeterUI.exe
+D:\School\PS - Teamwork Viktor\CalorimeterUI\bin\Debug\CalorimeterUI.pdb
+D:\School\PS - Teamwork Viktor\CalorimeterUI\bin\Debug\EntityFramework.dll
+D:\School\PS - Teamwork Viktor\CalorimeterUI\bin\Debug\EntityFramework.xml
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csprojResolveAssemblyReference.cache
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.g.resources
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.AboutBox.resources
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.CalorimeterUI.resources
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.Properties.Resources.resources
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.LoginForm.resources
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.RegisterForm.resources
+D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csproj.GenerateResource.Cache
+D:\School\PS - Teamwork Broadway\CalorimeterUI\bin\Debug\CalorimeterUI.exe.config
+D:\School\PS - Teamwork Broadway\CalorimeterUI\obj\x86\Debug\CalorimeterUI.exe
+D:\School\PS - Teamwork Broadway\CalorimeterUI\obj\x86\Debug\CalorimeterUI.pdb

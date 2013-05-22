@@ -1,0 +1,5 @@
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\BackEnd\bin\Debug\BackEnd.exe
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\BackEnd\bin\Debug\BackEnd.pdb
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\BackEnd\obj\Debug\BackEnd.exe
+D:\School\Telerik\C#\Code\OOP\Teamwork Winnie\Solution1\CalorimeterRadControls\BackEnd\obj\Debug\BackEnd.pdb
