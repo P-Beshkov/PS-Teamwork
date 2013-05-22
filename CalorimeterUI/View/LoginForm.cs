@@ -64,6 +64,5 @@ namespace CalorimeterUI.View
                 return false;
             }
         }
-
     }
 }
