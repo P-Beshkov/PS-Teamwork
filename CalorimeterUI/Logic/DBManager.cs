@@ -147,24 +147,68 @@ namespace Logic
             dbCon.Close();
         }
 
-        internal static void AddEatenFood(string currentUserName, DateTime dateTime, string p, int value)
+        internal static void AddEatenFood(string UserName, DateTime dateTime, string productName, int quantity)
         {
             dbCon.Open();
 
+            SqlCeCommand cmd = new SqlCeCommand();
+            cmd.Connection = dbCon;
+            string sqlCommandString = "SELECT MAX(Id)+1 FROM DailyHistory";
+            cmd.CommandText = sqlCommandString;
+            int id = (int)cmd.ExecuteScalar();
+
+            cmd.CommandText = String.Format(
+                @"SELECT {0}*Calories FROM Products WHERE ProductName = '{1}'",quantity,productName);
+            decimal calories = ((decimal)cmd.ExecuteScalar())*0.01M;
+            string dateTimeString = String.Format("{0}.{1}.{2} ã.",
+                dateTime.Day,dateTime.Month,dateTime.Year);
+            cmd.CommandText = String.Format(
+                @"SELECT Id FROM History WHERE Data = '{0}' AND UserName = '{1}'",dateTimeString,UserName);
+            var result = cmd.ExecuteScalar();
+            int historyId;
+            if (result == null)
+            {
+                cmd.CommandText = @"SELECT MAX(Id)+1 FROM History";
+                historyId = (int)cmd.ExecuteScalar();
+                cmd.CommandText = String.Format(
+                    @"INSERT INTO History(Id,Data,DailyCalories,UserName) VALUES({0}, '{1}',{2},'{3}')", historyId, dateTimeString, 0M, UserName);
+                cmd.ExecuteNonQuery();
+                dbCon.Close();
+                dbCon.Open();
+                //cmd.CommandText = String.Format(
+                //@"SELECT Id FROM History WHERE Data = '{0}' AND UserName = '{1}'", dateTimeString, UserName);
+                //result = cmd.ExecuteScalar();
+            }
+            else
+            {
+                historyId = (int)result;
+            }
+            cmd.CommandText =String.Format(
+                @"INSERT INTO  DailyHistory (Id, ProductName, Quantity, Calories, HistoryId)
+                VALUES ({0},'{1}',{2},{3}, {4})"
+                , id, productName, quantity, calories, historyId);
+            cmd.ExecuteNonQuery();
             dbCon.Close();
-            throw new NotImplementedException();
+            dbCon.Open();
+            cmd.CommandText = String.Format("SELECT SUM(Calories) AS Expr FROM DailyHistory WHERE (HistoryId = {0})", historyId);
+            var reader = cmd.ExecuteReader();
+            decimal newCalories;
+            reader.Read();
+            newCalories = (Decimal)reader[0];
+            cmd.CommandText = String.Format(@"UPDATE History SET DailyCalories = {0} WHERE Id={1}",newCalories,historyId);
+            cmd.ExecuteNonQuery();
+            dbCon.Close();
         }
 
         internal static void AddNewFood(NutritionData item)
         {
             dbCon.Open();
             string cmdString = String.Format(
-                "INSERT INTO Products(Category,ProductName,Calories,Fat,Carbohydrates,Proteins) VALUES('{0}','{1}',{2},{3},{4},{5}",
+                "INSERT INTO Products(Category,ProductName,Calories,Fat,Carbohydrates,Proteins) VALUES('{0}','{1}',{2},{3},{4},{5})",
                 item.type.ToString(), item.name, item.calories, item.fat, item.carbohydrates, item.protein);
             SqlCeCommand cmd = new SqlCeCommand(cmdString, dbCon);
             cmd.ExecuteNonQuery();
-            dbCon.Close();
-            throw new NotImplementedException();
+            dbCon.Close();            
         }
 
         internal static List<String> LoadProducts(TypeFood typeFood)

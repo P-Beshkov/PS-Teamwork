@@ -401,17 +401,19 @@ namespace CalorimeterUI
         private void addProductBtn_Click(object sender, EventArgs e)
         {
             string input = this.enterProductWeight.Text;
-            int value;
+            int quantity;
 
-            if (!int.TryParse(input, out value))
+            if (!int.TryParse(input, out quantity))
             {
                 MessageBox.Show("Wrong input! Enter weight in correct format.");
                 return;
             }
             
             //ApplicationLogic.AddEatenNutrition(type.Text, Current.Text, value);
-            user.AddEatenFood(DateTime.Now, Current.Text, value);
-            DBManager.AddEatenFood(currentUserName.ToString(), DateTime.Now, Current.Text, value);
+            //user.AddEatenFood(DateTime.Now, Current.Text, quantity);
+            string productName = Current.Text;
+
+            DBManager.AddEatenFood(user.Name, DateTime.Now, productName, quantity);
             this.enterProductWeight.Visible = false;
             this.addProductBtn.Visible = false;
             this.enterProductWeight.Text = String.Empty;
