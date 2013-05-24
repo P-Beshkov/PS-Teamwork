@@ -16,15 +16,13 @@ namespace Logic
 
         public static bool IsUsernameValid(string username, string password)
         {
-
             dbCon.Open();
-
             string sqlCommand = @"SELECT UserName, Password
                                     FROM     Users
                                     WHERE  UserName = '" + username + "' AND Password = '" + password + "'";
             SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
             SqlCeDataReader reader = command.ExecuteReader();
-            
+
             using (reader)
             {
                 if (reader.Read())
@@ -82,7 +80,7 @@ namespace Logic
                         if (readMore)
                         {
                             isDateEqual = (string)reader["Data"] == daily.date;
-                            if (isDateEqual==false)
+                            if (isDateEqual == false)
                             {
                                 isDateEqual = true;
                                 result.Add(daily);
@@ -92,7 +90,7 @@ namespace Logic
                                     date = (string)reader["Data"],
                                     dailyCalories = (decimal)reader["DailyCalories"]
                                 };
-                                
+
                             }
                         }
                         else
@@ -100,10 +98,10 @@ namespace Logic
                             result.Add(daily);
                             isDateEqual = false;
                         }
-                        
+
                     }
                     while (readMore && isDateEqual);
-                    
+
                 }
 
             }
@@ -114,21 +112,58 @@ namespace Logic
 
         internal static bool IsUernameFree(string username)
         {
-            throw new NotImplementedException();
+
+            dbCon.Open();
+
+            string sqlCommand = @"SELECT UserName
+                                    FROM     Users
+                                    WHERE  UserName = '" + username + "'";
+            SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            using (reader)
+            {
+                if (reader.Read())
+                {
+                    dbCon.Close();
+                    return false;
+                }
+                else
+                {
+                    dbCon.Close();
+                    return true;
+                }
+            }
         }
 
         internal static void RegisterUser(string username, string password)
         {
-            throw new NotImplementedException();
+            dbCon.Open();
+            string cmdString =
+                String.Format("INSERT INTO Users(Username, Password, Type) VALUES ('{0}','{1}','{2}')",
+                username, password, UserType.User.ToString());
+            SqlCeCommand cmd = new SqlCeCommand(cmdString, dbCon);
+            cmd.ExecuteNonQuery();
+            dbCon.Close();
         }
 
-        internal static void AddEatenFood(System.Windows.Forms.Label currentUserName, DateTime dateTime, string p, int value)
+        internal static void AddEatenFood(string currentUserName, DateTime dateTime, string p, int value)
         {
+            dbCon.Open();
+
+            dbCon.Close();
             throw new NotImplementedException();
         }
 
         internal static void AddNewFood(NutritionData item)
         {
+            dbCon.Open();
+            string cmdString = String.Format(
+                "INSERT INTO Products(Category,ProductName,Calories,Fat,Carbohydrates,Proteins) VALUES('{0}','{1}',{2},{3},{4},{5}",
+                item.type.ToString(), item.name, item.calories, item.fat, item.carbohydrates, item.protein);
+            SqlCeCommand cmd = new SqlCeCommand(cmdString, dbCon);
+            cmd.ExecuteNonQuery();
+            dbCon.Close();
             throw new NotImplementedException();
         }
 
@@ -136,7 +171,7 @@ namespace Logic
         {
             string sqlCommandString = @"SELECT ProductName, Category
                 FROM     Products
-                WHERE  (Category = N'"+typeFood.ToString()+"')";
+                WHERE  (Category = N'" + typeFood.ToString() + "')";
             dbCon.Open();
             SqlCeCommand cmd = new SqlCeCommand(sqlCommandString, dbCon);
             SqlCeDataReader reader = cmd.ExecuteReader();

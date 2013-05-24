@@ -411,7 +411,7 @@ namespace CalorimeterUI
             
             //ApplicationLogic.AddEatenNutrition(type.Text, Current.Text, value);
             user.AddEatenFood(DateTime.Now, Current.Text, value);
-            DBManager.AddEatenFood(currentUserName, DateTime.Now, Current.Text, value);
+            DBManager.AddEatenFood(currentUserName.ToString(), DateTime.Now, Current.Text, value);
             this.enterProductWeight.Visible = false;
             this.addProductBtn.Visible = false;
             this.enterProductWeight.Text = String.Empty;
