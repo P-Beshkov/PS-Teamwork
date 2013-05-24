@@ -7,40 +7,49 @@ namespace Logic
     public static class DBManager
     {
         private static SqlCeConnection dbCon;
-
-        public static void InicializeDB(string connectionString)
+        //SqlCeConnection dbCon = new SqlCeConnection(@"Data Source=..\\..\\CalorimeterLocal.sdf");
+        static DBManager()
         {
-            DBManager.dbCon = new SqlCeConnection(connectionString);
-            //SqlCeConnection dbCon = new SqlCeConnection(@"Data Source=D:\School\PS-Teamwork\CalorimeterUI\CalorimeterLocal.sdf");
+            DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");            
         }
 
         public static bool IsUsernameValid(string username, string password)
         {            
-            dbCon.Open();
             using (dbCon)
             {
-                SqlCeCommand command = new SqlCeCommand("SELECT * FROM Products", dbCon);
+                dbCon.Open();
+                string sqlCommand = @"SELECT UserName, Password
+                                    FROM     Users
+                                    WHERE  UserName = '"+username+"' AND Password = '"+password+"'";
+                SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
                 SqlCeDataReader reader = command.ExecuteReader();
+               
                 using (reader)
                 {
-                    while (reader.Read())
+                    if (reader.Read())
                     {
-                        string category = (string)reader["Category"];
-                        string productName = (string)reader["ProductName"];
-                        float calories = (float)reader["Calories"];
+                        return true;
+                        //string category = (string)reader["Category"];
+                        //string productName = (string)reader["ProductName"];
+                        //float calories = (float)reader["Calories"];
+                    }
+                    else
+                    {
+                        return false;
                     }
                 }
+            }
+        }
 
+        internal static List<DailyHistory> LoadUserData(string username, out UserType status)
+        {
+            using (dbCon)
+            {
+                dbCon.Open();
+                //string sqlCommand = 
             }
             throw new NotImplementedException();
         }
-
-        internal static List<DailyHistory> LoadUserData(string username,out UserType status)
-        {
-            throw new NotImplementedException();
-        }
-
-
 
         internal static bool IsUernameFree(string username)
         {
