@@ -64,3 +64,14 @@ D:\School\PS - Teamwork Viktor\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csproj.
 D:\School\PS - Teamwork Broadway\CalorimeterUI\bin\Debug\CalorimeterUI.exe.config
 D:\School\PS - Teamwork Broadway\CalorimeterUI\obj\x86\Debug\CalorimeterUI.exe
 D:\School\PS - Teamwork Broadway\CalorimeterUI\obj\x86\Debug\CalorimeterUI.pdb
+D:\School\PS-Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.exe.config
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.exe
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.pdb
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csprojResolveAssemblyReference.cache
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.g.resources
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.AboutBox.resources
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.CalorimeterUI.resources
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.Properties.Resources.resources
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.LoginForm.resources
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.RegisterForm.resources
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csproj.GenerateResource.Cache

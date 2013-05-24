@@ -95,26 +95,16 @@
     <Compile Include="History.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Alchohol.cs" />
+    <Compile Include="Logic\OldClasses.cs" />
     <Compile Include="Logic\ApplicationLogic.cs" />
-    <Compile Include="Logic\Bread.cs" />
-    <Compile Include="Logic\Cereals.cs" />
-    <Compile Include="Logic\Drink.cs" />
-    <Compile Include="Logic\Fish.cs" />
-    <Compile Include="Logic\Food.cs" />
-    <Compile Include="Logic\Fruits.cs" />
     <Compile Include="Logic\ILoadable.cs" />
     <Compile Include="Logic\ISavable.cs" />
     <Compile Include="Logic\IUserActions.cs" />
-    <Compile Include="Logic\Meat.cs" />
     <Compile Include="Logic\Nutrition.cs" />
     <Compile Include="Logic\NutritionData.cs" />
-    <Compile Include="Logic\Nuts.cs" />
-    <Compile Include="Logic\SoftDrinks.cs" />
     <Compile Include="Logic\TypeFood.cs" />
     <Compile Include="Logic\TypeFoodException.cs" />
     <Compile Include="Logic\User.cs" />
-    <Compile Include="Logic\Vegetables.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

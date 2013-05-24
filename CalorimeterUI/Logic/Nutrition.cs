@@ -12,9 +12,7 @@ namespace Logic
         protected List<NutritionData> availableProducts;
         protected string fileLocation;
         protected int loadedProducts;
-        public string metrics;
-
-        
+        public string metrics;       
 
         public Nutrition()
         {
