@@ -68,9 +68,9 @@ namespace Logic
                     string[] elements = line.Split(new char[] { '^' }, StringSplitOptions.RemoveEmptyEntries);
                     NutritionData newProduct = new NutritionData();
                     newProduct.name = elements[0];
-                    newProduct.protein = float.Parse(elements[1]);
-                    newProduct.fat = float.Parse(elements[2]);
-                    newProduct.carbohydrates = float.Parse(elements[3]);
+                    newProduct.protein = decimal.Parse(elements[1]);
+                    newProduct.fat = decimal.Parse(elements[2]);
+                    newProduct.carbohydrates = decimal.Parse(elements[3]);
                     newProduct.calories = int.Parse(elements[4]);
                     this.availableProducts.Add(newProduct);
                     this.loadedProducts++;

@@ -7,16 +7,16 @@ namespace Logic
     public struct NutritionData : IComparable<NutritionData>
     {
         public string name;
-        public int calories;
-        public float? carbohydrates;
-        public float? fat;
-        public float? protein;
+        public decimal calories;
+        public decimal carbohydrates;
+        public decimal fat;
+        public decimal protein;
         public TypeFood type ;
-        public NutritionData(string name, int calories) : this(name, calories,null,null,null)
+        public NutritionData(string name, decimal calories) : this(name, calories,0,0,0)
         {
             
         }
-        public NutritionData(string name, int calories, float? carbohydrates, float? fat, float? protein)
+        public NutritionData(string name, decimal calories, decimal carbohydrates, decimal fat, decimal protein)
         {
             this.name = name;
             this.calories = calories;

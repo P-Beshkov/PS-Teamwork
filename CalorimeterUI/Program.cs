@@ -21,13 +21,120 @@ namespace CalorimeterUI
         [STAThread]
         static void Main()
         {
+           
+
             //Already added
             //InsertHistory();
             //InserDailyHistory();
+            //InsertProductData();
             Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new CalorimeterUI());
+        }
+  
+        private static void InsertProductData()
+        {
+            SqlCeConnection dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");
+            using (dbCon)
+            {
+                dbCon.Open();
+
+                Alchohol alchohol = new Alchohol();
+                for (int i = 0; i < alchohol.availableProducts.Count; i++)
+                {
+                    var item = alchohol.availableProducts[i];
+                    item.type = TypeFood.Alchohol;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+                Bread bread = new Bread();
+                for (int i = 0; i < bread.availableProducts.Count; i++)
+                {
+                    var item = bread.availableProducts[i];
+                    item.type = TypeFood.Bread;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+                Cereals cereals = new Cereals();
+                for (int i = 0; i < cereals.availableProducts.Count; i++)
+                {
+                    var item = cereals.availableProducts[i];
+                    item.type = TypeFood.Cereals;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+                Fish fish = new Fish();
+                for (int i = 0; i < fish.availableProducts.Count; i++)
+                {
+                    var item = fish.availableProducts[i];
+                    item.type = TypeFood.Fish;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+                Fruits fruits = new Fruits();
+                for (int i = 0; i < fruits.availableProducts.Count; i++)
+                {
+                    var item = fruits.availableProducts[i];
+                    item.type = TypeFood.Fruit;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+                Meat meat = new Meat();
+                for (int i = 0; i < meat.availableProducts.Count; i++)
+                {
+                    var item = meat.availableProducts[i];
+                    item.type = TypeFood.Meat;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+                Nuts nuts = new Nuts();
+                for (int i = 0; i < nuts.availableProducts.Count; i++)
+                {
+                    var item = nuts.availableProducts[i];
+                    item.type = TypeFood.Nuts;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+                SoftDrinks softDrinks = new SoftDrinks();
+                for (int i = 0; i < softDrinks.availableProducts.Count; i++)
+                {
+                    var item = softDrinks.availableProducts[i];
+                    item.type = TypeFood.SoftDrinks;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+                Vegetables vegetables = new Vegetables();
+                for (int i = 0; i < vegetables.availableProducts.Count; i++)
+                {
+                    var item = vegetables.availableProducts[i];
+                    item.type = TypeFood.Vegetables;
+                    StringBuilder sqlCommand = BuildQueryString(item);
+                    SqlCeCommand command = new SqlCeCommand(sqlCommand.ToString(), dbCon);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+  
+        private static StringBuilder BuildQueryString(NutritionData item)
+        {
+            StringBuilder sqlCommand = new StringBuilder();
+            sqlCommand.Append("INSERT INTO Products (Category, ProductName, Calories, Fat, Carbohydrates, Proteins) VALUES (");
+            sqlCommand.Append("'" + item.type.ToString() + "',");
+            sqlCommand.Append("'" + item.name + "',");
+            sqlCommand.Append(item.calories + ",");
+            sqlCommand.Append(item.fat + ",");
+            sqlCommand.Append(item.carbohydrates + ",");
+            sqlCommand.Append(item.protein + ")");
+            return sqlCommand;
         }
   
         private static void InserDailyHistory()

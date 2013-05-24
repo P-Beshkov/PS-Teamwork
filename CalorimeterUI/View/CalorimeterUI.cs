@@ -142,9 +142,9 @@ namespace CalorimeterUI
 
             if (addCarbo.Text != String.Empty)
             {
-                float carbohydrates;
+                decimal carbohydrates;
 
-                if (!float.TryParse(addCarbo.Text, out carbohydrates))
+                if (!decimal.TryParse(addCarbo.Text, out carbohydrates))
                 {
                     MessageBox.Show("Wrong input! Enter carbohydrates in correct format.");
                     return;
@@ -157,9 +157,9 @@ namespace CalorimeterUI
 
             if (addFat.Text != String.Empty)
             {
-                float fat;
+                decimal fat;
 
-                if (!float.TryParse(addFat.Text, out fat))
+                if (!decimal.TryParse(addFat.Text, out fat))
                 {
                     MessageBox.Show("Wrong input! Enter fats in correct format.");
                     return;
@@ -172,9 +172,9 @@ namespace CalorimeterUI
 
             if (addProteins.Text != String.Empty)
             {
-                float protein;
+                decimal protein;
 
-                if (!float.TryParse(addProteins.Text, out protein))
+                if (!decimal.TryParse(addProteins.Text, out protein))
                 {
                     MessageBox.Show("Wrong input! Enter proteins in correct format.");
                     return;
