@@ -134,7 +134,19 @@ namespace Logic
 
         internal static List<String> LoadProducts(TypeFood typeFood)
         {
-            throw new NotImplementedException();
+            string sqlCommandString = @"SELECT ProductName, Category
+                FROM     Products
+                WHERE  (Category = N'"+typeFood.ToString()+"')";
+            dbCon.Open();
+            SqlCeCommand cmd = new SqlCeCommand(sqlCommandString, dbCon);
+            SqlCeDataReader reader = cmd.ExecuteReader();
+            List<string> result = new List<string>();
+            while (reader.Read())
+            {
+                result.Add((string)reader["ProductName"]);
+            }
+            dbCon.Close();
+            return result;
         }
     }
 }
