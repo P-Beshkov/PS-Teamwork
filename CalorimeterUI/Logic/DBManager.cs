@@ -18,6 +18,7 @@ namespace Logic
             using (dbCon)
             {
                 dbCon.Open();
+               
                 string sqlCommand = @"SELECT UserName, Password
                                     FROM     Users
                                     WHERE  UserName = '"+username+"' AND Password = '"+password+"'";
@@ -29,9 +30,6 @@ namespace Logic
                     if (reader.Read())
                     {
                         return true;
-                        //string category = (string)reader["Category"];
-                        //string productName = (string)reader["ProductName"];
-                        //float calories = (float)reader["Calories"];
                     }
                     else
                     {

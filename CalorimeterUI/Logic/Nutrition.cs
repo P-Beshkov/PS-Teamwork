@@ -9,7 +9,7 @@ namespace Logic
 {
     public abstract class Nutrition : ILoadable, ISavable, IEnumerable<NutritionData>
     { 
-        protected List<NutritionData> availableProducts;
+        public List<NutritionData> availableProducts;
         protected string fileLocation;
         protected int loadedProducts;
         public string metrics;       
