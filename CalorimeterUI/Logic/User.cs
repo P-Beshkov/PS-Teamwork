@@ -6,18 +6,18 @@ using System.IO;
 
 namespace Logic
 {
-    struct EatenData
+    public struct EatenData
     {
-        string productName;
-        int quantity;
-        int calories;
+        public string productName;
+        public int quantity;
+        public decimal calories;
     }
 
     public struct DailyHistory
     {
-        List<EatenData> eatenHistory;
-        DateTime date;
-        decimal dailyCalories;
+        public List<EatenData> eatenHistory;
+        public string date;
+        public decimal dailyCalories;
     }
 
     public class User// : IUserActions

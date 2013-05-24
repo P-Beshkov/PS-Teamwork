@@ -7,46 +7,109 @@ namespace Logic
     public static class DBManager
     {
         private static SqlCeConnection dbCon;
+
         //SqlCeConnection dbCon = new SqlCeConnection(@"Data Source=..\\..\\CalorimeterLocal.sdf");
         static DBManager()
         {
-            DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");            
+            DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");
         }
 
         public static bool IsUsernameValid(string username, string password)
-        {            
-            using (dbCon)
-            {
-                dbCon.Open();
-               
-                string sqlCommand = @"SELECT UserName, Password
+        {
+
+            dbCon.Open();
+
+            string sqlCommand = @"SELECT UserName, Password
                                     FROM     Users
-                                    WHERE  UserName = '"+username+"' AND Password = '"+password+"'";
-                SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
-                SqlCeDataReader reader = command.ExecuteReader();
-               
-                using (reader)
+                                    WHERE  UserName = '" + username + "' AND Password = '" + password + "'";
+            SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
+            SqlCeDataReader reader = command.ExecuteReader();
+            
+            using (reader)
+            {
+                if (reader.Read())
                 {
-                    if (reader.Read())
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    dbCon.Close();
+                    return true;
+                }
+                else
+                {
+                    dbCon.Close();
+                    return false;
                 }
             }
+
         }
 
         internal static List<DailyHistory> LoadUserData(string username, out UserType status)
         {
-            using (dbCon)
+            List<DailyHistory> result = new List<DailyHistory>();
+            status = UserType.Anonymous;
+
+            dbCon.Open();
+            string sqlCommand = @"SELECT Users.Type, History.Data, History.DailyCalories, DailyHistory.ProductName, DailyHistory.Quantity, DailyHistory.Calories, Users.UserName
+                    FROM     DailyHistory INNER JOIN
+                    History ON DailyHistory.HistoryId = History.Id INNER JOIN
+                    Users ON History.UserName = Users.UserName
+                    WHERE  (Users.UserName = '" + username + "')";
+            SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            using (reader)
             {
-                dbCon.Open();
-                //string sqlCommand = 
+
+                while (reader.Read())
+                {
+                    status = (UserType)Enum.Parse(typeof(UserType), (string)reader["Type"]);
+                    DailyHistory daily = new DailyHistory()
+                    {
+                        eatenHistory = new List<EatenData>(),
+                        date = (string)reader["Data"],
+                        dailyCalories = (decimal)reader["DailyCalories"]
+                    };
+                    bool isDateEqual;
+                    bool readMore;
+                    do
+                    {
+                        EatenData eaten = new EatenData()
+                        {
+                            productName = (string)reader["ProductName"],
+                            quantity = (int)reader["Quantity"],
+                            calories = (decimal)reader["Calories"]
+                        };
+                        daily.eatenHistory.Add(eaten);
+                        readMore = reader.Read();
+                        if (readMore)
+                        {
+                            isDateEqual = (string)reader["Data"] == daily.date;
+                            if (isDateEqual==false)
+                            {
+                                isDateEqual = true;
+                                result.Add(daily);
+                                daily = new DailyHistory()
+                                {
+                                    eatenHistory = new List<EatenData>(),
+                                    date = (string)reader["Data"],
+                                    dailyCalories = (decimal)reader["DailyCalories"]
+                                };
+                                
+                            }
+                        }
+                        else
+                        {
+                            result.Add(daily);
+                            isDateEqual = false;
+                        }
+                        
+                    }
+                    while (readMore && isDateEqual);
+                    
+                }
+
             }
-            throw new NotImplementedException();
+            dbCon.Close();
+
+            return result;
         }
 
         internal static bool IsUernameFree(string username)
