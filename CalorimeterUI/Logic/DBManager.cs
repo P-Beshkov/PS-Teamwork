@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlServerCe;
+using System.Globalization;
 
 namespace Logic
 {
@@ -225,9 +226,32 @@ namespace Logic
             return result;
         }
 
-        internal static List<Tuple<DateTime, decimal>> LoadHistory(int daysBefore)
+        internal static List<Tuple<DateTime, decimal>> LoadHistory(int daysBefore, string name)
         {
-            throw new NotImplementedException();
+            List<Tuple<DateTime, decimal>> result = new List<Tuple<DateTime, decimal>>();
+            dbCon.Open();
+            SqlCeCommand cmd = new SqlCeCommand();
+            cmd.Connection = dbCon;
+
+            cmd.CommandText = "SELECT MAX(Id) FROM History";
+            int maxId = (int)cmd.ExecuteScalar();
+            int minId = maxId - daysBefore;
+            if (minId<1)
+            {
+                minId = 1;
+            }
+            cmd.CommandText = String.Format(@"SELECT Data, DailyCalories FROM History WHERE Id>{0}", minId);
+            SqlCeDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string dateString = (string)reader["Data"];
+                string dateFormat = "d.M.yyyy ã.";                
+                DateTime date = DateTime.ParseExact(dateString, dateFormat,CultureInfo.InvariantCulture);
+                result.Add(new Tuple<DateTime, decimal>(date, (decimal)reader["DailyCalories"]));
+            }
+            dbCon.Close();
+            return result;
         }
     }
 }

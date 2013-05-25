@@ -173,14 +173,14 @@ namespace Logic
         {
             //throw new NotImplementedException();
             int daysBefore = 7;
-            return DBManager.LoadHistory(daysBefore);
+            return DBManager.LoadHistory(daysBefore, user.Name);
             //return user.GetElements(7);
         }
 
         public static List<Tuple<DateTime, decimal>> ShowLastMonth()
         {
             int daysBefore = 30;
-            return DBManager.LoadHistory(daysBefore);
+            return DBManager.LoadHistory(daysBefore,user.Name);
             throw new NotImplementedException();
             //return user.GetElements(30);
         }

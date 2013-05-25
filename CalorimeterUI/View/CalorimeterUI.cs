@@ -452,8 +452,8 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = ApplicationLogic.ShowLastWeek();
-            eatenFood.Rows.Add("Today", current[6].Item2);
+            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(1,user.Name);
+            eatenFood.Rows.Add("Today", current[current.Count-1].Item2);
 
             this.statisticsGraph.DataSource = set;
             this.statisticsGraph.BackColor = Color.Red;
@@ -490,7 +490,7 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = ApplicationLogic.ShowLastWeek();
+            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(7,user.Name);
             
             for (int i = 0; i < current.Count; i++)
             {
@@ -532,7 +532,7 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = ApplicationLogic.ShowLastMonth();
+            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(30,user.Name);
 
             for (int i = 0; i < current.Count; i++)
             {
