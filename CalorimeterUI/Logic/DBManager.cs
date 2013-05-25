@@ -253,5 +253,10 @@ namespace Logic
             dbCon.Close();
             return result;
         }
+
+        internal static void Dispose()
+        {
+            dbCon.Dispose();
+        }
     }
 }

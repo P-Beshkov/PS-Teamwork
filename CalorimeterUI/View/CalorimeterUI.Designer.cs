@@ -107,17 +107,20 @@
             this.enterProductWeight = new Telerik.WinControls.UI.RadTextBox();
             this.addProductBtn = new Telerik.WinControls.UI.RadButton();
             this.Current = new Telerik.WinControls.UI.RadTextBoxControl();
-            this.saveProduct = new Telerik.WinControls.UI.RadButton();
             this.appleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.object_b1878d34_aaef_4303_9685_91ca102d06f4 = new Telerik.WinControls.RootRadElement();
             this.loginBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.registerBtn = new System.Windows.Forms.Button();
             this.userStatusButtons = new System.Windows.Forms.GroupBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.aboutBtn = new System.Windows.Forms.Button();
             this.labelUserGreetings = new System.Windows.Forms.Label();
             this.currentUserName = new System.Windows.Forms.Label();
             this.mainGroupBox = new System.Windows.Forms.GroupBox();
+            this.addCaloriesValidation = new System.Windows.Forms.Label();
+            this.addProductNameValidation = new System.Windows.Forms.Label();
+            this.eatenProductValidation = new System.Windows.Forms.Label();
             this.vegetablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ChooseFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MeatList.ComboBoxElement)).BeginInit();
@@ -151,7 +154,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.enterProductWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addProductBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Current)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appleBindingSource)).BeginInit();
             this.userStatusButtons.SuspendLayout();
             this.mainGroupBox.SuspendLayout();
@@ -180,15 +182,15 @@
             this.Cereals,
             this.radMenuSeparatorItem9,
             this.Nuts});
-            this.ChooseFood.Location = new System.Drawing.Point(8, 23);
-            this.ChooseFood.Margin = new System.Windows.Forms.Padding(4);
+            this.ChooseFood.Location = new System.Drawing.Point(6, 19);
             this.ChooseFood.Name = "ChooseFood";
-            this.ChooseFood.Size = new System.Drawing.Size(251, 92);
+            this.ChooseFood.Size = new System.Drawing.Size(188, 75);
             this.ChooseFood.TabIndex = 0;
             this.ChooseFood.Text = "Choose Food";
             this.ChooseFood.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.ChooseFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ChooseFood.ThemeName = "TelerikMetroTouch";
+            this.ChooseFood.Click += new System.EventHandler(this.ChooseFood_Click);
             ((Telerik.WinControls.UI.RadDropDownButtonElement)(this.ChooseFood.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             ((Telerik.WinControls.UI.RadDropDownButtonElement)(this.ChooseFood.GetChildAt(0))).TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             ((Telerik.WinControls.UI.RadDropDownButtonElement)(this.ChooseFood.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -691,15 +693,15 @@
             this.radMenuSeparatorItem4,
             this.Alcohol,
             this.radMenuSeparatorItem5});
-            this.ChooseDrinks.Location = new System.Drawing.Point(8, 137);
-            this.ChooseDrinks.Margin = new System.Windows.Forms.Padding(4);
+            this.ChooseDrinks.Location = new System.Drawing.Point(6, 111);
             this.ChooseDrinks.Name = "ChooseDrinks";
-            this.ChooseDrinks.Size = new System.Drawing.Size(251, 92);
+            this.ChooseDrinks.Size = new System.Drawing.Size(188, 75);
             this.ChooseDrinks.TabIndex = 1;
             this.ChooseDrinks.Text = "Choose Drinks";
             this.ChooseDrinks.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.ChooseDrinks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ChooseDrinks.ThemeName = "TelerikMetroTouch";
+            this.ChooseDrinks.Click += new System.EventHandler(this.ChooseDrinks_Click);
             // 
             // SoftDrinks
             // 
@@ -845,15 +847,15 @@
             this.addFood,
             this.radMenuSeparatorItem6,
             this.addDrink});
-            this.AddProduct.Location = new System.Drawing.Point(8, 368);
-            this.AddProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.AddProduct.Location = new System.Drawing.Point(6, 299);
             this.AddProduct.Name = "AddProduct";
-            this.AddProduct.Size = new System.Drawing.Size(251, 92);
+            this.AddProduct.Size = new System.Drawing.Size(188, 75);
             this.AddProduct.TabIndex = 2;
             this.AddProduct.Text = "Add Product";
             this.AddProduct.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.AddProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddProduct.ThemeName = "TelerikMetroTouch";
+            this.AddProduct.Click += new System.EventHandler(this.AddProduct_Click);
             // 
             // addFood
             // 
@@ -1111,14 +1113,14 @@
             this.currentDay,
             this.pastWeek,
             this.lastMonth});
-            this.showStatistics.Location = new System.Drawing.Point(8, 252);
-            this.showStatistics.Margin = new System.Windows.Forms.Padding(4);
+            this.showStatistics.Location = new System.Drawing.Point(6, 205);
             this.showStatistics.Name = "showStatistics";
-            this.showStatistics.Size = new System.Drawing.Size(251, 92);
+            this.showStatistics.Size = new System.Drawing.Size(188, 75);
             this.showStatistics.TabIndex = 6;
             this.showStatistics.Text = "Show Statistics";
             this.showStatistics.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.showStatistics.ThemeName = "TelerikMetroTouch";
+            this.showStatistics.Click += new System.EventHandler(this.showStatistics_Click);
             // 
             // currentDay
             // 
@@ -1173,15 +1175,14 @@
             this.statisticsGraph.AccessibleDescription = "statisticsGraph";
             this.statisticsGraph.AccessibleName = "statisticsGraph";
             this.statisticsGraph.AreaDesign = cartesianArea1;
-            this.statisticsGraph.Location = new System.Drawing.Point(303, 25);
-            this.statisticsGraph.Margin = new System.Windows.Forms.Padding(5);
+            this.statisticsGraph.Location = new System.Drawing.Point(225, 20);
+            this.statisticsGraph.Margin = new System.Windows.Forms.Padding(4);
             this.statisticsGraph.Name = "statisticsGraph";
             this.statisticsGraph.ShowGrid = false;
-            this.statisticsGraph.Size = new System.Drawing.Size(991, 436);
+            this.statisticsGraph.Size = new System.Drawing.Size(743, 354);
             this.statisticsGraph.TabIndex = 7;
             this.statisticsGraph.Text = "<html>Statistics Graph</html>";
             this.statisticsGraph.Visible = false;
-            this.statisticsGraph.Click += new System.EventHandler(this.statisticsGraph_Click);
             // 
             // addToList
             // 
@@ -1190,10 +1191,9 @@
             this.addToList.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.addToList.Image = ((System.Drawing.Image)(resources.GetObject("addToList.Image")));
             this.addToList.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.addToList.Location = new System.Drawing.Point(303, 480);
-            this.addToList.Margin = new System.Windows.Forms.Padding(4);
+            this.addToList.Location = new System.Drawing.Point(227, 390);
             this.addToList.Name = "addToList";
-            this.addToList.Size = new System.Drawing.Size(93, 39);
+            this.addToList.Size = new System.Drawing.Size(70, 32);
             this.addToList.TabIndex = 8;
             this.addToList.Text = "Add";
             this.addToList.TextAlignment = System.Drawing.ContentAlignment.BottomLeft;
@@ -1207,10 +1207,9 @@
             this.removeFromList.AccessibleName = "removeFromList";
             this.removeFromList.Image = ((System.Drawing.Image)(resources.GetObject("removeFromList.Image")));
             this.removeFromList.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.removeFromList.Location = new System.Drawing.Point(404, 480);
-            this.removeFromList.Margin = new System.Windows.Forms.Padding(4);
+            this.removeFromList.Location = new System.Drawing.Point(303, 390);
             this.removeFromList.Name = "removeFromList";
-            this.removeFromList.Size = new System.Drawing.Size(99, 39);
+            this.removeFromList.Size = new System.Drawing.Size(74, 32);
             this.removeFromList.TabIndex = 9;
             this.removeFromList.Text = "Clear";
             this.removeFromList.TextAlignment = System.Drawing.ContentAlignment.BottomLeft;
@@ -1223,10 +1222,9 @@
             this.resetStatistics.AccessibleDescription = "resetStatistics";
             this.resetStatistics.AccessibleName = "resetStatistics";
             this.resetStatistics.Image = ((System.Drawing.Image)(resources.GetObject("resetStatistics.Image")));
-            this.resetStatistics.Location = new System.Drawing.Point(1141, 480);
-            this.resetStatistics.Margin = new System.Windows.Forms.Padding(4);
+            this.resetStatistics.Location = new System.Drawing.Point(856, 390);
             this.resetStatistics.Name = "resetStatistics";
-            this.resetStatistics.Size = new System.Drawing.Size(152, 39);
+            this.resetStatistics.Size = new System.Drawing.Size(114, 32);
             this.resetStatistics.TabIndex = 10;
             this.resetStatistics.Text = "Clear Chart";
             this.resetStatistics.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -1239,10 +1237,9 @@
             this.showProductDesc.AccessibleDescription = "showProductDesc";
             this.showProductDesc.AccessibleName = "showProductDesc";
             this.showProductDesc.Image = ((System.Drawing.Image)(resources.GetObject("showProductDesc.Image")));
-            this.showProductDesc.Location = new System.Drawing.Point(97, 511);
-            this.showProductDesc.Margin = new System.Windows.Forms.Padding(4);
+            this.showProductDesc.Location = new System.Drawing.Point(73, 415);
             this.showProductDesc.Name = "showProductDesc";
-            this.showProductDesc.Size = new System.Drawing.Size(180, 78);
+            this.showProductDesc.Size = new System.Drawing.Size(135, 63);
             this.showProductDesc.TabIndex = 11;
             this.showProductDesc.Text = "Product List";
             this.showProductDesc.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -1254,10 +1251,9 @@
             // 
             this.productDescList.AccessibleDescription = "productDescList";
             this.productDescList.AccessibleName = "productDescList";
-            this.productDescList.Location = new System.Drawing.Point(801, -209);
-            this.productDescList.Margin = new System.Windows.Forms.Padding(4);
+            this.productDescList.Location = new System.Drawing.Point(601, -170);
             this.productDescList.Name = "productDescList";
-            this.productDescList.Size = new System.Drawing.Size(249, 35);
+            this.productDescList.Size = new System.Drawing.Size(187, 30);
             this.productDescList.TabIndex = 12;
             this.productDescList.Text = "Products List";
             this.productDescList.ThemeName = "TelerikMetroTouch";
@@ -1268,10 +1264,9 @@
             this.productsListView.AccessibleName = "productsListView";
             this.productsListView.GroupItemSize = new System.Drawing.Size(200, 40);
             this.productsListView.ItemSize = new System.Drawing.Size(200, 40);
-            this.productsListView.Location = new System.Drawing.Point(300, 527);
-            this.productsListView.Margin = new System.Windows.Forms.Padding(4);
+            this.productsListView.Location = new System.Drawing.Point(225, 428);
             this.productsListView.Name = "productsListView";
-            this.productsListView.Size = new System.Drawing.Size(203, 90);
+            this.productsListView.Size = new System.Drawing.Size(152, 73);
             this.productsListView.TabIndex = 13;
             this.productsListView.Text = "productsListView";
             this.productsListView.ThemeName = "TelerikMetroTouch";
@@ -1282,10 +1277,9 @@
             this.showDesc.AccessibleDescription = "showDesc";
             this.showDesc.AccessibleName = "showDesc";
             this.showDesc.Image = ((System.Drawing.Image)(resources.GetObject("showDesc.Image")));
-            this.showDesc.Location = new System.Drawing.Point(8, 543);
-            this.showDesc.Margin = new System.Windows.Forms.Padding(4);
+            this.showDesc.Location = new System.Drawing.Point(6, 441);
             this.showDesc.Name = "showDesc";
-            this.showDesc.Size = new System.Drawing.Size(249, 58);
+            this.showDesc.Size = new System.Drawing.Size(187, 47);
             this.showDesc.TabIndex = 14;
             this.showDesc.Text = "    Show Ingredients";
             this.showDesc.ThemeName = "TelerikMetroTouch";
@@ -1302,37 +1296,36 @@
             // 
             this.addProductName.AccessibleDescription = "addProductName";
             this.addProductName.AccessibleName = "addProductName";
-            this.addProductName.Location = new System.Drawing.Point(303, 192);
-            this.addProductName.Margin = new System.Windows.Forms.Padding(4);
+            this.addProductName.Location = new System.Drawing.Point(227, 156);
             this.addProductName.Name = "addProductName";
             this.addProductName.NullText = "enter product";
-            this.addProductName.Size = new System.Drawing.Size(200, 37);
+            this.addProductName.Size = new System.Drawing.Size(150, 30);
             this.addProductName.TabIndex = 17;
             this.addProductName.ThemeName = "TelerikMetroTouch";
             this.addProductName.Visible = false;
+            this.addProductName.TextChanged += new System.EventHandler(this.enterProductName_TextChanged);
             // 
             // addCalories
             // 
             this.addCalories.AccessibleDescription = "addCalories";
             this.addCalories.AccessibleName = "addCalories";
-            this.addCalories.Location = new System.Drawing.Point(303, 252);
-            this.addCalories.Margin = new System.Windows.Forms.Padding(4);
+            this.addCalories.Location = new System.Drawing.Point(227, 205);
             this.addCalories.Name = "addCalories";
             this.addCalories.NullText = "enter calories";
-            this.addCalories.Size = new System.Drawing.Size(200, 37);
+            this.addCalories.Size = new System.Drawing.Size(150, 30);
             this.addCalories.TabIndex = 18;
             this.addCalories.ThemeName = "TelerikMetroTouch";
             this.addCalories.Visible = false;
+            this.addCalories.TextChanged += new System.EventHandler(this.enterProductCalories_TextChanged);
             // 
             // addCarbo
             // 
             this.addCarbo.AccessibleDescription = "addCarbo";
             this.addCarbo.AccessibleName = "addCarbo";
-            this.addCarbo.Location = new System.Drawing.Point(303, 308);
-            this.addCarbo.Margin = new System.Windows.Forms.Padding(4);
+            this.addCarbo.Location = new System.Drawing.Point(227, 250);
             this.addCarbo.Name = "addCarbo";
             this.addCarbo.NullText = "enter carbohydrates";
-            this.addCarbo.Size = new System.Drawing.Size(200, 37);
+            this.addCarbo.Size = new System.Drawing.Size(150, 30);
             this.addCarbo.TabIndex = 19;
             this.addCarbo.ThemeName = "TelerikMetroTouch";
             this.addCarbo.Visible = false;
@@ -1341,11 +1334,10 @@
             // 
             this.addFat.AccessibleDescription = "addFat";
             this.addFat.AccessibleName = "addFat";
-            this.addFat.Location = new System.Drawing.Point(303, 368);
-            this.addFat.Margin = new System.Windows.Forms.Padding(4);
+            this.addFat.Location = new System.Drawing.Point(227, 299);
             this.addFat.Name = "addFat";
             this.addFat.NullText = "enter fats";
-            this.addFat.Size = new System.Drawing.Size(200, 37);
+            this.addFat.Size = new System.Drawing.Size(150, 30);
             this.addFat.TabIndex = 20;
             this.addFat.ThemeName = "TelerikMetroTouch";
             this.addFat.Visible = false;
@@ -1354,11 +1346,10 @@
             // 
             this.addProteins.AccessibleDescription = "addProteins";
             this.addProteins.AccessibleName = "addProteins";
-            this.addProteins.Location = new System.Drawing.Point(303, 423);
-            this.addProteins.Margin = new System.Windows.Forms.Padding(4);
+            this.addProteins.Location = new System.Drawing.Point(227, 344);
             this.addProteins.Name = "addProteins";
             this.addProteins.NullText = "enter proteins";
-            this.addProteins.Size = new System.Drawing.Size(200, 37);
+            this.addProteins.Size = new System.Drawing.Size(150, 30);
             this.addProteins.TabIndex = 21;
             this.addProteins.Tag = "";
             this.addProteins.ThemeName = "TelerikMetroTouch";
@@ -1368,10 +1359,10 @@
             // 
             this.type.AccessibleDescription = "type";
             this.type.AccessibleName = "type";
-            this.type.Location = new System.Drawing.Point(8, 480);
-            this.type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.type.Location = new System.Drawing.Point(6, 390);
+            this.type.Margin = new System.Windows.Forms.Padding(2);
             this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(167, 25);
+            this.type.Size = new System.Drawing.Size(125, 20);
             this.type.TabIndex = 22;
             this.type.Text = "Type";
             this.type.Visible = false;
@@ -1407,15 +1398,15 @@
             // 
             this.enterProductWeight.AccessibleDescription = "enterProductWeight";
             this.enterProductWeight.AccessibleName = "enterProductWeight";
-            this.enterProductWeight.Location = new System.Drawing.Point(303, 23);
-            this.enterProductWeight.Margin = new System.Windows.Forms.Padding(4);
+            this.enterProductWeight.Location = new System.Drawing.Point(227, 19);
             this.enterProductWeight.Name = "enterProductWeight";
             this.enterProductWeight.NullText = "enter weight";
-            this.enterProductWeight.Size = new System.Drawing.Size(200, 35);
+            this.enterProductWeight.Size = new System.Drawing.Size(150, 30);
             this.enterProductWeight.TabIndex = 23;
             this.enterProductWeight.TabStop = false;
             this.enterProductWeight.ThemeName = "TelerikMetroTouch";
             this.enterProductWeight.Visible = false;
+            this.enterProductWeight.TextChanged += new System.EventHandler(this.enterProductWeight_TextChanged);
             // 
             // addProductBtn
             // 
@@ -1423,10 +1414,9 @@
             this.addProductBtn.AccessibleName = "addProductBtn";
             this.addProductBtn.Image = ((System.Drawing.Image)(resources.GetObject("addProductBtn.Image")));
             this.addProductBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.addProductBtn.Location = new System.Drawing.Point(303, 76);
-            this.addProductBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addProductBtn.Location = new System.Drawing.Point(227, 62);
             this.addProductBtn.Name = "addProductBtn";
-            this.addProductBtn.Size = new System.Drawing.Size(97, 39);
+            this.addProductBtn.Size = new System.Drawing.Size(73, 32);
             this.addProductBtn.TabIndex = 24;
             this.addProductBtn.Text = "Add";
             this.addProductBtn.TextAlignment = System.Drawing.ContentAlignment.BottomLeft;
@@ -1438,29 +1428,12 @@
             // 
             this.Current.AccessibleDescription = "Current";
             this.Current.AccessibleName = "Current";
-            this.Current.Location = new System.Drawing.Point(8, 511);
-            this.Current.Margin = new System.Windows.Forms.Padding(4);
+            this.Current.Location = new System.Drawing.Point(6, 415);
             this.Current.Name = "Current";
-            this.Current.Size = new System.Drawing.Size(167, 25);
+            this.Current.Size = new System.Drawing.Size(125, 20);
             this.Current.TabIndex = 25;
             this.Current.Text = "Current";
             this.Current.Visible = false;
-            // 
-            // saveProduct
-            // 
-            this.saveProduct.AccessibleDescription = "saveProduct";
-            this.saveProduct.AccessibleName = "saveProduct";
-            this.saveProduct.Image = ((System.Drawing.Image)(resources.GetObject("saveProduct.Image")));
-            this.saveProduct.Location = new System.Drawing.Point(1189, 23);
-            this.saveProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.saveProduct.Name = "saveProduct";
-            this.saveProduct.Size = new System.Drawing.Size(109, 55);
-            this.saveProduct.TabIndex = 26;
-            this.saveProduct.Text = "Save";
-            this.saveProduct.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.saveProduct.ThemeName = "TelerikMetroTouch";
-            this.saveProduct.Visible = false;
-            this.saveProduct.Click += new System.EventHandler(this.saveProduct_Click);
             // 
             // object_b1878d34_aaef_4303_9685_91ca102d06f4
             // 
@@ -1474,10 +1447,9 @@
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.loginBtn.Image = ((System.Drawing.Image)(resources.GetObject("loginBtn.Image")));
             this.loginBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.loginBtn.Location = new System.Drawing.Point(979, 6);
-            this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.loginBtn.Location = new System.Drawing.Point(613, 9);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(153, 55);
+            this.loginBtn.Size = new System.Drawing.Size(115, 45);
             this.loginBtn.TabIndex = 27;
             this.loginBtn.Text = "Login";
             this.loginBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1489,10 +1461,9 @@
             this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.logoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logoutBtn.Image")));
             this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(979, 6);
-            this.logoutBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.logoutBtn.Location = new System.Drawing.Point(613, 10);
             this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(153, 55);
+            this.logoutBtn.Size = new System.Drawing.Size(115, 45);
             this.logoutBtn.TabIndex = 28;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1504,10 +1475,9 @@
             this.registerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.registerBtn.Image = ((System.Drawing.Image)(resources.GetObject("registerBtn.Image")));
             this.registerBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.registerBtn.Location = new System.Drawing.Point(817, 6);
-            this.registerBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.registerBtn.Location = new System.Drawing.Point(492, 9);
             this.registerBtn.Name = "registerBtn";
-            this.registerBtn.Size = new System.Drawing.Size(153, 55);
+            this.registerBtn.Size = new System.Drawing.Size(115, 45);
             this.registerBtn.TabIndex = 29;
             this.registerBtn.Text = "Register";
             this.registerBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1517,27 +1487,39 @@
             // userStatusButtons
             // 
             this.userStatusButtons.BackColor = System.Drawing.Color.Transparent;
+            this.userStatusButtons.Controls.Add(this.exitButton);
             this.userStatusButtons.Controls.Add(this.aboutBtn);
             this.userStatusButtons.Controls.Add(this.loginBtn);
             this.userStatusButtons.Controls.Add(this.logoutBtn);
             this.userStatusButtons.Controls.Add(this.registerBtn);
-            this.userStatusButtons.Location = new System.Drawing.Point(16, 5);
-            this.userStatusButtons.Margin = new System.Windows.Forms.Padding(4);
+            this.userStatusButtons.Location = new System.Drawing.Point(12, 4);
             this.userStatusButtons.Name = "userStatusButtons";
-            this.userStatusButtons.Padding = new System.Windows.Forms.Padding(4);
-            this.userStatusButtons.Size = new System.Drawing.Size(1307, 74);
+            this.userStatusButtons.Size = new System.Drawing.Size(980, 60);
             this.userStatusButtons.TabIndex = 30;
             this.userStatusButtons.TabStop = false;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.exitButton.Image = ((System.Drawing.Image)(resources.GetObject("exitButton.Image")));
+            this.exitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exitButton.Location = new System.Drawing.Point(856, 10);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(115, 45);
+            this.exitButton.TabIndex = 31;
+            this.exitButton.Text = "Exit";
+            this.exitButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // aboutBtn
             // 
             this.aboutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.aboutBtn.Image = ((System.Drawing.Image)(resources.GetObject("aboutBtn.Image")));
             this.aboutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.aboutBtn.Location = new System.Drawing.Point(1140, 7);
-            this.aboutBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutBtn.Location = new System.Drawing.Point(734, 10);
             this.aboutBtn.Name = "aboutBtn";
-            this.aboutBtn.Size = new System.Drawing.Size(153, 55);
+            this.aboutBtn.Size = new System.Drawing.Size(115, 45);
             this.aboutBtn.TabIndex = 30;
             this.aboutBtn.Text = "About";
             this.aboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1550,10 +1532,9 @@
             this.labelUserGreetings.BackColor = System.Drawing.Color.Transparent;
             this.labelUserGreetings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.labelUserGreetings.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelUserGreetings.Location = new System.Drawing.Point(32, 12);
-            this.labelUserGreetings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUserGreetings.Location = new System.Drawing.Point(24, 10);
             this.labelUserGreetings.Name = "labelUserGreetings";
-            this.labelUserGreetings.Size = new System.Drawing.Size(78, 29);
+            this.labelUserGreetings.Size = new System.Drawing.Size(61, 25);
             this.labelUserGreetings.TabIndex = 31;
             this.labelUserGreetings.Text = "Hello,";
             // 
@@ -1563,10 +1544,9 @@
             this.currentUserName.BackColor = System.Drawing.Color.Transparent;
             this.currentUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.currentUserName.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.currentUserName.Location = new System.Drawing.Point(115, 12);
-            this.currentUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.currentUserName.Location = new System.Drawing.Point(86, 10);
             this.currentUserName.Name = "currentUserName";
-            this.currentUserName.Size = new System.Drawing.Size(159, 29);
+            this.currentUserName.Size = new System.Drawing.Size(125, 25);
             this.currentUserName.TabIndex = 32;
             this.currentUserName.Text = " anonymous!";
             this.currentUserName.Click += new System.EventHandler(this.label1_Click);
@@ -1574,6 +1554,9 @@
             // mainGroupBox
             // 
             this.mainGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.mainGroupBox.Controls.Add(this.addCaloriesValidation);
+            this.mainGroupBox.Controls.Add(this.addProductNameValidation);
+            this.mainGroupBox.Controls.Add(this.eatenProductValidation);
             this.mainGroupBox.Controls.Add(this.AddProduct);
             this.mainGroupBox.Controls.Add(this.ChooseFood);
             this.mainGroupBox.Controls.Add(this.ChooseDrinks);
@@ -1582,7 +1565,6 @@
             this.mainGroupBox.Controls.Add(this.statisticsGraph);
             this.mainGroupBox.Controls.Add(this.showProductDesc);
             this.mainGroupBox.Controls.Add(this.addToList);
-            this.mainGroupBox.Controls.Add(this.saveProduct);
             this.mainGroupBox.Controls.Add(this.removeFromList);
             this.mainGroupBox.Controls.Add(this.Current);
             this.mainGroupBox.Controls.Add(this.resetStatistics);
@@ -1595,13 +1577,53 @@
             this.mainGroupBox.Controls.Add(this.addProteins);
             this.mainGroupBox.Controls.Add(this.addCarbo);
             this.mainGroupBox.Controls.Add(this.addFat);
-            this.mainGroupBox.Location = new System.Drawing.Point(13, 63);
-            this.mainGroupBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mainGroupBox.Location = new System.Drawing.Point(12, 70);
             this.mainGroupBox.Name = "mainGroupBox";
-            this.mainGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.mainGroupBox.Size = new System.Drawing.Size(1301, 629);
+            this.mainGroupBox.Size = new System.Drawing.Size(976, 511);
             this.mainGroupBox.TabIndex = 33;
             this.mainGroupBox.TabStop = false;
+            // 
+            // addCaloriesValidation
+            // 
+            this.addCaloriesValidation.BackColor = System.Drawing.Color.Transparent;
+            this.addCaloriesValidation.Font = new System.Drawing.Font("Segoe UI", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.addCaloriesValidation.ForeColor = System.Drawing.Color.Maroon;
+            this.addCaloriesValidation.Image = ((System.Drawing.Image)(resources.GetObject("addCaloriesValidation.Image")));
+            this.addCaloriesValidation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addCaloriesValidation.Location = new System.Drawing.Point(383, 202);
+            this.addCaloriesValidation.Name = "addCaloriesValidation";
+            this.addCaloriesValidation.Size = new System.Drawing.Size(41, 33);
+            this.addCaloriesValidation.TabIndex = 28;
+            this.addCaloriesValidation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addCaloriesValidation.Visible = false;
+            // 
+            // addProductNameValidation
+            // 
+            this.addProductNameValidation.BackColor = System.Drawing.Color.Transparent;
+            this.addProductNameValidation.Font = new System.Drawing.Font("Segoe UI", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.addProductNameValidation.ForeColor = System.Drawing.Color.Maroon;
+            this.addProductNameValidation.Image = ((System.Drawing.Image)(resources.GetObject("addProductNameValidation.Image")));
+            this.addProductNameValidation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addProductNameValidation.Location = new System.Drawing.Point(383, 153);
+            this.addProductNameValidation.Name = "addProductNameValidation";
+            this.addProductNameValidation.Size = new System.Drawing.Size(41, 33);
+            this.addProductNameValidation.TabIndex = 27;
+            this.addProductNameValidation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addProductNameValidation.Visible = false;
+            // 
+            // eatenProductValidation
+            // 
+            this.eatenProductValidation.BackColor = System.Drawing.Color.Transparent;
+            this.eatenProductValidation.Font = new System.Drawing.Font("Segoe UI", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.eatenProductValidation.ForeColor = System.Drawing.Color.Maroon;
+            this.eatenProductValidation.Image = ((System.Drawing.Image)(resources.GetObject("eatenProductValidation.Image")));
+            this.eatenProductValidation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.eatenProductValidation.Location = new System.Drawing.Point(383, 16);
+            this.eatenProductValidation.Name = "eatenProductValidation";
+            this.eatenProductValidation.Size = new System.Drawing.Size(41, 33);
+            this.eatenProductValidation.TabIndex = 26;
+            this.eatenProductValidation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.eatenProductValidation.Visible = false;
             // 
             // vegetablesBindingSource
             // 
@@ -1609,12 +1631,12 @@
             // 
             // CalorimeterUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1339, 692);
+            this.ClientSize = new System.Drawing.Size(1004, 583);
             this.Controls.Add(this.mainGroupBox);
             this.Controls.Add(this.currentUserName);
             this.Controls.Add(this.labelUserGreetings);
@@ -1622,12 +1644,12 @@
             this.Controls.Add(this.productDescList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1357, 932);
-            this.MinimumSize = new System.Drawing.Size(994, 47);
+            this.MaximumSize = new System.Drawing.Size(1022, 764);
+            this.MinimumSize = new System.Drawing.Size(750, 45);
             this.Name = "CalorimeterUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CALORIMETER";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalorimeterUI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ChooseFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MeatList.ComboBoxElement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FishList.ComboBoxElement)).EndInit();
@@ -1660,7 +1682,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.enterProductWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addProductBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Current)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appleBindingSource)).EndInit();
             this.userStatusButtons.ResumeLayout(false);
             this.mainGroupBox.ResumeLayout(false);
@@ -1750,7 +1771,6 @@
         private Telerik.WinControls.UI.RadTextBox enterProductWeight;
         private Telerik.WinControls.UI.RadButton addProductBtn;
         private Telerik.WinControls.UI.RadTextBoxControl Current;
-        private Telerik.WinControls.UI.RadButton saveProduct;
         private Telerik.WinControls.RootRadElement object_b1878d34_aaef_4303_9685_91ca102d06f4;
         private Telerik.WinControls.UI.RadMenuButtonItem currentDay;
         private System.Windows.Forms.Button loginBtn;
@@ -1760,7 +1780,11 @@
         private System.Windows.Forms.Label labelUserGreetings;
         private System.Windows.Forms.Label currentUserName;
         private System.Windows.Forms.GroupBox mainGroupBox;
-        private System.Windows.Forms.Button aboutBtn; // this is an image file that i can't delete,cause crashes my program.
+        private System.Windows.Forms.Button aboutBtn;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label eatenProductValidation;
+        private System.Windows.Forms.Label addProductNameValidation;
+        private System.Windows.Forms.Label addCaloriesValidation; // this is an image file that i can't delete,cause crashes my program.
     }
 }
 
