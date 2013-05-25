@@ -31,6 +31,9 @@ namespace CalorimeterUI
             AddProduct.Visible = false;
             loginBtn.Visible = true;
             registerBtn.Visible = true;
+            HideEatForms();
+            HideAddProcutMenu();
+            HideStatisticsGraph();
         }
 
         // user is logged-in
@@ -110,7 +113,7 @@ namespace CalorimeterUI
         {
             NutritionData item = new NutritionData();
 
-            if (addProductName.Text == String.Empty)
+            if (string.IsNullOrWhiteSpace(addProductName.Text))
             {
                 MessageBox.Show("Wrong input! Enter product name.");
                 return;
@@ -120,7 +123,7 @@ namespace CalorimeterUI
                 item.name = addProductName.Text;
             }
 
-            if (addCalories.Text == String.Empty)
+            if (string.IsNullOrWhiteSpace(addCalories.Text))
             {
                 MessageBox.Show("Wrong input! Enter calories.");
                 return;
@@ -129,7 +132,7 @@ namespace CalorimeterUI
             {
                 int calories;
 
-                if (!int.TryParse(addCalories.Text, out calories))
+                if (!int.TryParse(addCalories.Text, out calories) || calories < 0)
                 {
                     MessageBox.Show("Wrong input! Enter calories in correct format.");
                     return;
@@ -140,11 +143,11 @@ namespace CalorimeterUI
                 }
             }
 
-            if (addCarbo.Text != String.Empty)
+            if (!string.IsNullOrWhiteSpace(addCarbo.Text))
             {
                 decimal carbohydrates;
 
-                if (!decimal.TryParse(addCarbo.Text, out carbohydrates))
+                if (!decimal.TryParse(addCarbo.Text, out carbohydrates) || carbohydrates < 0)
                 {
                     MessageBox.Show("Wrong input! Enter carbohydrates in correct format.");
                     return;
@@ -155,11 +158,11 @@ namespace CalorimeterUI
                 }
             }
 
-            if (addFat.Text != String.Empty)
+            if (!string.IsNullOrWhiteSpace(addFat.Text))
             {
                 decimal fat;
 
-                if (!decimal.TryParse(addFat.Text, out fat))
+                if (!decimal.TryParse(addFat.Text, out fat) || fat < 0)
                 {
                     MessageBox.Show("Wrong input! Enter fats in correct format.");
                     return;
@@ -170,11 +173,11 @@ namespace CalorimeterUI
                 }
             }
 
-            if (addProteins.Text != String.Empty)
+            if (!string.IsNullOrWhiteSpace(addProteins.Text))
             {
                 decimal protein;
 
-                if (!decimal.TryParse(addProteins.Text, out protein))
+                if (!decimal.TryParse(addProteins.Text, out protein) || protein < 0)
                 {
                     MessageBox.Show("Wrong input! Enter proteins in correct format.");
                     return;
@@ -190,7 +193,7 @@ namespace CalorimeterUI
 
             //ApplicationLogic.AddNewNutrition(item, this.type.Text); old, aleady using DBManager
 
-            HideMenu();
+            HideAddProcutMenu();
         }
 
         private void WriteDataType(TypeFood type)
@@ -209,10 +212,9 @@ namespace CalorimeterUI
             this.removeFromList.Visible = true;
             this.AddProduct.Visible = false;
             this.AddProduct.Visible = true;
-            this.saveProduct.Visible = true;
         }
 
-        private void HideMenu()
+        private void HideAddProcutMenu()
         {
             this.addProductName.Visible = false;
             this.addCalories.Visible = false;
@@ -221,19 +223,35 @@ namespace CalorimeterUI
             this.addProteins.Visible = false;
             this.addToList.Visible = false;
             this.removeFromList.Visible = false;
+            this.addProductNameValidation.Visible = false;
+            this.addCaloriesValidation.Visible = false;
 
-            this.addProductName.Text = String.Empty;
-            this.addCalories.Text = String.Empty;
-            this.addCarbo.Text = String.Empty;
-            this.addFat.Text = String.Empty;
-            this.addProteins.Text = String.Empty;
+            this.addProductName.Text = string.Empty;
+            this.addCalories.Text = string.Empty;
+            this.addCarbo.Text = string.Empty;
+            this.addFat.Text = string.Empty;
+            this.addProteins.Text = string.Empty;
+        }
+
+        private void HideStatisticsGraph()
+        {
+            this.statisticsGraph.Series.Clear();
+            this.statisticsGraph.Visible = false;
+            this.resetStatistics.Visible = false;
+        }
+
+        private void HideEatForms()
+        {
+            this.enterProductWeight.Visible = false;
+            this.addProductBtn.Visible = false;
+            this.enterProductWeight.Text = string.Empty;
+            this.eatenProductValidation.Visible = false;
         }
 
         private void ShowEatForms()
         {
             this.enterProductWeight.Visible = true;
             this.addProductBtn.Visible = true;
-            this.saveProduct.Visible = true;
         }
 
         private void MeatList_Click(object sender, EventArgs e)
@@ -403,25 +421,18 @@ namespace CalorimeterUI
             string input = this.enterProductWeight.Text;
             int quantity;
 
-            if (!int.TryParse(input, out quantity))
+            if (!int.TryParse(input, out quantity) || quantity < 0)
             {
                 MessageBox.Show("Wrong input! Enter weight in correct format.");
                 return;
             }
-            
+
             //ApplicationLogic.AddEatenNutrition(type.Text, Current.Text, value);
             //user.AddEatenFood(DateTime.Now, Current.Text, quantity);
             string productName = Current.Text;
 
             DBManager.AddEatenFood(user.Name, DateTime.Now, productName, quantity);
-            this.enterProductWeight.Visible = false;
-            this.addProductBtn.Visible = false;
-            this.enterProductWeight.Text = String.Empty;
-        }
-
-        private void saveProduct_Click(object sender, EventArgs e)
-        {
-            this.saveProduct.Visible = false;
+            HideEatForms();
         }
 
         private void currentDay_Click(object sender, EventArgs e)
@@ -451,8 +462,8 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(1,user.Name);
-            eatenFood.Rows.Add("Today", current[current.Count-1].Item2);
+            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(1, user.Name);
+            eatenFood.Rows.Add("Today", current[current.Count - 1].Item2);
 
             this.statisticsGraph.DataSource = set;
             this.statisticsGraph.BackColor = Color.Red;
@@ -489,8 +500,8 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(7,user.Name);
-            
+            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(7, user.Name);
+
             for (int i = 0; i < current.Count; i++)
             {
                 eatenFood.Rows.Add(String.Format("Day {0}", i + 1), current[i].Item2);
@@ -531,7 +542,7 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(30,user.Name);
+            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(30, user.Name);
 
             for (int i = 0; i < current.Count; i++)
             {
@@ -548,9 +559,7 @@ namespace CalorimeterUI
 
         private void resetStatistics_Click(object sender, EventArgs e)
         {
-            this.statisticsGraph.Series.Clear();
-            this.statisticsGraph.Visible = false;
-            this.resetStatistics.Visible = false;
+            HideStatisticsGraph();
         }
 
         private void removeFromList_Click(object sender, EventArgs e)
@@ -604,9 +613,95 @@ namespace CalorimeterUI
             aboutBox.ShowDialog();
         }
 
-        private void statisticsGraph_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Have a nice day!");
+            this.Close();
+        }
 
+        private void CalorimeterUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DBManager.Dispose();
+        }
+
+        private void enterProductWeight_TextChanged(object sender, EventArgs e)
+        {
+            if (!enterProductWeight.Visible)
+            {
+                return;
+            }
+
+            int value;
+            if (int.TryParse(enterProductWeight.Text, out value) && value >= 0)
+            {
+                eatenProductValidation.Visible = false;
+            }
+            else
+            {
+                eatenProductValidation.Visible = true;
+            }
+        }
+
+        private void enterProductName_TextChanged(object sender, EventArgs e)
+        {
+            if (!addProductName.Visible)
+            {
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(addProductName.Text))
+            {
+                addProductNameValidation.Visible = true;
+            }
+            else
+            {
+                addProductNameValidation.Visible = false;
+            }
+        }
+
+        private void enterProductCalories_TextChanged(object sender, EventArgs e)
+        {
+            if (!addCalories.Visible)
+            {
+                return;
+            }
+
+            int value;
+            if (int.TryParse(addCalories.Text, out value) && value >= 0)
+            {
+                addCaloriesValidation.Visible = false;
+            }
+            else
+            {
+                addCaloriesValidation.Visible = true;
+            }
+        }
+
+        private void ChooseFood_Click(object sender, EventArgs e)
+        {
+            HideStatisticsGraph();
+            HideAddProcutMenu();
+            HideEatForms();
+        }
+
+        private void ChooseDrinks_Click(object sender, EventArgs e)
+        {
+            HideStatisticsGraph();
+            HideAddProcutMenu();
+            HideEatForms();
+        }
+
+        private void AddProduct_Click(object sender, EventArgs e)
+        {
+            HideStatisticsGraph();
+            HideAddProcutMenu();
+            HideEatForms();
+        }
+
+        private void showStatistics_Click(object sender, EventArgs e)
+        {
+            HideAddProcutMenu();
+            HideEatForms();
         }
     }
 }

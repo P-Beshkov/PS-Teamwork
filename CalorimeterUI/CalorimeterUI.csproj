@@ -269,6 +269,10 @@
     <Resource Include="Images\about.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Images\attention.png" />
+    <Content Include="Images\exit.png" />
+    <Content Include="Images\not-vaid.png" />
+    <Content Include="Images\notvalid.png" />
     <Content Include="test.txt" />
     <Content Include="Data\Vegetables.txt" />
     <Content Include="Winnie the Pooh.txt" />
