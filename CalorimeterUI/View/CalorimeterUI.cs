@@ -188,7 +188,7 @@ namespace CalorimeterUI
             item.type = type;
             DBManager.AddNewFood(item);
 
-            ApplicationLogic.AddNewNutrition(item, this.type.Text);
+            //ApplicationLogic.AddNewNutrition(item, this.type.Text); old, aleady using DBManager
 
             HideMenu();
         }
@@ -421,7 +421,6 @@ namespace CalorimeterUI
 
         private void saveProduct_Click(object sender, EventArgs e)
         {
-            ApplicationLogic.Save();
             this.saveProduct.Visible = false;
         }
 

@@ -96,14 +96,8 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Logic\OldClasses.cs" />
-    <Compile Include="Logic\ApplicationLogic.cs" />
-    <Compile Include="Logic\ILoadable.cs" />
-    <Compile Include="Logic\ISavable.cs" />
-    <Compile Include="Logic\IUserActions.cs" />
-    <Compile Include="Logic\Nutrition.cs" />
     <Compile Include="Logic\NutritionData.cs" />
     <Compile Include="Logic\TypeFood.cs" />
-    <Compile Include="Logic\TypeFoodException.cs" />
     <Compile Include="Logic\User.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>

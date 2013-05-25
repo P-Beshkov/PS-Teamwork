@@ -139,6 +139,8 @@ namespace CalorimeterUI
   
         private static void InserDailyHistory()
         {
+            throw new NotImplementedException();
+            //Used applicationLogic to load data in DB
             SqlCeConnection dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");
             using (dbCon)
             {
@@ -151,12 +153,12 @@ namespace CalorimeterUI
 
                     sqlCommand.Append("INSERT INTO DailyHistory (Id, ProductName, Quantity, Calories, HistoryId) VALUES (");
                     sqlCommand.Append(productId.ToString() + ",");
-                    int productIndex = random.Next(1, ApplicationLogic.meat.availableProducts.Count);
-                    sqlCommand.Append("'" + ApplicationLogic.meat.availableProducts[productIndex].name + "',");
+                    //int productIndex = random.Next(1, ApplicationLogic.meat.availableProducts.Count);
+                    //sqlCommand.Append("'" + ApplicationLogic.meat.availableProducts[productIndex].name + "',");
                     int quantity = random.Next(50, 300);
                     sqlCommand.Append(quantity + ", ");
-                    decimal calories = ApplicationLogic.meat.availableProducts[productIndex].calories * quantity * 0.01M;
-                    sqlCommand.Append(calories + ", ");
+                    //decimal calories = ApplicationLogic.meat.availableProducts[productIndex].calories * quantity * 0.01M;
+                    //sqlCommand.Append(calories + ", ");
                     sqlCommand.Append(id + ")");
                     SqlCeCommand cmd = new SqlCeCommand(sqlCommand.ToString(), dbCon);
                     cmd.ExecuteNonQuery();
@@ -165,12 +167,12 @@ namespace CalorimeterUI
                     sqlCommand = new StringBuilder();
                     sqlCommand.Append("INSERT INTO DailyHistory (Id, ProductName, Quantity, Calories, HistoryId) VALUES (");
                     sqlCommand.Append(productId.ToString() + ",");
-                    productIndex = random.Next(1, ApplicationLogic.fruit.availableProducts.Count);
-                    sqlCommand.Append("'" + ApplicationLogic.fruit.availableProducts[productIndex].name + "',");
+                    //productIndex = random.Next(1, ApplicationLogic.fruit.availableProducts.Count);
+                    //sqlCommand.Append("'" + ApplicationLogic.fruit.availableProducts[productIndex].name + "',");
                     quantity = random.Next(50, 300);
                     sqlCommand.Append(quantity + ", ");
-                    calories = ApplicationLogic.fruit.availableProducts[productIndex].calories * quantity * 0.01M;
-                    sqlCommand.Append(calories + ", ");
+                   // calories = ApplicationLogic.fruit.availableProducts[productIndex].calories * quantity * 0.01M;
+                    //sqlCommand.Append(calories + ", ");
                     sqlCommand.Append(id + ")");
                     cmd = new SqlCeCommand(sqlCommand.ToString(), dbCon);
                     cmd.ExecuteNonQuery();
@@ -179,12 +181,12 @@ namespace CalorimeterUI
                     sqlCommand = new StringBuilder();
                     sqlCommand.Append("INSERT INTO DailyHistory (Id, ProductName, Quantity, Calories, HistoryId) VALUES (");
                     sqlCommand.Append(productId.ToString() + ",");
-                    productIndex = random.Next(1, ApplicationLogic.cereals.availableProducts.Count);
-                    sqlCommand.Append("'" + ApplicationLogic.cereals.availableProducts[productIndex].name + "',");
+                   // productIndex = random.Next(1, ApplicationLogic.cereals.availableProducts.Count);
+                   // sqlCommand.Append("'" + ApplicationLogic.cereals.availableProducts[productIndex].name + "',");
                     quantity = random.Next(50, 300);
                     sqlCommand.Append(quantity + ", ");
-                    calories = ApplicationLogic.cereals.availableProducts[productIndex].calories * quantity * 0.01M;
-                    sqlCommand.Append(calories + ", ");
+                    //calories = ApplicationLogic.cereals.availableProducts[productIndex].calories * quantity * 0.01M;
+                    //sqlCommand.Append(calories + ", ");
                     sqlCommand.Append(id + ")");
                     cmd = new SqlCeCommand(sqlCommand.ToString(), dbCon);
                     cmd.ExecuteNonQuery();
@@ -193,12 +195,12 @@ namespace CalorimeterUI
                     sqlCommand = new StringBuilder();
                     sqlCommand.Append("INSERT INTO DailyHistory (Id, ProductName, Quantity, Calories, HistoryId) VALUES (");
                     sqlCommand.Append(productId.ToString() + ",");
-                    productIndex = random.Next(1, ApplicationLogic.softDrinks.availableProducts.Count);
-                    sqlCommand.Append("'" + ApplicationLogic.softDrinks.availableProducts[productIndex].name + "',");
+                    //productIndex = random.Next(1, ApplicationLogic.softDrinks.availableProducts.Count);
+                    //sqlCommand.Append("'" + ApplicationLogic.softDrinks.availableProducts[productIndex].name + "',");
                     quantity = random.Next(50, 300);
                     sqlCommand.Append(quantity + ", ");
-                    calories = ApplicationLogic.softDrinks.availableProducts[productIndex].calories * quantity;
-                    sqlCommand.Append(calories + ", ");
+                    //calories = ApplicationLogic.softDrinks.availableProducts[productIndex].calories * quantity;
+                    //sqlCommand.Append(calories + ", ");
                     sqlCommand.Append(id + ")");
                     cmd = new SqlCeCommand(sqlCommand.ToString(), dbCon);
                     cmd.ExecuteNonQuery();
