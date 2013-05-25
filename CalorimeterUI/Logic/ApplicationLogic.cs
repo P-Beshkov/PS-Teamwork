@@ -171,12 +171,16 @@ namespace Logic
 
         public static List<Tuple<DateTime, decimal>> ShowLastWeek()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            int daysBefore = 7;
+            return DBManager.LoadHistory(daysBefore);
             //return user.GetElements(7);
         }
 
         public static List<Tuple<DateTime, decimal>> ShowLastMonth()
         {
+            int daysBefore = 30;
+            return DBManager.LoadHistory(daysBefore);
             throw new NotImplementedException();
             //return user.GetElements(30);
         }

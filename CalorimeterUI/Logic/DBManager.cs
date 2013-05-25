@@ -175,9 +175,6 @@ namespace Logic
                 cmd.ExecuteNonQuery();
                 dbCon.Close();
                 dbCon.Open();
-                //cmd.CommandText = String.Format(
-                //@"SELECT Id FROM History WHERE Data = '{0}' AND UserName = '{1}'", dateTimeString, UserName);
-                //result = cmd.ExecuteScalar();
             }
             else
             {
@@ -226,6 +223,11 @@ namespace Logic
             }
             dbCon.Close();
             return result;
+        }
+
+        internal static List<Tuple<DateTime, decimal>> LoadHistory(int daysBefore)
+        {
+            throw new NotImplementedException();
         }
     }
 }
