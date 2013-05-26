@@ -1614,7 +1614,7 @@
             // 
             // vegetablesBindingSource
             // 
-            this.vegetablesBindingSource.DataSource = typeof(Logic.Vegetables);
+            this.vegetablesBindingSource.DataSource = typeof(Logic.TypeFood);
             // 
             // showProductDesc
             // 
