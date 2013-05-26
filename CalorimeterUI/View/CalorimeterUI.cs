@@ -616,8 +616,7 @@ namespace CalorimeterUI
         }
 
         private void exitButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Have a nice day!");
+        {            
             this.Close();
         }
 

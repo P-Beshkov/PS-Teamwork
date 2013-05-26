@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlServerCe;
 using System.Globalization;
 
@@ -8,7 +9,7 @@ namespace Logic
     public static class DBManager
     {
         private static SqlCeConnection dbCon;
-                
+        private static SqlCeDataAdapter dataAdapter;        
         static DBManager()
         {
             DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");
@@ -259,7 +260,6 @@ namespace Logic
                     date, 
                     (decimal)reader["DailyCalories"]));
             }
-
             dbCon.Close();
             return result;
         }
@@ -267,6 +267,23 @@ namespace Logic
         internal static void Dispose()
         {
             dbCon.Dispose();
+        }
+
+        internal static void GetProductsData(System.Data.DataSet dataSet)
+        {            
+            SqlCeCommandBuilder cmdBldr;
+            DBManager.dbCon.Open();
+            DBManager.dataAdapter = new SqlCeDataAdapter("Select * from Products", dbCon);            
+            cmdBldr = new SqlCeCommandBuilder(dataAdapter);
+            dataAdapter.Fill(dataSet, "Products");
+            dbCon.Close();
+        }
+
+        internal static void UpdateAdapter(DataSet dataSet, string srcTable)
+        {
+            dbCon.Open();
+            dataAdapter.Update(dataSet, "Products");
+            dbCon.Close();
         }
     }
 }
