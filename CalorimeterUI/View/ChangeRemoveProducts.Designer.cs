@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeRemoveProducts));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +61,9 @@
             this.carbohydratesDataGridViewTextBoxColumn,
             this.proteinsDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 59);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(643, 415);
+            this.dataGridView1.Size = new System.Drawing.Size(662, 415);
             this.dataGridView1.TabIndex = 0;
             // 
             // categoryDataGridViewTextBoxColumn
@@ -122,21 +123,30 @@
             // 
             // buttonSaveToDB
             // 
+            this.buttonSaveToDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonSaveToDB.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveToDB.Image")));
+            this.buttonSaveToDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSaveToDB.Location = new System.Drawing.Point(12, 13);
             this.buttonSaveToDB.Name = "buttonSaveToDB";
-            this.buttonSaveToDB.Size = new System.Drawing.Size(113, 23);
+            this.buttonSaveToDB.Size = new System.Drawing.Size(160, 40);
             this.buttonSaveToDB.TabIndex = 1;
             this.buttonSaveToDB.Text = "Save to database";
+            this.buttonSaveToDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSaveToDB.UseVisualStyleBackColor = true;
             this.buttonSaveToDB.Click += new System.EventHandler(this.BtnSaveGridDataClick);
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(558, 12);
+            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
+            this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonClose.Location = new System.Drawing.Point(559, 12);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(97, 23);
+            this.buttonClose.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.buttonClose.Size = new System.Drawing.Size(115, 40);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.Text = "Close";
+            this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.ButtonCloseClick);
             // 
@@ -144,10 +154,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 470);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(686, 486);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSaveToDB);
             this.Controls.Add(this.dataGridView1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangeRemoveProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChangeRemoveProducts";
