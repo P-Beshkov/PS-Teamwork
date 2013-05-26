@@ -1,4 +1,4 @@
-1. With change/remove menu we can add any product, including not implemented one.
+﻿// 1. With change/remove menu we can add any product, including not implemented one. - Готово - дропдаун меню.
 
 // 2. Има контроли зад Change/Remove product, които май вече не ги ползваме. - Готово.
 

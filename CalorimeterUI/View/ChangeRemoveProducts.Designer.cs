@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeRemoveProducts));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caloriesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carbohydratesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proteinsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.calorimeterLocalDataSet = new CalorimeterLocalDataSet();
             this.productsTableAdapter = new CalorimeterLocalDataSetTableAdapters.ProductsTableAdapter();
             this.calorimeterLocalDataSet1 = new CalorimeterLocalDataSet();
             this.buttonSaveToDB = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caloriesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carbohydratesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proteinsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calorimeterLocalDataSet)).BeginInit();
@@ -65,42 +65,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(662, 415);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            // 
-            // caloriesDataGridViewTextBoxColumn
-            // 
-            this.caloriesDataGridViewTextBoxColumn.DataPropertyName = "Calories";
-            this.caloriesDataGridViewTextBoxColumn.HeaderText = "Calories";
-            this.caloriesDataGridViewTextBoxColumn.Name = "caloriesDataGridViewTextBoxColumn";
-            // 
-            // fatDataGridViewTextBoxColumn
-            // 
-            this.fatDataGridViewTextBoxColumn.DataPropertyName = "Fat";
-            this.fatDataGridViewTextBoxColumn.HeaderText = "Fat";
-            this.fatDataGridViewTextBoxColumn.Name = "fatDataGridViewTextBoxColumn";
-            // 
-            // carbohydratesDataGridViewTextBoxColumn
-            // 
-            this.carbohydratesDataGridViewTextBoxColumn.DataPropertyName = "Carbohydrates";
-            this.carbohydratesDataGridViewTextBoxColumn.HeaderText = "Carbohydrates";
-            this.carbohydratesDataGridViewTextBoxColumn.Name = "carbohydratesDataGridViewTextBoxColumn";
-            // 
-            // proteinsDataGridViewTextBoxColumn
-            // 
-            this.proteinsDataGridViewTextBoxColumn.DataPropertyName = "Proteins";
-            this.proteinsDataGridViewTextBoxColumn.HeaderText = "Proteins";
-            this.proteinsDataGridViewTextBoxColumn.Name = "proteinsDataGridViewTextBoxColumn";
             // 
             // productsBindingSource
             // 
@@ -150,6 +114,55 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.ButtonCloseClick);
             // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.Items.AddRange(new object[] {
+            "Meat",
+            "Fruit",
+            "Nuts",
+            "Vegetables",
+            "Fish",
+            "Cereals",
+            "Bread",
+            "Alchohol",
+            "SoftDrinks"});
+            this.categoryDataGridViewTextBoxColumn.MaxDropDownItems = 9;
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.categoryDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            // 
+            // caloriesDataGridViewTextBoxColumn
+            // 
+            this.caloriesDataGridViewTextBoxColumn.DataPropertyName = "Calories";
+            this.caloriesDataGridViewTextBoxColumn.HeaderText = "Calories";
+            this.caloriesDataGridViewTextBoxColumn.Name = "caloriesDataGridViewTextBoxColumn";
+            // 
+            // fatDataGridViewTextBoxColumn
+            // 
+            this.fatDataGridViewTextBoxColumn.DataPropertyName = "Fat";
+            this.fatDataGridViewTextBoxColumn.HeaderText = "Fat";
+            this.fatDataGridViewTextBoxColumn.Name = "fatDataGridViewTextBoxColumn";
+            // 
+            // carbohydratesDataGridViewTextBoxColumn
+            // 
+            this.carbohydratesDataGridViewTextBoxColumn.DataPropertyName = "Carbohydrates";
+            this.carbohydratesDataGridViewTextBoxColumn.HeaderText = "Carbohydrates";
+            this.carbohydratesDataGridViewTextBoxColumn.Name = "carbohydratesDataGridViewTextBoxColumn";
+            // 
+            // proteinsDataGridViewTextBoxColumn
+            // 
+            this.proteinsDataGridViewTextBoxColumn.DataPropertyName = "Proteins";
+            this.proteinsDataGridViewTextBoxColumn.HeaderText = "Proteins";
+            this.proteinsDataGridViewTextBoxColumn.Name = "proteinsDataGridViewTextBoxColumn";
+            // 
             // ChangeRemoveProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,14 +192,14 @@
         private CalorimeterLocalDataSet calorimeterLocalDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private CalorimeterLocalDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private CalorimeterLocalDataSet calorimeterLocalDataSet1;
+        private System.Windows.Forms.Button buttonSaveToDB;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.DataGridViewComboBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn caloriesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn carbohydratesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn proteinsDataGridViewTextBoxColumn;
-        private CalorimeterLocalDataSet calorimeterLocalDataSet1;
-        private System.Windows.Forms.Button buttonSaveToDB;
-        private System.Windows.Forms.Button buttonClose;
     }
 }
