@@ -29,6 +29,7 @@ namespace CalorimeterUI
             logoutBtn.Visible = false;
             currentUserName.Text = "anonymous!";
             AddProduct.Visible = false;
+            buttonRemoveChangeProducts.Visible = false;
             loginBtn.Visible = true;
             registerBtn.Visible = true;
             HideEatForms();
@@ -47,6 +48,7 @@ namespace CalorimeterUI
             if (this.user.Type == UserType.Admin)
             {
                 AddProduct.Visible = true;
+                buttonRemoveChangeProducts.Visible = true;
             }
         }
 
@@ -702,6 +704,17 @@ namespace CalorimeterUI
         {
             HideAddProcutMenu();
             HideEatForms();
+        }
+
+        private void buttonRemoveChangeProducts_Click(object sender, EventArgs e)
+        {
+            if (this.user.Type != UserType.Admin)
+            {
+                MessageBox.Show("You are not allowed to add/change/remove products.");
+                return;
+            }
+            ChangeRemoveProducts form = new ChangeRemoveProducts();
+            form.ShowDialog();
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalorimeterUI));
-            Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CartesianArea cartesianArea2 = new Telerik.WinControls.UI.CartesianArea();
             this.ChooseFood = new Telerik.WinControls.UI.RadDropDownButton();
             this.Meat = new Telerik.WinControls.UI.RadMenuItem();
             this.MeatList = new Telerik.WinControls.UI.RadMenuComboItem();
@@ -122,6 +122,7 @@
             this.eatenProductValidation = new System.Windows.Forms.Label();
             this.vegetablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.showProductDesc = new Telerik.WinControls.UI.RadButton();
+            this.buttonRemoveChangeProducts = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ChooseFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MeatList.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FishList.ComboBoxElement)).BeginInit();
@@ -1174,7 +1175,7 @@
             // 
             this.statisticsGraph.AccessibleDescription = "statisticsGraph";
             this.statisticsGraph.AccessibleName = "statisticsGraph";
-            this.statisticsGraph.AreaDesign = cartesianArea1;
+            this.statisticsGraph.AreaDesign = cartesianArea2;
             this.statisticsGraph.Location = new System.Drawing.Point(225, 20);
             this.statisticsGraph.Margin = new System.Windows.Forms.Padding(4);
             this.statisticsGraph.Name = "statisticsGraph";
@@ -1539,6 +1540,7 @@
             // mainGroupBox
             // 
             this.mainGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.mainGroupBox.Controls.Add(this.buttonRemoveChangeProducts);
             this.mainGroupBox.Controls.Add(this.addCaloriesValidation);
             this.mainGroupBox.Controls.Add(this.addProductNameValidation);
             this.mainGroupBox.Controls.Add(this.eatenProductValidation);
@@ -1628,6 +1630,21 @@
             this.showProductDesc.ThemeName = "TelerikMetroTouch";
             this.showProductDesc.Visible = false;
             this.showProductDesc.Click += new System.EventHandler(this.showProductDesc_Click);
+            // 
+            // buttonRemoveChangeProducts
+            // 
+            this.buttonRemoveChangeProducts.BackColor = System.Drawing.Color.White;
+            this.buttonRemoveChangeProducts.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.buttonRemoveChangeProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRemoveChangeProducts.Location = new System.Drawing.Point(6, 390);
+            this.buttonRemoveChangeProducts.Name = "buttonRemoveChangeProducts";
+            this.buttonRemoveChangeProducts.Size = new System.Drawing.Size(188, 75);
+            this.buttonRemoveChangeProducts.TabIndex = 29;
+            this.buttonRemoveChangeProducts.Text = "Change/Remove product";
+            this.buttonRemoveChangeProducts.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRemoveChangeProducts.UseVisualStyleBackColor = false;
+            this.buttonRemoveChangeProducts.Visible = false;
+            this.buttonRemoveChangeProducts.Click += new System.EventHandler(this.buttonRemoveChangeProducts_Click);
             // 
             // CalorimeterUI
             // 
@@ -1784,7 +1801,8 @@
         private System.Windows.Forms.Label eatenProductValidation;
         private System.Windows.Forms.Label addProductNameValidation;
         private System.Windows.Forms.Label addCaloriesValidation;
-        private Telerik.WinControls.UI.RadButton showProductDesc; // this is an image file that i can't delete,cause crashes my program.
+        private Telerik.WinControls.UI.RadButton showProductDesc;
+        private System.Windows.Forms.Button buttonRemoveChangeProducts; // this is an image file that i can't delete,cause crashes my program.
     }
 }
 
