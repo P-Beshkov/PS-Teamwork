@@ -128,7 +128,7 @@
             this.buttonSaveToDB.TabIndex = 1;
             this.buttonSaveToDB.Text = "Save to database";
             this.buttonSaveToDB.UseVisualStyleBackColor = true;
-            this.buttonSaveToDB.Click += new System.EventHandler(this.btnSaveGridData_Click);
+            this.buttonSaveToDB.Click += new System.EventHandler(this.BtnSaveGridDataClick);
             // 
             // buttonClose
             // 
@@ -138,7 +138,7 @@
             this.buttonClose.TabIndex = 2;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonCloseClick);
             // 
             // ChangeRemoveProducts
             // 

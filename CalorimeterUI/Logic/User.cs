@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-
-namespace Logic
+﻿namespace Logic
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     public struct EatenData
     {
         public string productName;

@@ -1,16 +1,8 @@
-﻿using Logic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CalorimeterUI.View
+﻿namespace CalorimeterUI.View
 {
+    using Data;
+    using System;
+    using System.Windows.Forms;
     public partial class RegisterForm : Form
     {
         public RegisterForm()

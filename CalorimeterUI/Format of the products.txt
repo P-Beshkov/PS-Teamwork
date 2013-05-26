@@ -1,1 +1,0 @@
-Food | Protein | Fat | Carbohydrates | Calories

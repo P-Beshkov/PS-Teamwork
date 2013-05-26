@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using Logic;
+using Data;
 using CalorimeterUI.View;
 
 namespace CalorimeterUI
@@ -465,7 +464,11 @@ namespace CalorimeterUI
             }
 
             List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(1, user.Name);
-            eatenFood.Rows.Add("Today", current[current.Count - 1].Item2);
+            if (current.Count!=0)
+            {
+                eatenFood.Rows.Add("Today", current[0].Item2);
+            }
+            
 
             this.statisticsGraph.DataSource = set;
             this.statisticsGraph.BackColor = Color.Red;
@@ -484,7 +487,7 @@ namespace CalorimeterUI
             this.statisticsGraph.ShowTitle = true;
             this.statisticsGraph.ShowLegend = true;
 
-            this.statisticsGraph.Title = "Today";
+            this.statisticsGraph.Title = "Week";
 
             this.statisticsGraph.Text = this.statisticsGraph.Title;
             this.statisticsGraph.LegendTitle = "Legend";
@@ -526,7 +529,7 @@ namespace CalorimeterUI
             this.statisticsGraph.ShowTitle = true;
             this.statisticsGraph.ShowLegend = true;
 
-            this.statisticsGraph.Title = "Today";
+            this.statisticsGraph.Title = "Month";
 
             this.statisticsGraph.Text = this.statisticsGraph.Title;
             this.statisticsGraph.LegendTitle = "Legend";

@@ -1,9 +1,0 @@
-﻿Vodka^10.2^5.32^0.12^30
-Whisky^0^0.1^0^250
-Dry gin^0^0^0^263
-Champagne^0^0.2^12^117
-Wine^0.07^0^2.6^82
-Tequila Sunrise^0.3^0.1^11.3^110
-red Rum^0^0^0^231
-Vermouth^0^0^15.9^158
-Rakia^0^0.1^0^220

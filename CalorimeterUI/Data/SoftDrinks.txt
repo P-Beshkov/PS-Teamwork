@@ -1,9 +1,0 @@
-﻿Beer^10^3.21^12.21^120
-Coca cola^0^0^10.4^42
-Coca-Cola zero^0^0^0^0
-Sprite^0.05^0.02^10.14^40
-Cranberry Juice^0.05^0^51.45^201
-Nescafe3in1^1.7^12.8^77.3^418
-Think Fresh Pineapple^0.6^0^13.1^55
-Tea^0^0^9.09^36
-Coffee^0.1^0^0.34^2

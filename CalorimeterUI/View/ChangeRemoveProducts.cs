@@ -1,18 +1,10 @@
-﻿using Logic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.OleDb;
-using System.Data.SqlServerCe;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace CalorimeterUI.View
+﻿namespace CalorimeterUI.View
 {
+    using Data;
+    using System;
+    using System.Data;
+    using System.Windows.Forms;
+
     public partial class ChangeRemoveProducts : Form
     {
         private DataSet dataSet = new DataSet();
@@ -31,13 +23,12 @@ namespace CalorimeterUI.View
             this.productsTableAdapter.Fill(this.calorimeterLocalDataSet.Products);
         }
 
-        //Here is your save/update button code.
-        private void btnSaveGridData_Click(object sender, EventArgs e)
+        private void BtnSaveGridDataClick(object sender, EventArgs e)
         {
             DBManager.UpdateAdapter(dataSet, "Products");
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonCloseClick(object sender, EventArgs e)
         {
             this.Close();
         }
