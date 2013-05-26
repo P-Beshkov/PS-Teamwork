@@ -82,6 +82,7 @@
       <DependentUpon>CalorimeterLocalDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\DBManager.cs" />
+    <Compile Include="Logic\HashFunctions.cs" />
     <Compile Include="Logic\UserType.cs" />
     <Compile Include="View\AboutBox.cs">
       <SubType>Form</SubType>

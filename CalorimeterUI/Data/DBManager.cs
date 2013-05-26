@@ -10,7 +10,7 @@ namespace Data
     public static class DBManager
     {
         private static SqlCeConnection dbCon;
-        private static SqlCeDataAdapter dataAdapter;        
+        private static SqlCeDataAdapter dataAdapter;
         static DBManager()
         {
             DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");
@@ -22,23 +22,26 @@ namespace Data
             {
                 dbCon.Open();
             }
+            string hashedPassword = HashFunctions.CalculateMD5Hash(password);
             string sqlCommand = String.Format(@"SELECT UserName, Password FROM     Users
-                WHERE  UserName = '{0}' AND Password = '{1}'",username,password);
+                WHERE  UserName = '{0}' AND Password = '{1}'", username, hashedPassword);
             SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
             SqlCeDataReader reader = command.ExecuteReader();
 
             using (reader)
             {
+                bool isValid = false;
                 if (reader.Read())
                 {
-                    dbCon.Close();
-                    return true;
+                    // case sensitive
+                    string dbUsername = (string)reader["UserName"];
+                    if (dbUsername == username)
+                    {
+                        isValid = true;
+                    }
                 }
-                else
-                {
-                    dbCon.Close();
-                    return false;
-                }
+                dbCon.Close();
+                return isValid;
             }
         }
 
@@ -55,16 +58,14 @@ namespace Data
 
             using (reader)
             {
+                bool isFree = true;
                 if (reader.Read())
                 {
-                    dbCon.Close();
-                    return false;
+                    isFree = false;
                 }
-                else
-                {
-                    dbCon.Close();
-                    return true;
-                }
+
+                dbCon.Close();
+                return isFree;
             }
         }
 
@@ -74,9 +75,10 @@ namespace Data
             {
                 dbCon.Open();
             }
+            string hashedPassword = HashFunctions.CalculateMD5Hash(password);
             string cmdString =
                 String.Format("INSERT INTO Users(Username, Password, Type) VALUES ('{0}','{1}','{2}')",
-                username, password, UserType.User.ToString());
+                username, hashedPassword, UserType.User.ToString());
             SqlCeCommand cmd = new SqlCeCommand(cmdString, dbCon);
             cmd.ExecuteNonQuery();
             dbCon.Close();
@@ -93,7 +95,7 @@ namespace Data
                 DailyHistory.Quantity, DailyHistory.Calories, Users.UserName FROM DailyHistory 
                     INNER JOIN History ON DailyHistory.HistoryId = History.Id 
                     INNER JOIN Users ON History.UserName = Users.UserName
-                WHERE  (Users.UserName = '{0}')",username);
+                WHERE  (Users.UserName = '{0}')", username);
             SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
             SqlCeDataReader reader = command.ExecuteReader();
 
@@ -163,14 +165,14 @@ namespace Data
             int id = (int)cmd.ExecuteScalar();
 
             cmd.CommandText = String.Format(
-                @"SELECT {0}*Calories FROM Products WHERE ProductName = '{1}'",quantity,productName);
-            decimal calories = ((decimal)cmd.ExecuteScalar())*0.01M;
-            
+                @"SELECT {0}*Calories FROM Products WHERE ProductName = '{1}'", quantity, productName);
+            decimal calories = ((decimal)cmd.ExecuteScalar()) * 0.01M;
+
             string dateTimeString = String.Format("{0}.{1}.{2} ã.", dateTime.Day, dateTime.Month, dateTime.Year);
             cmd.CommandText = String.Format(@"SELECT Id FROM History WHERE Data = '{0}' AND UserName = '{1}'",
-                dateTimeString,userName);
+                dateTimeString, userName);
             var result = cmd.ExecuteScalar();
-            
+
             int historyId;
             if (result == null)
             {
@@ -187,21 +189,21 @@ namespace Data
                 historyId = (int)result;
             }
 
-            cmd.CommandText =String.Format(
+            cmd.CommandText = String.Format(
                 @"INSERT INTO  DailyHistory (Id, ProductName, Quantity, Calories, HistoryId)
                 VALUES ({0},'{1}',{2},{3}, {4})", id, productName, quantity, calories, historyId);
             cmd.ExecuteNonQuery();
             dbCon.Close();
             dbCon.Open();
-            
+
             cmd.CommandText = String.Format(
                 "SELECT SUM(Calories) AS Expr FROM DailyHistory WHERE (HistoryId = {0})", historyId);
-            SqlCeDataReader reader = cmd.ExecuteReader();            
+            SqlCeDataReader reader = cmd.ExecuteReader();
             reader.Read();
             decimal newCalories = (Decimal)reader[0];
 
             cmd.CommandText = String.Format(
-                @"UPDATE History SET DailyCalories = {0} WHERE Id={1}",newCalories,historyId);
+                @"UPDATE History SET DailyCalories = {0} WHERE Id={1}", newCalories, historyId);
             cmd.ExecuteNonQuery();
 
             dbCon.Close();
@@ -221,7 +223,7 @@ namespace Data
             SqlCeCommand cmd = new SqlCeCommand(cmdString, dbCon);
             cmd.ExecuteNonQuery();
 
-            dbCon.Close();            
+            dbCon.Close();
         }
 
         internal static List<String> LoadProducts(TypeFood typeFood)
@@ -233,7 +235,7 @@ namespace Data
 
             string sqGetAllProductsFromType = @"SELECT ProductName, Category FROM Products
                 WHERE  (Category = N'" + typeFood.ToString() + "')";
-            
+
             SqlCeCommand cmd = new SqlCeCommand(sqGetAllProductsFromType, dbCon);
             SqlCeDataReader reader = cmd.ExecuteReader();
             List<string> result = new List<string>();
@@ -253,11 +255,11 @@ namespace Data
                 dbCon.Open();
             }
 
-            List<Tuple<DateTime, decimal>> result = new List<Tuple<DateTime, decimal>>();           
+            List<Tuple<DateTime, decimal>> result = new List<Tuple<DateTime, decimal>>();
             SqlCeCommand cmd = new SqlCeCommand();
-            
+
             cmd.Connection = dbCon;
-            cmd.CommandText = String.Format("SELECT MAX(Id) FROM History WHERE UserName='{0}'",name);
+            cmd.CommandText = String.Format("SELECT MAX(Id) FROM History WHERE UserName='{0}'", name);
             var cmdResult = cmd.ExecuteScalar();
             if (cmdResult is DBNull)
             {
@@ -265,20 +267,20 @@ namespace Data
             }
             int maxId = (int)cmdResult;
             int minId = maxId - daysBefore;
-            if (minId<1)
+            if (minId < 1)
             {
                 minId = 1;
             }
 
-            cmd.CommandText = String.Format(@"SELECT Data, DailyCalories FROM History WHERE Id>{0} AND UserName='{1}'", minId,name);
+            cmd.CommandText = String.Format(@"SELECT Data, DailyCalories FROM History WHERE Id>{0} AND UserName='{1}'", minId, name);
             SqlCeDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 string dateString = (string)reader["Data"];
-                string dateFormat = "d.M.yyyy ã.";                
-                DateTime date = DateTime.ParseExact(dateString, dateFormat,CultureInfo.InvariantCulture);
+                string dateFormat = "d.M.yyyy ã.";
+                DateTime date = DateTime.ParseExact(dateString, dateFormat, CultureInfo.InvariantCulture);
                 result.Add(new Tuple<DateTime, decimal>(
-                    date, 
+                    date,
                     (decimal)reader["DailyCalories"]));
             }
             dbCon.Close();
@@ -291,13 +293,13 @@ namespace Data
         }
 
         internal static void GetProductsData(System.Data.DataSet dataSet)
-        {            
+        {
             SqlCeCommandBuilder cmdBldr;
             if (dbCon.State == ConnectionState.Closed)
             {
                 dbCon.Open();
             }
-            DBManager.dataAdapter = new SqlCeDataAdapter("Select * from Products", dbCon);          
+            DBManager.dataAdapter = new SqlCeDataAdapter("Select * from Products", dbCon);
             cmdBldr = new SqlCeCommandBuilder(dataAdapter);
             dataAdapter.Fill(dataSet, "Products");
             dbCon.Close();
@@ -312,5 +314,7 @@ namespace Data
             dataAdapter.Update(dataSet, "Products");
             dbCon.Close();
         }
+
+
     }
 }
