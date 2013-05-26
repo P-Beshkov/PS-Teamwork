@@ -11,6 +11,7 @@ namespace Data
     {
         private static SqlCeConnection dbCon;
         private static SqlCeDataAdapter dataAdapter;
+
         static DBManager()
         {
             DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");
@@ -314,7 +315,5 @@ namespace Data
             dataAdapter.Update(dataSet, "Products");
             dbCon.Close();
         }
-
-
     }
 }

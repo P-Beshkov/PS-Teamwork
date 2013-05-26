@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
     public struct EatenData
     {
         public string productName;
@@ -34,7 +35,6 @@
             get { return name; }
             set { name = value; }
         }
-
 
         public User(string name, List<DailyHistory> history, UserType type=UserType.User)
         {

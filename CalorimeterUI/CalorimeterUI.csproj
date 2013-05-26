@@ -238,6 +238,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="CaloriesHystory.txt" />
+    <Resource Include="Images\db.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\save-to-db.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="TODO List.txt" />
     <Resource Include="Images\buttonCancel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
