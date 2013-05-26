@@ -118,3 +118,4 @@ C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\Calorime
 C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.RegisterForm.resources
 C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csproj.GenerateResource.Cache
 C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.pdb
+C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ChangeRemoveProducts.resources

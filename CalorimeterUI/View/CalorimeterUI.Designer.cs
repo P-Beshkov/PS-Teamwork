@@ -91,7 +91,6 @@
             this.addToList = new Telerik.WinControls.UI.RadButton();
             this.removeFromList = new Telerik.WinControls.UI.RadButton();
             this.resetStatistics = new Telerik.WinControls.UI.RadButton();
-            this.showProductDesc = new Telerik.WinControls.UI.RadButton();
             this.productDescList = new Telerik.WinControls.UI.RadDropDownList();
             this.productsListView = new Telerik.WinControls.UI.RadListView();
             this.showDesc = new Telerik.WinControls.UI.RadButton();
@@ -122,6 +121,7 @@
             this.addProductNameValidation = new System.Windows.Forms.Label();
             this.eatenProductValidation = new System.Windows.Forms.Label();
             this.vegetablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.showProductDesc = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.ChooseFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MeatList.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FishList.ComboBoxElement)).BeginInit();
@@ -139,7 +139,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.addToList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.removeFromList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resetStatistics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.showProductDesc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDescList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showDesc)).BeginInit();
@@ -158,6 +157,7 @@
             this.userStatusButtons.SuspendLayout();
             this.mainGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vegetablesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showProductDesc)).BeginInit();
             this.SuspendLayout();
             // 
             // ChooseFood
@@ -1232,21 +1232,6 @@
             this.resetStatistics.Visible = false;
             this.resetStatistics.Click += new System.EventHandler(this.resetStatistics_Click);
             // 
-            // showProductDesc
-            // 
-            this.showProductDesc.AccessibleDescription = "showProductDesc";
-            this.showProductDesc.AccessibleName = "showProductDesc";
-            this.showProductDesc.Image = ((System.Drawing.Image)(resources.GetObject("showProductDesc.Image")));
-            this.showProductDesc.Location = new System.Drawing.Point(73, 415);
-            this.showProductDesc.Name = "showProductDesc";
-            this.showProductDesc.Size = new System.Drawing.Size(135, 63);
-            this.showProductDesc.TabIndex = 11;
-            this.showProductDesc.Text = "Product List";
-            this.showProductDesc.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.showProductDesc.ThemeName = "TelerikMetroTouch";
-            this.showProductDesc.Visible = false;
-            this.showProductDesc.Click += new System.EventHandler(this.showProductDesc_Click);
-            // 
             // productDescList
             // 
             this.productDescList.AccessibleDescription = "productDescList";
@@ -1629,6 +1614,21 @@
             // 
             this.vegetablesBindingSource.DataSource = typeof(Logic.Vegetables);
             // 
+            // showProductDesc
+            // 
+            this.showProductDesc.AccessibleDescription = "showProductDesc";
+            this.showProductDesc.AccessibleName = "showProductDesc";
+            this.showProductDesc.Image = ((System.Drawing.Image)(resources.GetObject("showProductDesc.Image")));
+            this.showProductDesc.Location = new System.Drawing.Point(73, 415);
+            this.showProductDesc.Name = "showProductDesc";
+            this.showProductDesc.Size = new System.Drawing.Size(135, 63);
+            this.showProductDesc.TabIndex = 11;
+            this.showProductDesc.Text = "Product List";
+            this.showProductDesc.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.showProductDesc.ThemeName = "TelerikMetroTouch";
+            this.showProductDesc.Visible = false;
+            this.showProductDesc.Click += new System.EventHandler(this.showProductDesc_Click);
+            // 
             // CalorimeterUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1667,7 +1667,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.addToList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.removeFromList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resetStatistics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.showProductDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDescList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsListView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showDesc)).EndInit();
@@ -1687,6 +1686,7 @@
             this.mainGroupBox.ResumeLayout(false);
             this.mainGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vegetablesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showProductDesc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1752,7 +1752,6 @@
         private Telerik.WinControls.UI.RadButton addToList;
         private Telerik.WinControls.UI.RadButton removeFromList;
         private Telerik.WinControls.UI.RadButton resetStatistics;
-        private Telerik.WinControls.UI.RadButton showProductDesc;
         private Telerik.WinControls.UI.RadDropDownList productDescList;
         private Telerik.WinControls.UI.RadListView productsListView;
         private Telerik.WinControls.UI.RadButton showDesc;
@@ -1784,7 +1783,8 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label eatenProductValidation;
         private System.Windows.Forms.Label addProductNameValidation;
-        private System.Windows.Forms.Label addCaloriesValidation; // this is an image file that i can't delete,cause crashes my program.
+        private System.Windows.Forms.Label addCaloriesValidation;
+        private Telerik.WinControls.UI.RadButton showProductDesc; // this is an image file that i can't delete,cause crashes my program.
     }
 }
 
