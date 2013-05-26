@@ -76,8 +76,6 @@ D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.LoginForm.r
 D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.RegisterForm.resources
 D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csproj.GenerateResource.Cache
 D:\School\PS-Teamwork\CalorimeterUI\bin\Debug\CalorimeterLocal.sdf
-D:\School\PS-Teamwork\CalorimeterUI\bin\Debug\CalorimeterDB.mdf
-D:\School\PS-Teamwork\CalorimeterUI\bin\Debug\CalorimeterDB_log.ldf
 D:\School\PS-Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.exe
 D:\School\PS-Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.pdb
 D:\School\PS-Teamwork\CalorimeterUI\bin\Debug\EntityFramework.dll
