@@ -8,17 +8,21 @@ using Telerik.WinControls.UI;
 using Logic;
 using Data;
 using CalorimeterUI.View;
+using System.Drawing.Printing;
 
 namespace CalorimeterUI
 {
     public partial class CalorimeterUI : Form
     {
         private User user;
+        private PrintDocument printDocument = new PrintDocument();
+        private Bitmap memoryImage;
 
         public CalorimeterUI()
         {
             InitializeComponent();
             DisableControls();
+            printDocument.PrintPage += new PrintPageEventHandler(printDocument_PrintPage);
         }
 
         // user isn't logged-in
@@ -239,6 +243,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Series.Clear();
             this.statisticsGraph.Visible = false;
             this.resetStatistics.Visible = false;
+            this.buttonPrint.Visible = false;
         }
 
         private void HideEatForms()
@@ -441,6 +446,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Series.Clear();
             this.statisticsGraph.Visible = true;
             this.resetStatistics.Visible = true;
+            this.buttonPrint.Visible = true;
 
             this.statisticsGraph.ShowTitle = true;
             this.statisticsGraph.ShowLegend = true;
@@ -464,11 +470,11 @@ namespace CalorimeterUI
             }
 
             List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(1, user.Name);
-            if (current.Count!=0)
+            if (current.Count != 0)
             {
                 eatenFood.Rows.Add("Today", current[0].Item2);
             }
-            
+
 
             this.statisticsGraph.DataSource = set;
             this.statisticsGraph.BackColor = Color.Red;
@@ -483,6 +489,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Series.Clear();
             this.statisticsGraph.Visible = true;
             this.resetStatistics.Visible = true;
+            this.buttonPrint.Visible = true;
 
             this.statisticsGraph.ShowTitle = true;
             this.statisticsGraph.ShowLegend = true;
@@ -525,6 +532,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Series.Clear();
             this.statisticsGraph.Visible = true;
             this.resetStatistics.Visible = true;
+            this.buttonPrint.Visible = true;
 
             this.statisticsGraph.ShowTitle = true;
             this.statisticsGraph.ShowLegend = true;
@@ -619,7 +627,7 @@ namespace CalorimeterUI
         }
 
         private void exitButton_Click(object sender, EventArgs e)
-        {            
+        {
             this.Close();
         }
 
@@ -717,6 +725,36 @@ namespace CalorimeterUI
             }
             ChangeRemoveProducts form = new ChangeRemoveProducts();
             form.ShowDialog();
+        }
+
+        private void CaptureScreen()
+        {
+            int graphX = statisticsGraph.Location.X;
+            int graphY = statisticsGraph.Location.Y;
+
+            Point upperLeft = new Point(this.Location.X + graphX + 20, this.Location.Y + graphY + 100);
+
+            Graphics myGraphics = statisticsGraph.CreateGraphics();
+            Size s = new Size(statisticsGraph.Size.Width, statisticsGraph.Size.Height);
+            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+
+            memoryGraphics.CopyFromScreen(upperLeft, new Point(0, 0), s);
+        }
+
+        private void printDocument_PrintPage(Object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(memoryImage, 0, 0);
+        }
+
+        private void PrintChartButtonClick(object sender, EventArgs e)
+        {
+            printPreviewDialog.Document = printDocument;
+            CaptureScreen();
+            if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
         }
     }
 }

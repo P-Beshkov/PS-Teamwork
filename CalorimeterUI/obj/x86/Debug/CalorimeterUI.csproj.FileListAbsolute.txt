@@ -87,7 +87,6 @@ C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\bin\Debug
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\bin\Debug\CalorimeterUI.pdb
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\bin\Debug\EntityFramework.dll
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\bin\Debug\EntityFramework.xml
-C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csprojResolveAssemblyReference.cache
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.g.resources
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.AboutBox.resources
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.CalorimeterUI.resources
