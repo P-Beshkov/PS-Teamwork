@@ -17,6 +17,7 @@ namespace CalorimeterUI
         private User user;
         private PrintDocument printDocument = new PrintDocument();
         private Bitmap memoryImage;
+        private List<Tuple<DateTime, decimal>> currentHistory;
 
         public CalorimeterUI()
         {
@@ -244,6 +245,8 @@ namespace CalorimeterUI
             this.statisticsGraph.Visible = false;
             this.resetStatistics.Visible = false;
             this.buttonPrint.Visible = false;
+            this.buttonSaveToFile.Visible = false;
+            this.currentHistory = null;
         }
 
         private void HideEatForms()
@@ -447,6 +450,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Visible = true;
             this.resetStatistics.Visible = true;
             this.buttonPrint.Visible = true;
+            this.buttonSaveToFile.Visible = true;
 
             this.statisticsGraph.ShowTitle = true;
             this.statisticsGraph.ShowLegend = true;
@@ -469,10 +473,10 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(1, user.Name);
-            if (current.Count != 0)
+            currentHistory = DBManager.LoadHistory(1, user.Name);
+            if (currentHistory.Count != 0)
             {
-                eatenFood.Rows.Add("Today", current[0].Item2);
+                eatenFood.Rows.Add("Today", currentHistory[0].Item2);
             }
 
 
@@ -490,6 +494,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Visible = true;
             this.resetStatistics.Visible = true;
             this.buttonPrint.Visible = true;
+            this.buttonSaveToFile.Visible = true;
 
             this.statisticsGraph.ShowTitle = true;
             this.statisticsGraph.ShowLegend = true;
@@ -512,11 +517,11 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(7, user.Name);
+            currentHistory = DBManager.LoadHistory(7, user.Name);
 
-            for (int i = 0; i < current.Count; i++)
+            for (int i = 0; i < currentHistory.Count; i++)
             {
-                eatenFood.Rows.Add(String.Format("Day {0}", i + 1), current[i].Item2);
+                eatenFood.Rows.Add(String.Format("Day {0}", i + 1), currentHistory[i].Item2);
             }
 
             this.statisticsGraph.DataSource = set;
@@ -533,6 +538,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Visible = true;
             this.resetStatistics.Visible = true;
             this.buttonPrint.Visible = true;
+            this.buttonSaveToFile.Visible = true;
 
             this.statisticsGraph.ShowTitle = true;
             this.statisticsGraph.ShowLegend = true;
@@ -555,11 +561,11 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            List<Tuple<DateTime, decimal>> current = DBManager.LoadHistory(30, user.Name);
+            currentHistory = DBManager.LoadHistory(30, user.Name);
 
-            for (int i = 0; i < current.Count; i++)
+            for (int i = 0; i < currentHistory.Count; i++)
             {
-                eatenFood.Rows.Add(i + 1, current[i].Item2);
+                eatenFood.Rows.Add(i + 1, currentHistory[i].Item2);
             }
 
             this.statisticsGraph.DataSource = set;
@@ -755,6 +761,39 @@ namespace CalorimeterUI
             {
                 printDocument.Print();
             }
+        }
+
+        private void buttonSaveToFile_Click(object sender, EventArgs e)
+        {
+            if (currentHistory == null)
+            {
+                MessageBox.Show("Can't save your history.");
+                return;
+            }
+
+            saveFileDialog.DefaultExt = "*.txt";
+            saveFileDialog.Filter = "Text Files (.txt)|*.txt|MS Word Files (.doc)|*.doc|MS Word 2007+ Files (.docx)|*.docx|RTF Files (.rtf)|*.rtf";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK
+                && !string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+            {
+                try
+                {
+                    FileManager.SaveUserData(this.user.Name, currentHistory, saveFileDialog.FileName, true);
+                }
+                catch (ArgumentException ae)
+                {
+                    MessageBox.Show(ae.Message);
+                }
+                catch (System.IO.IOException ioe)
+                {
+                    MessageBox.Show(ioe.Message);
+                }
+            }
+
+
+
+
         }
     }
 }

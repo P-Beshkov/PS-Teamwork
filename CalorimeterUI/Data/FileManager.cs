@@ -6,38 +6,38 @@ namespace Data
     using System.IO;
     using System.Text;
 
-    public class FileManager
+    public static class FileManager
     {
-        public static void SaveUserData(string username, List<Tuple<DateTime, decimal>> data, 
-            string fileName = null, bool overwrite=false)
+        public static void SaveUserData(string username, List<Tuple<DateTime, decimal>> data,
+            string fileName = null, bool overwrite = false)
         {
-            if (String.IsNullOrEmpty(fileName))
+            if (string.IsNullOrEmpty(fileName))
             {
                 fileName = username + ".txt";
             }
-            else
-            {
-                fileName += ".txt";
-                bool isValidName = fileName.IndexOfAny(Path.GetInvalidFileNameChars()) < 0;
-                if (!isValidName)
-                {
-                    throw new ArgumentException(String.Format("File name - '{0}' has invalid chars", fileName));
-                }
-                bool isFileNameFree = !File.Exists(Path.Combine(Directory.GetCurrentDirectory(), fileName));
-                if (!isFileNameFree)
-                {
-                    throw new IOException(String.Format("'{0}' already exists", fileName));
-                }
-            }
+            //else
+            //{
+            //    //fileName += ".txt";
+            //    bool isValidName = fileName.IndexOfAny(Path.GetInvalidFileNameChars()) < 0;
+            //    if (!isValidName)
+            //    {
+            //        throw new ArgumentException(String.Format("File name - '{0}' has invalid chars", fileName));
+            //    }
+            //    bool isFileNameFree = !File.Exists(Path.Combine(Directory.GetCurrentDirectory(), fileName));
+            //    if (!isFileNameFree)
+            //    {
+            //        throw new IOException(String.Format("'{0}' already exists", fileName));
+            //    }
+            //}
 
-            using (StreamWriter writer = new StreamWriter(fileName, false, Encoding.UTF8))
+            using (StreamWriter writer = new StreamWriter(fileName, overwrite, Encoding.UTF8))
             {
                 writer.WriteLine("UserName - {0}\n", username);
                 foreach (var item in data)
                 {
                     DateTime date = item.Item1;
                     string dateTimeString = String.Format("{0}.{1}.{2} ã.", date.Day, date.Month, date.Year);
-                    writer.WriteLine(dateTimeString + "-" + item.Item2);
+                    writer.WriteLine(dateTimeString + " - " + item.Item2 + " calories.");
                 }
             }
         }
@@ -65,7 +65,7 @@ namespace Data
         //            line = reader.ReadLine();
         //        }
         //    }
-            
+
         //    return result;
         //}
     }

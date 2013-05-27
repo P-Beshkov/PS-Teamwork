@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalorimeterUI));
-            Telerik.WinControls.UI.CartesianArea cartesianArea2 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
             this.ChooseFood = new Telerik.WinControls.UI.RadDropDownButton();
             this.Meat = new Telerik.WinControls.UI.RadMenuItem();
             this.MeatList = new Telerik.WinControls.UI.RadMenuComboItem();
@@ -123,6 +123,8 @@
             this.type = new Telerik.WinControls.UI.RadTextBoxControl();
             this.vegetablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.buttonSaveToFile = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ChooseFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MeatList.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FishList.ComboBoxElement)).BeginInit();
@@ -1174,7 +1176,7 @@
             // 
             this.statisticsGraph.AccessibleDescription = "statisticsGraph";
             this.statisticsGraph.AccessibleName = "statisticsGraph";
-            this.statisticsGraph.AreaDesign = cartesianArea2;
+            this.statisticsGraph.AreaDesign = cartesianArea1;
             this.statisticsGraph.Location = new System.Drawing.Point(225, 20);
             this.statisticsGraph.Margin = new System.Windows.Forms.Padding(4);
             this.statisticsGraph.Name = "statisticsGraph";
@@ -1222,9 +1224,9 @@
             this.resetStatistics.AccessibleDescription = "resetStatistics";
             this.resetStatistics.AccessibleName = "resetStatistics";
             this.resetStatistics.Image = ((System.Drawing.Image)(resources.GetObject("resetStatistics.Image")));
-            this.resetStatistics.Location = new System.Drawing.Point(856, 390);
+            this.resetStatistics.Location = new System.Drawing.Point(848, 390);
             this.resetStatistics.Name = "resetStatistics";
-            this.resetStatistics.Size = new System.Drawing.Size(115, 40);
+            this.resetStatistics.Size = new System.Drawing.Size(120, 40);
             this.resetStatistics.TabIndex = 10;
             this.resetStatistics.Text = "Clear Chart";
             this.resetStatistics.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -1503,6 +1505,7 @@
             // mainGroupBox
             // 
             this.mainGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.mainGroupBox.Controls.Add(this.buttonSaveToFile);
             this.mainGroupBox.Controls.Add(this.buttonPrint);
             this.mainGroupBox.Controls.Add(this.addCaloriesValidation);
             this.mainGroupBox.Controls.Add(this.addProductNameValidation);
@@ -1538,9 +1541,9 @@
             this.buttonPrint.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.buttonPrint.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrint.Image")));
             this.buttonPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPrint.Location = new System.Drawing.Point(734, 390);
+            this.buttonPrint.Location = new System.Drawing.Point(722, 390);
             this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(115, 40);
+            this.buttonPrint.Size = new System.Drawing.Size(120, 40);
             this.buttonPrint.TabIndex = 0;
             this.buttonPrint.Text = "Print chart";
             this.buttonPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1644,6 +1647,21 @@
             this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
+            // 
+            // buttonSaveToFile
+            // 
+            this.buttonSaveToFile.BackColor = System.Drawing.Color.White;
+            this.buttonSaveToFile.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.buttonSaveToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveToFile.Image")));
+            this.buttonSaveToFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSaveToFile.Location = new System.Drawing.Point(596, 390);
+            this.buttonSaveToFile.Name = "buttonSaveToFile";
+            this.buttonSaveToFile.Size = new System.Drawing.Size(120, 40);
+            this.buttonSaveToFile.TabIndex = 29;
+            this.buttonSaveToFile.Text = "Save to file";
+            this.buttonSaveToFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSaveToFile.UseVisualStyleBackColor = false;
+            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
             // 
             // CalorimeterUI
             // 
@@ -1800,7 +1818,9 @@
         private Telerik.WinControls.UI.RadTextBoxControl type;
         private Telerik.WinControls.UI.RadButton buttonRemoveChangeProducts;
         private System.Windows.Forms.Button buttonPrint;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog; // this is an image file that i can't delete,cause crashes my program.
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Windows.Forms.Button buttonSaveToFile;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog; // this is an image file that i can't delete,cause crashes my program.
     }
 }
 

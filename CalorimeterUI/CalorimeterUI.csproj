@@ -251,6 +251,9 @@
     <Resource Include="Images\printer.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\save.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="TODO List.txt" />
     <Resource Include="Images\buttonCancel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
