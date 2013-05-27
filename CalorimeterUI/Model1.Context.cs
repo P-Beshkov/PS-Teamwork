@@ -25,9 +25,9 @@ namespace CalorimeterUI
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<DailyHistory> DailyHistorySet { get; set; }
+        public DbSet<History> HistorySet { get; set; }
         public DbSet<Products> ProductsSet { get; set; }
         public DbSet<Users> UsersSet { get; set; }
-        public DbSet<History> HistorySet { get; set; }
-        public DbSet<DailyHistory> DailyHistorySet { get; set; }
     }
 }

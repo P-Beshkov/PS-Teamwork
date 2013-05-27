@@ -14,7 +14,36 @@ namespace Data
 
         static DBManager()
         {
-            DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");
+            DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");            
+        }
+  
+        private static void UpdateDailyHistory()
+        {
+
+        }
+        private static void UpdateHistory()
+        {
+            SqlCeCommand cmd = new SqlCeCommand();
+            if (dbCon.State == ConnectionState.Closed)
+            {
+                dbCon.Open();
+            }
+            cmd.Connection = dbCon;
+            cmd.CommandText = @"SELECT MAX(Id) FROM History";
+            int historyId = (int)cmd.ExecuteScalar();
+            for (int i = 1; i <= historyId; i++)
+            {
+                cmd.CommandText = String.Format(
+                    "SELECT SUM(Calories) AS Expr FROM DailyHistory WHERE (HistoryId = {0})", i);
+                SqlCeDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                decimal newCalories = (Decimal)reader[0];
+
+                cmd.CommandText = String.Format(
+                    @"UPDATE History SET DailyCalories = {0} WHERE Id={1}", newCalories, i);
+                cmd.ExecuteNonQuery();
+            }
+            dbCon.Close();
         }
 
         public static bool IsUsernameValid(string username, string password)
@@ -79,7 +108,7 @@ namespace Data
             string hashedPassword = HashFunctions.CalculateMD5Hash(password);
             string cmdString =
                 String.Format("INSERT INTO Users(Username, Password, Type) VALUES ('{0}','{1}','{2}')",
-                username, hashedPassword, UserType.User.ToString());
+                    username, hashedPassword, UserType.User.ToString());
             SqlCeCommand cmd = new SqlCeCommand(cmdString, dbCon);
             cmd.ExecuteNonQuery();
             dbCon.Close();
@@ -207,7 +236,7 @@ namespace Data
                 @"UPDATE History SET DailyCalories = {0} WHERE Id={1}", newCalories, historyId);
             cmd.ExecuteNonQuery();
 
-            dbCon.Close();
+            dbCon.Close();            
         }
 
         internal static void AddNewFood(NutritionData item)
@@ -273,7 +302,8 @@ namespace Data
                 minId = 1;
             }
 
-            cmd.CommandText = String.Format(@"SELECT Data, DailyCalories FROM History WHERE Id>{0} AND UserName='{1}'", minId, name);
+            cmd.CommandText = String.Format(
+                @"SELECT Data, DailyCalories FROM History WHERE Id>{0} AND UserName='{1}'", minId, name);
             SqlCeDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {

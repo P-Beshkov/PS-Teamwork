@@ -14,11 +14,11 @@ namespace CalorimeterUI
     
     public partial class Products
     {
-        public int Name { get; set; }
-        public string Fat { get; set; }
-        public string Carbohydrates { get; set; }
-        public string Proteins { get; set; }
-        public string Calories { get; set; }
         public string Category { get; set; }
+        public string ProductName { get; set; }
+        public decimal Calories { get; set; }
+        public Nullable<decimal> Fat { get; set; }
+        public Nullable<decimal> Carbohydrates { get; set; }
+        public Nullable<decimal> Proteins { get; set; }
     }
 }

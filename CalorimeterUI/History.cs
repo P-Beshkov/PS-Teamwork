@@ -19,12 +19,12 @@ namespace CalorimeterUI
             this.DailyHistory = new HashSet<DailyHistory>();
         }
     
-        public int Data { get; set; }
-        public string Calories { get; set; }
+        public int Id { get; set; }
+        public string Data { get; set; }
+        public decimal DailyCalories { get; set; }
         public string UserName { get; set; }
-        public string Id { get; set; }
     
-        public virtual Users Users { get; set; }
         public virtual ICollection<DailyHistory> DailyHistory { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

@@ -16,9 +16,9 @@ namespace CalorimeterUI
     {
         public int Id { get; set; }
         public string ProductName { get; set; }
-        public string Quantity { get; set; }
-        public string Calories { get; set; }
-        public string HistoryId { get; set; }
+        public int Quantity { get; set; }
+        public Nullable<decimal> Calories { get; set; }
+        public int HistoryId { get; set; }
     
         public virtual History History { get; set; }
     }

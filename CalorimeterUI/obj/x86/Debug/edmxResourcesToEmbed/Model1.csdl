@@ -1,67 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
   <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DailyHistorySet" EntityType="Model1.DailyHistory" />
+    <EntitySet Name="HistorySet" EntityType="Model1.History" />
     <EntitySet Name="ProductsSet" EntityType="Model1.Products" />
     <EntitySet Name="UsersSet" EntityType="Model1.Users" />
-    <EntitySet Name="HistorySet" EntityType="Model1.History" />
-    <AssociationSet Name="UsersHistory" Association="Model1.UsersHistory">
-      <End Role="Users" EntitySet="UsersSet" />
-      <End Role="History" EntitySet="HistorySet" />
+    <AssociationSet Name="DailyHistory_History" Association="Model1.DailyHistory_History">
+      <End Role="History1" EntitySet="HistorySet" />
+      <End Role="DailyHistory1" EntitySet="DailyHistorySet" />
     </AssociationSet>
-    <EntitySet Name="DailyHistorySet" EntityType="Model1.DailyHistory" />
-    <AssociationSet Name="HistoryDailyHistory" Association="Model1.HistoryDailyHistory">
-      <End Role="History" EntitySet="HistorySet" />
-      <End Role="DailyHistory" EntitySet="DailyHistorySet" />
+    <AssociationSet Name="History_Users" Association="Model1.History_Users">
+      <End Role="Users1" EntitySet="UsersSet" />
+      <End Role="History1" EntitySet="HistorySet" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Products">
+  <EntityType Name="DailyHistory">
     <Key>
-      <PropertyRef Name="Name" />
-      <PropertyRef Name="Category" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Type="Int32" Name="Name" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Fat" Nullable="false" />
-    <Property Type="String" Name="Carbohydrates" Nullable="false" />
-    <Property Type="String" Name="Proteins" Nullable="false" />
-    <Property Type="String" Name="Calories" Nullable="false" />
-    <Property Type="String" Name="Category" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="UserName" />
-    </Key>
-    <Property Type="Int32" Name="UserName" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Password" Nullable="false" />
-    <NavigationProperty Name="History" Relationship="Model1.UsersHistory" FromRole="Users" ToRole="History" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="Calories" Precision="19" Scale="4" />
+    <Property Type="Int32" Name="HistoryId" Nullable="false" />
+    <NavigationProperty Name="History" Relationship="Model1.DailyHistory_History" FromRole="DailyHistory1" ToRole="History1" />
   </EntityType>
   <EntityType Name="History">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Type="Int32" Name="Data" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Calories" Nullable="false" />
-    <NavigationProperty Name="Users" Relationship="Model1.UsersHistory" FromRole="History" ToRole="Users" />
-    <Property Type="String" Name="UserName" Nullable="false" />
-    <NavigationProperty Name="DailyHistory" Relationship="Model1.HistoryDailyHistory" FromRole="History" ToRole="DailyHistory" />
-    <Property Type="String" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Data" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="DailyCalories" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DailyHistory" Relationship="Model1.DailyHistory_History" FromRole="History1" ToRole="DailyHistory1" />
+    <NavigationProperty Name="Users" Relationship="Model1.History_Users" FromRole="History1" ToRole="Users1" />
   </EntityType>
-  <Association Name="UsersHistory">
-    <End Type="Model1.Users" Role="Users" Multiplicity="1" />
-    <End Type="Model1.History" Role="History" Multiplicity="*" />
-  </Association>
-  <EntityType Name="DailyHistory">
+  <EntityType Name="Products">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Category" />
+      <PropertyRef Name="ProductName" />
     </Key>
-    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="ProductName" Nullable="false" />
-    <Property Type="String" Name="Quantity" Nullable="false" />
-    <Property Type="String" Name="Calories" Nullable="false" />
-    <NavigationProperty Name="History" Relationship="Model1.HistoryDailyHistory" FromRole="DailyHistory" ToRole="History" />
-    <Property Type="String" Name="HistoryId" Nullable="false" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProductName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Calories" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Fat" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Carbohydrates" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Proteins" Precision="19" Scale="4" />
   </EntityType>
-  <Association Name="HistoryDailyHistory">
-    <End Type="Model1.History" Role="History" Multiplicity="1" />
-    <End Type="Model1.DailyHistory" Role="DailyHistory" Multiplicity="*" />
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="History" Relationship="Model1.History_Users" FromRole="Users1" ToRole="History1" />
+  </EntityType>
+  <Association Name="DailyHistory_History">
+    <End Type="Model1.History" Role="History1" Multiplicity="1" />
+    <End Type="Model1.DailyHistory" Role="DailyHistory1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="History1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyHistory1">
+        <PropertyRef Name="HistoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="History_Users">
+    <End Type="Model1.Users" Role="Users1" Multiplicity="1" />
+    <End Type="Model1.History" Role="History1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users1">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="History1">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
 </Schema>

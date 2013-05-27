@@ -61,9 +61,10 @@
             this.carbohydratesDataGridViewTextBoxColumn,
             this.proteinsDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 73);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(662, 415);
+            this.dataGridView1.Size = new System.Drawing.Size(883, 511);
             this.dataGridView1.TabIndex = 0;
             // 
             // productsBindingSource
@@ -90,9 +91,10 @@
             this.buttonSaveToDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonSaveToDB.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveToDB.Image")));
             this.buttonSaveToDB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSaveToDB.Location = new System.Drawing.Point(12, 13);
+            this.buttonSaveToDB.Location = new System.Drawing.Point(16, 16);
+            this.buttonSaveToDB.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSaveToDB.Name = "buttonSaveToDB";
-            this.buttonSaveToDB.Size = new System.Drawing.Size(160, 40);
+            this.buttonSaveToDB.Size = new System.Drawing.Size(213, 49);
             this.buttonSaveToDB.TabIndex = 1;
             this.buttonSaveToDB.Text = "Save to database";
             this.buttonSaveToDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -104,10 +106,11 @@
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
             this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonClose.Location = new System.Drawing.Point(559, 12);
+            this.buttonClose.Location = new System.Drawing.Point(745, 15);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.buttonClose.Size = new System.Drawing.Size(115, 40);
+            this.buttonClose.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
+            this.buttonClose.Size = new System.Drawing.Size(153, 49);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.Text = "Close";
             this.buttonClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -116,6 +119,7 @@
             // 
             // categoryDataGridViewTextBoxColumn
             // 
+            this.categoryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
             this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
             this.categoryDataGridViewTextBoxColumn.Items.AddRange(new object[] {
@@ -132,48 +136,60 @@
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             this.categoryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.categoryDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.categoryDataGridViewTextBoxColumn.Width = 90;
             // 
             // productNameDataGridViewTextBoxColumn
             // 
+            this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
             this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
             this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.Width = 119;
             // 
             // caloriesDataGridViewTextBoxColumn
             // 
+            this.caloriesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.caloriesDataGridViewTextBoxColumn.DataPropertyName = "Calories";
             this.caloriesDataGridViewTextBoxColumn.HeaderText = "Calories";
             this.caloriesDataGridViewTextBoxColumn.Name = "caloriesDataGridViewTextBoxColumn";
+            this.caloriesDataGridViewTextBoxColumn.Width = 84;
             // 
             // fatDataGridViewTextBoxColumn
             // 
+            this.fatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.fatDataGridViewTextBoxColumn.DataPropertyName = "Fat";
             this.fatDataGridViewTextBoxColumn.HeaderText = "Fat";
             this.fatDataGridViewTextBoxColumn.Name = "fatDataGridViewTextBoxColumn";
+            this.fatDataGridViewTextBoxColumn.Width = 53;
             // 
             // carbohydratesDataGridViewTextBoxColumn
             // 
+            this.carbohydratesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.carbohydratesDataGridViewTextBoxColumn.DataPropertyName = "Carbohydrates";
             this.carbohydratesDataGridViewTextBoxColumn.HeaderText = "Carbohydrates";
             this.carbohydratesDataGridViewTextBoxColumn.Name = "carbohydratesDataGridViewTextBoxColumn";
+            this.carbohydratesDataGridViewTextBoxColumn.Width = 126;
             // 
             // proteinsDataGridViewTextBoxColumn
             // 
+            this.proteinsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.proteinsDataGridViewTextBoxColumn.DataPropertyName = "Proteins";
             this.proteinsDataGridViewTextBoxColumn.HeaderText = "Proteins";
             this.proteinsDataGridViewTextBoxColumn.Name = "proteinsDataGridViewTextBoxColumn";
+            this.proteinsDataGridViewTextBoxColumn.Width = 85;
             // 
             // ChangeRemoveProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(686, 486);
+            this.ClientSize = new System.Drawing.Size(915, 598);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSaveToDB);
             this.Controls.Add(this.dataGridView1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChangeRemoveProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChangeRemoveProducts";
