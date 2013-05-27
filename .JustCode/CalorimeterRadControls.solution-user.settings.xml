@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="12078a10-37af-4cfc-abcd-80e708363643">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings Version="2">
+      <FilePath>
+        <FileRelativePath>CalorimeterUI/Logic/HashFunctions.cs</FileRelativePath>
+        <ProjectRelativePath>CalorimeterUI/CalorimeterUI.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>2862106466244939218</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>876528470342852389</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <FileRelativePath>CalorimeterUI/Logic/User.cs</FileRelativePath>
+        <ProjectRelativePath>CalorimeterUI/CalorimeterUI.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>11799706417697949688</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>16781761035544674991</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>12531176050431667907</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <FileRelativePath>CalorimeterUI/Logic/NutritionData.cs</FileRelativePath>
+        <ProjectRelativePath>CalorimeterUI/CalorimeterUI.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>8121693308254149551</TextualIdentifier>
+        </IgnoredElement>
+        <IgnoredElement>
+          <TextualIdentifier>2862106466244939218</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+      <FilePath>
+        <FileRelativePath>CalorimeterUI/Logic/TypeFood.cs</FileRelativePath>
+        <ProjectRelativePath>CalorimeterUI/CalorimeterUI.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>12189710653594168433</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>

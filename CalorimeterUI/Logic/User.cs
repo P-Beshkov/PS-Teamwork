@@ -23,6 +23,7 @@
         private List<DailyHistory> history;
         private string name;
         private UserType type;
+        public string title;
 
         public UserType Type
         {
