@@ -132,7 +132,7 @@ namespace Data
             }
         }
 
-        internal static void RegisterUser(string username, string password)
+        internal static void RegisterUser(string username, string password, string email, string name)
         {
             if (dbCon.State == ConnectionState.Closed)
             {

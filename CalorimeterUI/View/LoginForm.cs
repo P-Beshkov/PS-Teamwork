@@ -30,11 +30,11 @@ namespace CalorimeterUI.View
                 MessageBox.Show("Enter valid password.");
                 return;
             }
-            // TODO: check if user with this username and this password exist.
             User usr = null;
             if (DBManager.IsUsernameValid(username,password))
             {
                 UserType status;
+                //TODO: LoadUserData must load username, password, name, email, history, status
                 var loadedData = DBManager.LoadUserData(username,out status);
                 usr = new User(username,loadedData, status);                
                 this.DialogResult = DialogResult.OK;
