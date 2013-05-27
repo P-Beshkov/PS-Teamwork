@@ -898,7 +898,7 @@
             this.addMeat.Name = "addMeat";
             this.addMeat.Text = "Meat";
             this.addMeat.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addMeat.Click += new System.EventHandler(this.addMeat_Click);
+            this.addMeat.Click += new System.EventHandler(this.AddMeatClick);
             // 
             // radMenuSeparatorItem10
             // 
@@ -921,7 +921,7 @@
             this.addFish.Name = "addFish";
             this.addFish.Text = "Fish";
             this.addFish.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addFish.Click += new System.EventHandler(this.addFish_Click);
+            this.addFish.Click += new System.EventHandler(this.AddFishClick);
             // 
             // radMenuSeparatorItem11
             // 
@@ -944,7 +944,7 @@
             this.addFruits.Name = "addFruits";
             this.addFruits.Text = "Fruits";
             this.addFruits.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addFruits.Click += new System.EventHandler(this.addFruits_Click);
+            this.addFruits.Click += new System.EventHandler(this.AddFruitsClick);
             // 
             // radMenuSeparatorItem12
             // 
@@ -967,7 +967,7 @@
             this.addVegetables.Name = "addVegetables";
             this.addVegetables.Text = "Vegetables";
             this.addVegetables.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addVegetables.Click += new System.EventHandler(this.addVegetables_Click);
+            this.addVegetables.Click += new System.EventHandler(this.AddVegetablesClick);
             // 
             // radMenuSeparatorItem13
             // 
@@ -990,7 +990,7 @@
             this.addBread.Name = "addBread";
             this.addBread.Text = "Bread";
             this.addBread.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addBread.Click += new System.EventHandler(this.addBread_Click);
+            this.addBread.Click += new System.EventHandler(this.AddBreadClick);
             // 
             // radMenuSeparatorItem14
             // 
@@ -1013,7 +1013,7 @@
             this.addCereals.Name = "addCereals";
             this.addCereals.Text = "Cereals";
             this.addCereals.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addCereals.Click += new System.EventHandler(this.addCereals_Click);
+            this.addCereals.Click += new System.EventHandler(this.AddCerealsClick);
             // 
             // radMenuSeparatorItem15
             // 
@@ -1036,7 +1036,7 @@
             this.addNuts.Name = "addNuts";
             this.addNuts.Text = "Nuts";
             this.addNuts.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addNuts.Click += new System.EventHandler(this.addNuts_Click);
+            this.addNuts.Click += new System.EventHandler(this.AddNutsClick);
             // 
             // radMenuSeparatorItem6
             // 
@@ -1074,7 +1074,7 @@
             this.addSoftDrink.Name = "addSoftDrink";
             this.addSoftDrink.Text = "Soft Drink";
             this.addSoftDrink.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addSoftDrink.Click += new System.EventHandler(this.addSoftDrink_Click);
+            this.addSoftDrink.Click += new System.EventHandler(this.AddSoftDrinkClick);
             // 
             // radMenuSeparatorItem16
             // 
@@ -1097,7 +1097,7 @@
             this.addAlocohol.Name = "addAlocohol";
             this.addAlocohol.Text = "Alocohol";
             this.addAlocohol.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.addAlocohol.Click += new System.EventHandler(this.addAlocohol_Click);
+            this.addAlocohol.Click += new System.EventHandler(this.AddAlocoholClick);
             // 
             // object_bc0f6b10_38d3_4f37_8f92_1557d6f70039
             // 
@@ -1122,7 +1122,7 @@
             this.showStatistics.Text = "Show Statistics";
             this.showStatistics.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.showStatistics.ThemeName = "TelerikMetroTouch";
-            this.showStatistics.Click += new System.EventHandler(this.showStatistics_Click);
+            this.showStatistics.Click += new System.EventHandler(this.ShowStatisticsClick);
             // 
             // currentDay
             // 
@@ -1140,7 +1140,7 @@
             this.currentDay.Text = "Today";
             this.currentDay.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.currentDay.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.currentDay.Click += new System.EventHandler(this.currentDay_Click);
+            this.currentDay.Click += new System.EventHandler(this.CurrentDayClick);
             // 
             // pastWeek
             // 
@@ -1155,7 +1155,7 @@
             this.pastWeek.Name = "pastWeek";
             this.pastWeek.Text = "last Week";
             this.pastWeek.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.pastWeek.Click += new System.EventHandler(this.pastWeek_Click);
+            this.pastWeek.Click += new System.EventHandler(this.PastWeekClick);
             // 
             // lastMonth
             // 
@@ -1170,7 +1170,7 @@
             this.lastMonth.Name = "lastMonth";
             this.lastMonth.Text = "last Month";
             this.lastMonth.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.lastMonth.Click += new System.EventHandler(this.lastMonth_Click);
+            this.lastMonth.Click += new System.EventHandler(this.LastMonthClick);
             // 
             // statisticsGraph
             // 
@@ -1201,7 +1201,7 @@
             this.addToList.TextAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.addToList.ThemeName = "TelerikMetroTouch";
             this.addToList.Visible = false;
-            this.addToList.Click += new System.EventHandler(this.addToList_Click);
+            this.addToList.Click += new System.EventHandler(this.AddToListClick);
             // 
             // removeFromList
             // 
@@ -1217,7 +1217,7 @@
             this.removeFromList.TextAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.removeFromList.ThemeName = "TelerikMetroTouch";
             this.removeFromList.Visible = false;
-            this.removeFromList.Click += new System.EventHandler(this.removeFromList_Click);
+            this.removeFromList.Click += new System.EventHandler(this.RemoveFromListClick);
             // 
             // resetStatistics
             // 
@@ -1232,7 +1232,7 @@
             this.resetStatistics.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.resetStatistics.ThemeName = "TelerikMetroTouch";
             this.resetStatistics.Visible = false;
-            this.resetStatistics.Click += new System.EventHandler(this.resetStatistics_Click);
+            this.resetStatistics.Click += new System.EventHandler(this.ResetStatisticsClick);
             // 
             // productDescList
             // 
@@ -1277,7 +1277,7 @@
             this.addProductName.TabIndex = 17;
             this.addProductName.ThemeName = "TelerikMetroTouch";
             this.addProductName.Visible = false;
-            this.addProductName.TextChanged += new System.EventHandler(this.enterProductName_TextChanged);
+            this.addProductName.TextChanged += new System.EventHandler(this.EnterProductNameTextChanged);
             // 
             // addCalories
             // 
@@ -1290,7 +1290,7 @@
             this.addCalories.TabIndex = 18;
             this.addCalories.ThemeName = "TelerikMetroTouch";
             this.addCalories.Visible = false;
-            this.addCalories.TextChanged += new System.EventHandler(this.enterProductCalories_TextChanged);
+            this.addCalories.TextChanged += new System.EventHandler(this.EnterProductCaloriesTextChanged);
             // 
             // addCarbo
             // 
@@ -1368,7 +1368,7 @@
             this.enterProductWeight.TabStop = false;
             this.enterProductWeight.ThemeName = "TelerikMetroTouch";
             this.enterProductWeight.Visible = false;
-            this.enterProductWeight.TextChanged += new System.EventHandler(this.enterProductWeight_TextChanged);
+            this.enterProductWeight.TextChanged += new System.EventHandler(this.EnterProductWeightTextChanged);
             // 
             // addProductBtn
             // 
@@ -1384,7 +1384,7 @@
             this.addProductBtn.TextAlignment = System.Drawing.ContentAlignment.BottomLeft;
             this.addProductBtn.ThemeName = "TelerikMetroTouch";
             this.addProductBtn.Visible = false;
-            this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
+            this.addProductBtn.Click += new System.EventHandler(this.AddProductBtnClick);
             // 
             // object_b1878d34_aaef_4303_9685_91ca102d06f4
             // 
@@ -1405,7 +1405,7 @@
             this.loginBtn.Text = "Login";
             this.loginBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.loginBtn.UseVisualStyleBackColor = true;
-            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            this.loginBtn.Click += new System.EventHandler(this.LoginBtnClick);
             // 
             // logoutBtn
             // 
@@ -1419,7 +1419,7 @@
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.logoutBtn.UseVisualStyleBackColor = true;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            this.logoutBtn.Click += new System.EventHandler(this.LogoutBtnClick);
             // 
             // registerBtn
             // 
@@ -1433,7 +1433,7 @@
             this.registerBtn.Text = "Register";
             this.registerBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.registerBtn.UseVisualStyleBackColor = true;
-            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
+            this.registerBtn.Click += new System.EventHandler(this.RegisterBtnClick);
             // 
             // userStatusButtons
             // 
@@ -1461,7 +1461,7 @@
             this.exitButton.Text = "Exit";
             this.exitButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.exitButton.Click += new System.EventHandler(this.ExitButtonClick);
             // 
             // aboutBtn
             // 
@@ -1475,7 +1475,7 @@
             this.aboutBtn.Text = "About";
             this.aboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.aboutBtn.UseVisualStyleBackColor = true;
-            this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click);
+            this.aboutBtn.Click += new System.EventHandler(this.AboutBtnClick);
             // 
             // labelUserGreetings
             // 
@@ -1500,7 +1500,7 @@
             this.currentUserName.Size = new System.Drawing.Size(125, 25);
             this.currentUserName.TabIndex = 32;
             this.currentUserName.Text = " anonymous!";
-            this.currentUserName.Click += new System.EventHandler(this.label1_Click);
+            this.currentUserName.Click += new System.EventHandler(this.Label1Click);
             // 
             // mainGroupBox
             // 
@@ -1609,7 +1609,7 @@
             this.buttonRemoveChangeProducts.Text = "<html>Change/Remove<br />product</html>";
             this.buttonRemoveChangeProducts.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRemoveChangeProducts.ThemeName = "TelerikMetroTouch";
-            this.buttonRemoveChangeProducts.Click += new System.EventHandler(this.buttonRemoveChangeProducts_Click);
+            this.buttonRemoveChangeProducts.Click += new System.EventHandler(this.ButtonRemoveChangeProductsClick);
             // 
             // Current
             // 
@@ -1661,7 +1661,7 @@
             this.buttonSaveToFile.Text = "Save to file";
             this.buttonSaveToFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSaveToFile.UseVisualStyleBackColor = false;
-            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
+            this.buttonSaveToFile.Click += new System.EventHandler(this.ButtonSaveToFileClick);
             // 
             // CalorimeterUI
             // 

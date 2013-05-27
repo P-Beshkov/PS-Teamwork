@@ -111,7 +111,7 @@
             this.buttonRegister.Text = "Register";
             this.buttonRegister.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRegister.UseVisualStyleBackColor = true;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            this.buttonRegister.Click += new System.EventHandler(this.ButtonRegisterClick);
             // 
             // RegisterForm
             // 

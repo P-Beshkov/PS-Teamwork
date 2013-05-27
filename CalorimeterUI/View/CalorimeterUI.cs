@@ -23,7 +23,7 @@ namespace CalorimeterUI
         {
             InitializeComponent();
             DisableControls();
-            printDocument.PrintPage += new PrintPageEventHandler(printDocument_PrintPage);
+            printDocument.PrintPage += new PrintPageEventHandler(PrintDocumentPrintPage);
         }
 
         // user isn't logged-in
@@ -56,66 +56,66 @@ namespace CalorimeterUI
             }
         }
 
-        private void showProductDesc_Click(object sender, EventArgs e)
+        private void ShowProductDescClick(object sender, EventArgs e)
         {
             productsListView.Visible = true;
         }
 
-        private void addMeat_Click(object sender, EventArgs e)
+        private void AddMeatClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.Meat);
             ShowMenu();
         }
 
-        private void addFish_Click(object sender, EventArgs e)
+        private void AddFishClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.Fish);
             ShowMenu();
         }
 
-        private void addFruits_Click(object sender, EventArgs e)
+        private void AddFruitsClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.Fruit);
             ShowMenu();
         }
 
-        private void addVegetables_Click(object sender, EventArgs e)
+        private void AddVegetablesClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.Vegetables);
             ShowMenu();
         }
 
-        private void addBread_Click(object sender, EventArgs e)
+        private void AddBreadClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.Bread);
             ShowMenu();
         }
 
-        private void addCereals_Click(object sender, EventArgs e)
+        private void AddCerealsClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.Cereals);
             ShowMenu();
         }
 
-        private void addNuts_Click(object sender, EventArgs e)
+        private void AddNutsClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.Nuts);
             ShowMenu();
         }
 
-        private void addSoftDrink_Click(object sender, EventArgs e)
+        private void AddSoftDrinkClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.SoftDrinks);
             ShowMenu();
         }
 
-        private void addAlocohol_Click(object sender, EventArgs e)
+        private void AddAlocoholClick(object sender, EventArgs e)
         {
             WriteDataType(TypeFood.Alchohol);
             ShowMenu();
         }
 
-        private void addToList_Click(object sender, EventArgs e)
+        private void AddToListClick(object sender, EventArgs e)
         {
             NutritionData item = new NutritionData();
 
@@ -425,7 +425,7 @@ namespace CalorimeterUI
             this.Current.Text = AlcoholList.ComboBoxElement.Text;
         }
 
-        private void addProductBtn_Click(object sender, EventArgs e)
+        private void AddProductBtnClick(object sender, EventArgs e)
         {
             string input = this.enterProductWeight.Text;
             int quantity;
@@ -444,7 +444,7 @@ namespace CalorimeterUI
             HideEatForms();
         }
 
-        private void currentDay_Click(object sender, EventArgs e)
+        private void CurrentDayClick(object sender, EventArgs e)
         {
             this.statisticsGraph.Series.Clear();
             this.statisticsGraph.Visible = true;
@@ -488,7 +488,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Series.AddRange(eatenFoodVar);
         }
 
-        private void pastWeek_Click(object sender, EventArgs e)
+        private void PastWeekClick(object sender, EventArgs e)
         {
             this.statisticsGraph.Series.Clear();
             this.statisticsGraph.Visible = true;
@@ -532,7 +532,7 @@ namespace CalorimeterUI
             this.statisticsGraph.Series.AddRange(eatenFoodVar);
         }
 
-        private void lastMonth_Click(object sender, EventArgs e)
+        private void LastMonthClick(object sender, EventArgs e)
         {
             this.statisticsGraph.Series.Clear();
             this.statisticsGraph.Visible = true;
@@ -576,12 +576,12 @@ namespace CalorimeterUI
             this.statisticsGraph.Series.AddRange(eatenFoodVar);
         }
 
-        private void resetStatistics_Click(object sender, EventArgs e)
+        private void ResetStatisticsClick(object sender, EventArgs e)
         {
             HideStatisticsGraph();
         }
 
-        private void removeFromList_Click(object sender, EventArgs e)
+        private void RemoveFromListClick(object sender, EventArgs e)
         {
             this.addProductName.Text = String.Empty;
             this.addCalories.Text = String.Empty;
@@ -590,12 +590,12 @@ namespace CalorimeterUI
             this.addProteins.Text = String.Empty;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1Click(object sender, EventArgs e)
         {
 
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
+        private void LoginBtnClick(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
@@ -610,13 +610,13 @@ namespace CalorimeterUI
             }
         }
 
-        private void logoutBtn_Click(object sender, EventArgs e)
+        private void LogoutBtnClick(object sender, EventArgs e)
         {
             DisableControls();
             this.user.Type = UserType.Anonymous;
         }
 
-        private void registerBtn_Click(object sender, EventArgs e)
+        private void RegisterBtnClick(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.ShowDialog();
@@ -626,13 +626,13 @@ namespace CalorimeterUI
             }
         }
 
-        private void aboutBtn_Click(object sender, EventArgs e)
+        private void AboutBtnClick(object sender, EventArgs e)
         {
             AboutBox aboutBox = new AboutBox();
             aboutBox.ShowDialog();
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
+        private void ExitButtonClick(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -642,7 +642,7 @@ namespace CalorimeterUI
             DBManager.Dispose();
         }
 
-        private void enterProductWeight_TextChanged(object sender, EventArgs e)
+        private void EnterProductWeightTextChanged(object sender, EventArgs e)
         {
             if (!enterProductWeight.Visible)
             {
@@ -660,7 +660,7 @@ namespace CalorimeterUI
             }
         }
 
-        private void enterProductName_TextChanged(object sender, EventArgs e)
+        private void EnterProductNameTextChanged(object sender, EventArgs e)
         {
             if (!addProductName.Visible)
             {
@@ -677,7 +677,7 @@ namespace CalorimeterUI
             }
         }
 
-        private void enterProductCalories_TextChanged(object sender, EventArgs e)
+        private void EnterProductCaloriesTextChanged(object sender, EventArgs e)
         {
             if (!addCalories.Visible)
             {
@@ -716,13 +716,13 @@ namespace CalorimeterUI
             HideEatForms();
         }
 
-        private void showStatistics_Click(object sender, EventArgs e)
+        private void ShowStatisticsClick(object sender, EventArgs e)
         {
             HideAddProcutMenu();
             HideEatForms();
         }
 
-        private void buttonRemoveChangeProducts_Click(object sender, EventArgs e)
+        private void ButtonRemoveChangeProductsClick(object sender, EventArgs e)
         {
             if (this.user.Type != UserType.Admin)
             {
@@ -748,7 +748,7 @@ namespace CalorimeterUI
             memoryGraphics.CopyFromScreen(upperLeft, new Point(0, 0), s);
         }
 
-        private void printDocument_PrintPage(Object sender, PrintPageEventArgs e)
+        private void PrintDocumentPrintPage(Object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(memoryImage, 0, 0);
         }
@@ -763,7 +763,7 @@ namespace CalorimeterUI
             }
         }
 
-        private void buttonSaveToFile_Click(object sender, EventArgs e)
+        private void ButtonSaveToFileClick(object sender, EventArgs e)
         {
             if (currentHistory == null)
             {

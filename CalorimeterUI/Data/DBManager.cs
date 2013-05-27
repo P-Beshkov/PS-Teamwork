@@ -1,12 +1,12 @@
-using Logic;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlServerCe;
-using System.Globalization;
-
 namespace Data
 {
+    using Logic;
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlServerCe;
+    using System.Globalization;
+
     public static class DBManager
     {
         private static SqlCeConnection dbCon;
@@ -16,12 +16,45 @@ namespace Data
         {
             DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");            
         }
-  
-        private static void UpdateDailyHistory()
-        {
 
-        }
-        private static void UpdateHistory()
+        internal static void UpdateDailyHistory()
+        {
+            if (dbCon.State == ConnectionState.Closed)
+            {
+                dbCon.Open();
+            }
+            SqlCeCommand cmd = new SqlCeCommand();
+            cmd.Connection = dbCon;
+            cmd.CommandText = @"SELECT ProductName, Quantity, Id FROM DailyHistory";
+            SqlCeDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string productName = (string)reader["ProductName"];
+                int id = (int)reader["Id"];
+                int quantity = (int)reader["Quantity"];
+                if (quantity > 500)
+                {
+                    quantity -=400;
+                    SqlCeCommand innerCmd = new SqlCeCommand();
+                    innerCmd.Connection = dbCon;
+                    innerCmd.CommandText = String.Format("UPDATE DailyHistory SET Quantity = {0} WHERE Id = {1}", quantity, id);
+                    innerCmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = String.Format("SELECT Calories FROM Products WHERE ProductName='{0}'", productName);
+                SqlCeDataReader caloriesReader = cmd.ExecuteReader();
+                caloriesReader.Read();
+                decimal standartCalories = (decimal)caloriesReader["Calories"];
+                decimal calculatedCalories = standartCalories * quantity * 0.01M;
+
+                cmd.CommandText = String.Format(
+                    "UPDATE DailyHistory SET Calories = {0} WHERE Id = {1}", calculatedCalories, id);
+                cmd.ExecuteNonQuery();
+            }
+
+            dbCon.Close();
+        }            
+
+        internal static void UpdateHistory()
         {
             SqlCeCommand cmd = new SqlCeCommand();
             if (dbCon.State == ConnectionState.Closed)

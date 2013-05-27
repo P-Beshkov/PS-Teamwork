@@ -10,7 +10,7 @@
             InitializeComponent();
         }
 
-        private void buttonRegister_Click(object sender, EventArgs e)
+        private void ButtonRegisterClick(object sender, EventArgs e)
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;

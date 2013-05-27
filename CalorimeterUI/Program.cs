@@ -1,5 +1,6 @@
 ﻿namespace CalorimeterUI
 {
+    using Data;
     using System;
     using System.Linq;
     using System.Threading;
@@ -13,6 +14,7 @@
         [STAThread]
         static void Main()
         {
+            //DBManager.UpdateDailyHistory();
             Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
