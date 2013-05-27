@@ -114,3 +114,4 @@ C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\Calorime
 C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ChangeRemoveProducts.resources
 D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ChangeRemoveProducts.resources
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ChangeRemoveProducts.resources
+C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csprojResolveAssemblyReference.cache

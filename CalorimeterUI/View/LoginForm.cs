@@ -33,10 +33,10 @@ namespace CalorimeterUI.View
             User usr = null;
             if (DBManager.IsUsernameValid(username,password))
             {
-                UserType status;
                 //TODO: LoadUserData must load username, password, name, email, history, status
-                var loadedData = DBManager.LoadUserData(username,out status);
-                usr = new User(username,loadedData, status);                
+                //var loadedData = DBManager.LoadUserData(username,out status);
+                //usr = new User(username, password, name, email, loadedData, status);  
+                usr = DBManager.LoadUserData(username);
                 this.DialogResult = DialogResult.OK;
                 this.User = usr;
                 this.Close();

@@ -134,6 +134,7 @@ namespace Data
 
         internal static void RegisterUser(string username, string password, string email, string name)
         {
+            throw new NotImplementedException("Implement register with name/email");
             if (dbCon.State == ConnectionState.Closed)
             {
                 dbCon.Open();
@@ -147,10 +148,11 @@ namespace Data
             dbCon.Close();
         }
 
-        internal static List<DailyHistory> LoadUserData(string username, out UserType status)
+        internal static User LoadUserData(string username)
         {
+            throw new NotImplementedException("Load user with all data.");
             List<DailyHistory> result = new List<DailyHistory>();
-            status = UserType.Anonymous;
+            var status = UserType.Anonymous;
 
             dbCon.Open();
             string sqlCommand = String.Format(
@@ -211,7 +213,7 @@ namespace Data
             }
 
             dbCon.Close();
-            return result;
+            return null;//result;
         }
 
         internal static void AddEatenFood(string userName, DateTime dateTime, string productName, int quantity)
