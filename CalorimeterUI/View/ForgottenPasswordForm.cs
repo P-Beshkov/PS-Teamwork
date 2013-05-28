@@ -69,18 +69,17 @@ namespace CalorimeterUI.View
 
         private void SendForgottenPasswordToMail(string password, string userEmail)
         {
-            MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("calorimeter.ui@abv.bg");
-            mail.To.Add(new MailAddress(userEmail));
+            MailMessage mail = new MailMessage(new MailAddress("calorimeter.ui@abv.bg"),
+                new MailAddress(userEmail));
             SmtpClient smtpServer = new SmtpClient();
             smtpServer.Port = 465;
             smtpServer.Host = "smtp.abv.bg";
-            smtpServer.Timeout = 2500;
+            smtpServer.Timeout = 10000;
             smtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpServer.UseDefaultCredentials = false;
             smtpServer.Credentials = new NetworkCredential("calorimeter.ui@abv.bg", "viktorpavel");
             smtpServer.EnableSsl = true;
-
+            
             mail.Subject = "Password Recover.";
             mail.Body = "Hello,\n we send you your forgotten passowrd " + password + "\nSee you soon at Calorimeter UI.";
 

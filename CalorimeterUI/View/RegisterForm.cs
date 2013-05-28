@@ -59,7 +59,7 @@
 
             if (DBManager.IsUernameFree(username))
             {
-                DBManager.RegisterUser(username, password, name, email);
+                DBManager.RegisterUser(username, password, email, name);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

@@ -27,6 +27,18 @@
         private UserType type;
         private string email;
 
+        public List<DailyHistory> History
+        {
+            get
+            {
+                return this.history;
+            }
+            set
+            {
+                this.history = value;
+            }
+        }
+
         public string Name
         {
             get { return this.name; }
@@ -57,6 +69,10 @@
             set { nickname = value; }
         }
 
+        public User()
+        {
+
+        }
         public User(string nickname, string password, string name,
             string email,  List<DailyHistory> history, UserType type = UserType.User)
         {

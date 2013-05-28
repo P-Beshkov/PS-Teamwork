@@ -117,3 +117,5 @@ C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\D
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ChangeRemoveUserInformation.resources
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ForgottenPasswordForm.resources
 C:\Users\Viktor\Desktop\Calorimeter - github\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.csprojResolveAssemblyReference.cache
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ChangeRemoveUserInformation.resources
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ForgottenPasswordForm.resources

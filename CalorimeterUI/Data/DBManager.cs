@@ -133,42 +133,67 @@ namespace Data
         }
 
         internal static void RegisterUser(string username, string password, string email, string name)
-        {
-            throw new NotImplementedException("Implement register with name/email");
+        {            
             if (dbCon.State == ConnectionState.Closed)
             {
                 dbCon.Open();
             }
             string hashedPassword = HashFunctions.CalculateMD5Hash(password);
-            string cmdString =
-                String.Format("INSERT INTO Users(Username, Password, Type) VALUES ('{0}','{1}','{2}')",
-                    username, hashedPassword, UserType.User.ToString());
+            string cmdString = String.Format(@"INSERT INTO Users(Username, Password, Type, Name, Email) 
+                VALUES ('{0}','{1}','{2}','{3}','{4}')",
+                username, hashedPassword, UserType.User.ToString(), name, email);
             SqlCeCommand cmd = new SqlCeCommand(cmdString, dbCon);
             cmd.ExecuteNonQuery();
             dbCon.Close();
         }
 
-        internal static User LoadUserData(string username)
+        internal static void ChangeUserData(string username, string newPassword, string newEmail, string newName)
         {
-            throw new NotImplementedException("Load user with all data.");
-            List<DailyHistory> result = new List<DailyHistory>();
-            var status = UserType.Anonymous;
+            if (dbCon.State == ConnectionState.Closed)
+            {
+                dbCon.Open();
+            }
 
-            dbCon.Open();
+            SqlCeCommand cmd = new SqlCeCommand();
+            cmd.Connection = dbCon;
+            string hashedPassword = HashFunctions.CalculateMD5Hash(newPassword);
+            cmd.CommandText = String.Format(
+                @"UPDATE Users SET Password='{0}', Name='{1}', Email='{2}' Where UserName='{3}'",
+                hashedPassword, newName, newEmail, username);
+        }
+
+        internal static User LoadUserData(string username)
+        {            
+            List<DailyHistory> result = new List<DailyHistory>();            
+            User loadedUser = new User();
+
+            if (dbCon.State == ConnectionState.Closed)
+            {
+                dbCon.Open();
+            }           
+            SqlCeCommand command = new SqlCeCommand();
+            command.Connection = dbCon;
+            command.CommandText = String.Format(@"SELECT * FROM Users WHERE UserName='{0}'",username);
+            SqlCeDataReader reader = command.ExecuteReader();
+            reader.Read();
+            loadedUser.Nickname = username;
+            loadedUser.Password = (string)reader["Password"];
+            loadedUser.Type = (UserType)Enum.Parse(typeof(UserType), (string)reader["Type"]);
+            loadedUser.Name = (string)reader["Name"];
+            loadedUser.Email = (string)reader["Email"];
+
             string sqlCommand = String.Format(
-                @"SELECT Users.Type, History.Data, History.DailyCalories, DailyHistory.ProductName, 
+                @"SELECT History.Data, History.DailyCalories, DailyHistory.ProductName, 
                 DailyHistory.Quantity, DailyHistory.Calories, Users.UserName FROM DailyHistory 
                     INNER JOIN History ON DailyHistory.HistoryId = History.Id 
                     INNER JOIN Users ON History.UserName = Users.UserName
                 WHERE  (Users.UserName = '{0}')", username);
-            SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
-            SqlCeDataReader reader = command.ExecuteReader();
-
+            command.CommandText = sqlCommand;
+            reader = command.ExecuteReader();
             using (reader)
             {
                 while (reader.Read())
-                {
-                    status = (UserType)Enum.Parse(typeof(UserType), (string)reader["Type"]);
+                {                    
                     DailyHistory daily = new DailyHistory()
                     {
                         eatenHistory = new List<EatenData>(),
@@ -213,7 +238,8 @@ namespace Data
             }
 
             dbCon.Close();
-            return null;//result;
+            loadedUser.History = result;
+            return loadedUser;
         }
 
         internal static void AddEatenFood(string userName, DateTime dateTime, string productName, int quantity)
@@ -383,7 +409,26 @@ namespace Data
 
         internal static string GetPasswordByEmail(string email)
         {
-            throw new NotImplementedException();
+            if (dbCon.State == ConnectionState.Closed)
+            {
+                dbCon.Open();
+            }
+            SqlCeCommand cmd = new SqlCeCommand();
+            cmd.Connection = dbCon;
+            cmd.CommandText = String.Format(
+                @"SELECT Email, Password FROM Users WHERE Email='{0}'",email);
+            SqlCeDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                string hashedPassword = (string)reader["Password"];
+                string clearTextPassword = HashFunctions.CalculateFromMD5Hash(hashedPassword);
+
+                return clearTextPassword;
+            }
+            else
+            {
+                throw new ArgumentException("This email doesn't exist");
+            }
         }
     }
 }
