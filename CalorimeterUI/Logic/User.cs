@@ -54,7 +54,7 @@
         public string Email
         {
             get { return email; }
-            set { email = Email; }
+            set { email = value; }
         }
 
         public UserType Type
