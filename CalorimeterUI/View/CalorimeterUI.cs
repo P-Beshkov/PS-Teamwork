@@ -602,7 +602,7 @@ namespace CalorimeterUI
             if (form.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Information updated succesfully.");
-                user = DBManager.LoadUserData(user.Nickname);
+                user = DBManager.LoadUserData(form.NewUsername);
                 currentUserName.Text = user.Nickname + "!";
             }
         }
@@ -621,7 +621,7 @@ namespace CalorimeterUI
         private void LogoutBtnClick(object sender, EventArgs e)
         {
             DisableControls();
-            this.user.Type = UserType.Anonymous;
+            this.user = null;
         }
 
         private void RegisterBtnClick(object sender, EventArgs e)

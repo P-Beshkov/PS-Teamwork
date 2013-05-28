@@ -10,6 +10,9 @@ namespace CalorimeterUI.View
     public partial class UserInformation : Form
     {
         private User user;
+
+        public string NewUsername { get; private set; }
+       
         public UserInformation(User user)
         {
             InitializeComponent();
@@ -83,6 +86,7 @@ namespace CalorimeterUI.View
             try
             {
                 DBManager.ChangeUserData(this.user.Nickname, newUsername, newPass, email, name);
+                this.NewUsername = newUsername;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

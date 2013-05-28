@@ -140,6 +140,7 @@
             // 
             this.textBoxRepeatPassword.Location = new System.Drawing.Point(200, 190);
             this.textBoxRepeatPassword.Name = "textBoxRepeatPassword";
+            this.textBoxRepeatPassword.PasswordChar = '•';
             this.textBoxRepeatPassword.Size = new System.Drawing.Size(130, 20);
             this.textBoxRepeatPassword.TabIndex = 4;
             this.textBoxRepeatPassword.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
