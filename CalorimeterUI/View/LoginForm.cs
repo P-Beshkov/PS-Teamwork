@@ -30,13 +30,13 @@ namespace CalorimeterUI.View
                 MessageBox.Show("Enter valid password.");
                 return;
             }
-            // TODO: check if user with this username and this password exist.
             User usr = null;
             if (DBManager.IsUsernameValid(username,password))
             {
-                UserType status;
-                var loadedData = DBManager.LoadUserData(username,out status);
-                usr = new User(username,loadedData, status);                
+                //TODO: LoadUserData must load username, password, name, email, history, status
+                //var loadedData = DBManager.LoadUserData(username,out status);
+                //usr = new User(username, password, name, email, loadedData, status);  
+                usr = DBManager.LoadUserData(username);
                 this.DialogResult = DialogResult.OK;
                 this.User = usr;
                 this.Close();
@@ -57,6 +57,12 @@ namespace CalorimeterUI.View
             {
                 return false;
             }
+        }
+
+        private void labelForgottenPassword_Click(object sender, EventArgs e)
+        {
+            ForgottenPasswordForm form = new ForgottenPasswordForm();
+            form.ShowDialog();
         }
     }
 }

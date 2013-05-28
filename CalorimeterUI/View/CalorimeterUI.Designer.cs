@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalorimeterUI));
-            Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CartesianArea cartesianArea2 = new Telerik.WinControls.UI.CartesianArea();
             this.ChooseFood = new Telerik.WinControls.UI.RadDropDownButton();
             this.Meat = new Telerik.WinControls.UI.RadMenuItem();
             this.MeatList = new Telerik.WinControls.UI.RadMenuComboItem();
@@ -114,6 +114,7 @@
             this.labelUserGreetings = new System.Windows.Forms.Label();
             this.currentUserName = new System.Windows.Forms.Label();
             this.mainGroupBox = new System.Windows.Forms.GroupBox();
+            this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.addCaloriesValidation = new System.Windows.Forms.Label();
             this.addProductNameValidation = new System.Windows.Forms.Label();
@@ -121,10 +122,10 @@
             this.buttonRemoveChangeProducts = new Telerik.WinControls.UI.RadButton();
             this.Current = new Telerik.WinControls.UI.RadTextBoxControl();
             this.type = new Telerik.WinControls.UI.RadTextBoxControl();
-            this.vegetablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
-            this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.buttonChangeRemoveUsers = new Telerik.WinControls.UI.RadButton();
+            this.vegetablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ChooseFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MeatList.ComboBoxElement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FishList.ComboBoxElement)).BeginInit();
@@ -159,6 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveChangeProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Current)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonChangeRemoveUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetablesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1176,7 +1178,7 @@
             // 
             this.statisticsGraph.AccessibleDescription = "statisticsGraph";
             this.statisticsGraph.AccessibleName = "statisticsGraph";
-            this.statisticsGraph.AreaDesign = cartesianArea1;
+            this.statisticsGraph.AreaDesign = cartesianArea2;
             this.statisticsGraph.Location = new System.Drawing.Point(225, 20);
             this.statisticsGraph.Margin = new System.Windows.Forms.Padding(4);
             this.statisticsGraph.Name = "statisticsGraph";
@@ -1505,6 +1507,7 @@
             // mainGroupBox
             // 
             this.mainGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.mainGroupBox.Controls.Add(this.buttonChangeRemoveUsers);
             this.mainGroupBox.Controls.Add(this.buttonSaveToFile);
             this.mainGroupBox.Controls.Add(this.buttonPrint);
             this.mainGroupBox.Controls.Add(this.addCaloriesValidation);
@@ -1531,9 +1534,24 @@
             this.mainGroupBox.Controls.Add(this.addFat);
             this.mainGroupBox.Location = new System.Drawing.Point(12, 70);
             this.mainGroupBox.Name = "mainGroupBox";
-            this.mainGroupBox.Size = new System.Drawing.Size(976, 511);
+            this.mainGroupBox.Size = new System.Drawing.Size(976, 567);
             this.mainGroupBox.TabIndex = 33;
             this.mainGroupBox.TabStop = false;
+            // 
+            // buttonSaveToFile
+            // 
+            this.buttonSaveToFile.BackColor = System.Drawing.Color.White;
+            this.buttonSaveToFile.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.buttonSaveToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveToFile.Image")));
+            this.buttonSaveToFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSaveToFile.Location = new System.Drawing.Point(596, 390);
+            this.buttonSaveToFile.Name = "buttonSaveToFile";
+            this.buttonSaveToFile.Size = new System.Drawing.Size(120, 40);
+            this.buttonSaveToFile.TabIndex = 29;
+            this.buttonSaveToFile.Text = "Save to file";
+            this.buttonSaveToFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSaveToFile.UseVisualStyleBackColor = false;
+            this.buttonSaveToFile.Click += new System.EventHandler(this.ButtonSaveToFileClick);
             // 
             // buttonPrint
             // 
@@ -1634,10 +1652,6 @@
             this.type.Text = "Type";
             this.type.Visible = false;
             // 
-            // vegetablesBindingSource
-            // 
-            this.vegetablesBindingSource.DataSource = typeof(Logic.TypeFood);
-            // 
             // printPreviewDialog
             // 
             this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -1648,20 +1662,28 @@
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
             // 
-            // buttonSaveToFile
+            // buttonChangeRemoveUsers
             // 
-            this.buttonSaveToFile.BackColor = System.Drawing.Color.White;
-            this.buttonSaveToFile.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.buttonSaveToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveToFile.Image")));
-            this.buttonSaveToFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSaveToFile.Location = new System.Drawing.Point(596, 390);
-            this.buttonSaveToFile.Name = "buttonSaveToFile";
-            this.buttonSaveToFile.Size = new System.Drawing.Size(120, 40);
-            this.buttonSaveToFile.TabIndex = 29;
-            this.buttonSaveToFile.Text = "Save to file";
-            this.buttonSaveToFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSaveToFile.UseVisualStyleBackColor = false;
-            this.buttonSaveToFile.Click += new System.EventHandler(this.ButtonSaveToFileClick);
+            this.buttonChangeRemoveUsers.AccessibleDescription = "showProductDesc";
+            this.buttonChangeRemoveUsers.AccessibleName = "showProductDesc";
+            this.buttonChangeRemoveUsers.Image = ((System.Drawing.Image)(resources.GetObject("buttonChangeRemoveUsers.Image")));
+            this.buttonChangeRemoveUsers.Location = new System.Drawing.Point(6, 481);
+            this.buttonChangeRemoveUsers.Name = "buttonChangeRemoveUsers";
+            this.buttonChangeRemoveUsers.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            // 
+            // 
+            // 
+            this.buttonChangeRemoveUsers.RootElement.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.buttonChangeRemoveUsers.Size = new System.Drawing.Size(188, 75);
+            this.buttonChangeRemoveUsers.TabIndex = 12;
+            this.buttonChangeRemoveUsers.Text = "<html>Change/Remove<br />user information</html>";
+            this.buttonChangeRemoveUsers.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonChangeRemoveUsers.ThemeName = "TelerikMetroTouch";
+            this.buttonChangeRemoveUsers.Click += new System.EventHandler(this.ButtonChangeRemoveUsersClick);
+            // 
+            // vegetablesBindingSource
+            // 
+            this.vegetablesBindingSource.DataSource = typeof(Logic.TypeFood);
             // 
             // CalorimeterUI
             // 
@@ -1670,7 +1692,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1004, 583);
+            this.ClientSize = new System.Drawing.Size(1004, 649);
             this.Controls.Add(this.mainGroupBox);
             this.Controls.Add(this.currentUserName);
             this.Controls.Add(this.labelUserGreetings);
@@ -1719,6 +1741,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveChangeProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Current)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonChangeRemoveUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetablesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1820,7 +1843,8 @@
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
         private System.Windows.Forms.Button buttonSaveToFile;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog; // this is an image file that i can't delete,cause crashes my program.
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private Telerik.WinControls.UI.RadButton buttonChangeRemoveUsers; // this is an image file that i can't delete,cause crashes my program.
     }
 }
 

@@ -48,7 +48,7 @@ namespace CalorimeterUI
             registerBtn.Visible = false;
             loginBtn.Visible = false;
             logoutBtn.Visible = true;
-            currentUserName.Text = this.user.Name + "!";
+            currentUserName.Text = this.user.Nickname + "!";
             if (this.user.Type == UserType.Admin)
             {
                 AddProduct.Visible = true;
@@ -440,7 +440,7 @@ namespace CalorimeterUI
             //user.AddEatenFood(DateTime.Now, Current.Text, quantity);
             string productName = Current.Text;
 
-            DBManager.AddEatenFood(user.Name, DateTime.Now, productName, quantity);
+            DBManager.AddEatenFood(user.Nickname, DateTime.Now, productName, quantity);
             HideEatForms();
         }
 
@@ -473,7 +473,7 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            currentHistory = DBManager.LoadHistory(1, user.Name);
+            currentHistory = DBManager.LoadHistory(1, user.Nickname);
             if (currentHistory.Count != 0)
             {
                 eatenFood.Rows.Add("Today", currentHistory[0].Item2);
@@ -517,7 +517,7 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            currentHistory = DBManager.LoadHistory(7, user.Name);
+            currentHistory = DBManager.LoadHistory(7, user.Nickname);
 
             for (int i = 0; i < currentHistory.Count; i++)
             {
@@ -561,7 +561,7 @@ namespace CalorimeterUI
                 table.Columns.Add("Usage", typeof(double));
             }
 
-            currentHistory = DBManager.LoadHistory(30, user.Name);
+            currentHistory = DBManager.LoadHistory(30, user.Nickname);
 
             for (int i = 0; i < currentHistory.Count; i++)
             {
@@ -733,6 +733,17 @@ namespace CalorimeterUI
             form.ShowDialog();
         }
 
+        private void ButtonChangeRemoveUsersClick(object sender, EventArgs e)
+        {
+            if (this.user.Type != UserType.Admin)
+            {
+                MessageBox.Show("You are not allowed to add/change/remove user information.");
+                return;
+            }
+            ChangeRemoveUserInformation form = new ChangeRemoveUserInformation();
+            form.ShowDialog();
+        }
+
         private void CaptureScreen()
         {
             int graphX = statisticsGraph.Location.X;
@@ -779,7 +790,7 @@ namespace CalorimeterUI
             {
                 try
                 {
-                    FileManager.SaveUserData(this.user.Name, currentHistory, saveFileDialog.FileName, true);
+                    FileManager.SaveUserData(this.user.Nickname, currentHistory, saveFileDialog.FileName, true);
                 }
                 catch (ArgumentException ae)
                 {
@@ -790,10 +801,6 @@ namespace CalorimeterUI
                     MessageBox.Show(ioe.Message);
                 }
             }
-
-
-
-
         }
     }
 }

@@ -21,9 +21,29 @@
     public class User
     {
         private List<DailyHistory> history;
+        private string nickname;
+        private string password;
         private string name;
         private UserType type;
-        public string title;
+        private string email;
+
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+
+        public string Password
+        {
+            get { return this.password; }
+            set { this.password = value; }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set { email = Email; }
+        }
 
         public UserType Type
         {
@@ -31,16 +51,20 @@
             set { type = value; }
         }
 
-        public string Name
+        public string Nickname
         {
-            get { return name; }
-            set { name = value; }
+            get { return nickname; }
+            set { nickname = value; }
         }
 
-        public User(string name, List<DailyHistory> history, UserType type=UserType.User)
+        public User(string nickname, string password, string name,
+            string email,  List<DailyHistory> history, UserType type = UserType.User)
         {
-            this.history = history;
+            this.Nickname = nickname;
+            this.Password = password;
             this.Name = name;
+            this.Email = email;
+            this.history = history;
             this.Type = type;
         }
     }
