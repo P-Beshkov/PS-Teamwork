@@ -42,9 +42,8 @@
 
         private void ChangeRemoveUserInformation_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'calorimeterLocalDataSet1.Users' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'calorimeterLocalDataSet2.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.dataSetForUsers.Users);
-
         }
     }
 }

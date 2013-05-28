@@ -11,6 +11,7 @@ namespace Data
     {
         private static SqlCeConnection dbCon;
         private static SqlCeDataAdapter dataAdapter;
+        private static string encDecKey = "calorimeterPS";
 
         static DBManager()
         {
@@ -85,9 +86,9 @@ namespace Data
             {
                 dbCon.Open();
             }
-            string hashedPassword = HashFunctions.CalculateMD5Hash(password);
+            string encryptedPassword = RijndaelEncryptDecrypt.Encrypt(password, encDecKey);
             string sqlCommand = String.Format(@"SELECT UserName, Password FROM     Users
-                WHERE  UserName = '{0}' AND Password = '{1}'", username, hashedPassword);
+                WHERE  UserName = '{0}' AND Password = '{1}'", username, encryptedPassword);
             SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
             SqlCeDataReader reader = command.ExecuteReader();
 
@@ -132,22 +133,46 @@ namespace Data
             }
         }
 
+        internal static bool IsEmailFree(string email)
+        {
+            if (dbCon.State == ConnectionState.Closed)
+            {
+                dbCon.Open();
+            }
+
+            string sqlCommand = String.Format(@"SELECT Email FROM Users WHERE  Email = '{0}'", email);
+            SqlCeCommand command = new SqlCeCommand(sqlCommand, dbCon);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            using (reader)
+            {
+                bool isFree = true;
+                if (reader.Read())
+                {
+                    isFree = false;
+                }
+
+                dbCon.Close();
+                return isFree;
+            }
+        }
+
         internal static void RegisterUser(string username, string password, string email, string name)
         {            
             if (dbCon.State == ConnectionState.Closed)
             {
                 dbCon.Open();
             }
-            string hashedPassword = HashFunctions.CalculateMD5Hash(password);
+            string encryptedPassword = RijndaelEncryptDecrypt.Encrypt(password, encDecKey);
             string cmdString = String.Format(@"INSERT INTO Users(Username, Password, Type, Name, Email) 
                 VALUES ('{0}','{1}','{2}','{3}','{4}')",
-                username, hashedPassword, UserType.User.ToString(), name, email);
+                username, encryptedPassword, UserType.User.ToString(), name, email);
             SqlCeCommand cmd = new SqlCeCommand(cmdString, dbCon);
             cmd.ExecuteNonQuery();
             dbCon.Close();
         }
 
-        internal static void ChangeUserData(string username, string newPassword, string newEmail, string newName)
+        internal static void ChangeUserData(string username, string newUserName, string newPassword, string newEmail, string newName)
         {
             if (dbCon.State == ConnectionState.Closed)
             {
@@ -156,10 +181,13 @@ namespace Data
 
             SqlCeCommand cmd = new SqlCeCommand();
             cmd.Connection = dbCon;
-            string hashedPassword = HashFunctions.CalculateMD5Hash(newPassword);
+            string encryptedPassword = RijndaelEncryptDecrypt.Encrypt(newPassword, encDecKey);
             cmd.CommandText = String.Format(
-                @"UPDATE Users SET Password='{0}', Name='{1}', Email='{2}' Where UserName='{3}'",
-                hashedPassword, newName, newEmail, username);
+                @"UPDATE Users SET UserName='{0}', Password='{1}', Name='{2}', Email='{3}' Where UserName='{4}'",
+                newUserName, encryptedPassword, newName, newEmail, username);
+
+            cmd.ExecuteNonQuery();
+            dbCon.Close();
         }
 
         internal static User LoadUserData(string username)
@@ -420,14 +448,14 @@ namespace Data
             SqlCeDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                string hashedPassword = (string)reader["Password"];
-                string clearTextPassword = HashFunctions.CalculateFromMD5Hash(hashedPassword);
+                string encryptedPassword = (string)reader["Password"];
+                string decryptedPassword = RijndaelEncryptDecrypt.Decrypt(encryptedPassword, encDecKey);
 
-                return clearTextPassword;
+                return decryptedPassword;
             }
             else
             {
-                throw new ArgumentException("This email doesn't exist");
+                throw new ArgumentException("This email doesn't exist in database.");
             }
         }
     }

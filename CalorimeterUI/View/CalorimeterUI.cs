@@ -34,6 +34,7 @@ namespace CalorimeterUI
             currentUserName.Text = "anonymous!";
             AddProduct.Visible = false;
             buttonRemoveChangeProducts.Visible = false;
+            buttonChangeRemoveUsers.Visible = false;
             loginBtn.Visible = true;
             registerBtn.Visible = true;
             HideEatForms();
@@ -53,6 +54,7 @@ namespace CalorimeterUI
             {
                 AddProduct.Visible = true;
                 buttonRemoveChangeProducts.Visible = true;
+                buttonChangeRemoveUsers.Visible = true;
             }
         }
 
@@ -590,9 +592,15 @@ namespace CalorimeterUI
             this.addProteins.Text = String.Empty;
         }
 
-        private void Label1Click(object sender, EventArgs e)
+        private void UserNameClick(object sender, EventArgs e)
         {
-
+            UserInformation form = new UserInformation(this.user);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Information updated succesfully.");
+                user = DBManager.LoadUserData(user.Nickname);
+                currentUserName.Text = user.Nickname + "!";
+            }
         }
 
         private void LoginBtnClick(object sender, EventArgs e)
@@ -601,11 +609,7 @@ namespace CalorimeterUI
             loginForm.ShowDialog();
             if (loginForm.DialogResult == DialogResult.OK)
             {
-                //TODO: Remove and replace with loginForm.User when it's rdy
-                //only for test
-                this.user = loginForm.User;//new User("Winnie the Pooh");
-                //this.userStatus = user.userStatus;
-
+                this.user = loginForm.User;
                 EnableControls();
             }
         }

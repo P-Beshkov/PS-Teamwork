@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalorimeterUI));
-            Telerik.WinControls.UI.CartesianArea cartesianArea2 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
             this.ChooseFood = new Telerik.WinControls.UI.RadDropDownButton();
             this.Meat = new Telerik.WinControls.UI.RadMenuItem();
             this.MeatList = new Telerik.WinControls.UI.RadMenuComboItem();
@@ -114,6 +114,7 @@
             this.labelUserGreetings = new System.Windows.Forms.Label();
             this.currentUserName = new System.Windows.Forms.Label();
             this.mainGroupBox = new System.Windows.Forms.GroupBox();
+            this.buttonChangeRemoveUsers = new Telerik.WinControls.UI.RadButton();
             this.buttonSaveToFile = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.addCaloriesValidation = new System.Windows.Forms.Label();
@@ -124,7 +125,6 @@
             this.type = new Telerik.WinControls.UI.RadTextBoxControl();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.buttonChangeRemoveUsers = new Telerik.WinControls.UI.RadButton();
             this.vegetablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ChooseFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MeatList.ComboBoxElement)).BeginInit();
@@ -157,10 +157,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.appleBindingSource)).BeginInit();
             this.userStatusButtons.SuspendLayout();
             this.mainGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonChangeRemoveUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveChangeProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Current)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.type)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonChangeRemoveUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetablesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1178,7 +1178,7 @@
             // 
             this.statisticsGraph.AccessibleDescription = "statisticsGraph";
             this.statisticsGraph.AccessibleName = "statisticsGraph";
-            this.statisticsGraph.AreaDesign = cartesianArea2;
+            this.statisticsGraph.AreaDesign = cartesianArea1;
             this.statisticsGraph.Location = new System.Drawing.Point(225, 20);
             this.statisticsGraph.Margin = new System.Windows.Forms.Padding(4);
             this.statisticsGraph.Name = "statisticsGraph";
@@ -1502,7 +1502,7 @@
             this.currentUserName.Size = new System.Drawing.Size(125, 25);
             this.currentUserName.TabIndex = 32;
             this.currentUserName.Text = " anonymous!";
-            this.currentUserName.Click += new System.EventHandler(this.Label1Click);
+            this.currentUserName.Click += new System.EventHandler(this.UserNameClick);
             // 
             // mainGroupBox
             // 
@@ -1537,6 +1537,26 @@
             this.mainGroupBox.Size = new System.Drawing.Size(976, 567);
             this.mainGroupBox.TabIndex = 33;
             this.mainGroupBox.TabStop = false;
+            // 
+            // buttonChangeRemoveUsers
+            // 
+            this.buttonChangeRemoveUsers.AccessibleDescription = "showProductDesc";
+            this.buttonChangeRemoveUsers.AccessibleName = "showProductDesc";
+            this.buttonChangeRemoveUsers.Image = ((System.Drawing.Image)(resources.GetObject("buttonChangeRemoveUsers.Image")));
+            this.buttonChangeRemoveUsers.Location = new System.Drawing.Point(6, 481);
+            this.buttonChangeRemoveUsers.Name = "buttonChangeRemoveUsers";
+            this.buttonChangeRemoveUsers.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            // 
+            // 
+            // 
+            this.buttonChangeRemoveUsers.RootElement.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.buttonChangeRemoveUsers.Size = new System.Drawing.Size(188, 75);
+            this.buttonChangeRemoveUsers.TabIndex = 12;
+            this.buttonChangeRemoveUsers.Text = "<html>Change/Remove<br />user information</html>";
+            this.buttonChangeRemoveUsers.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonChangeRemoveUsers.ThemeName = "TelerikMetroTouch";
+            this.buttonChangeRemoveUsers.Visible = false;
+            this.buttonChangeRemoveUsers.Click += new System.EventHandler(this.ButtonChangeRemoveUsersClick);
             // 
             // buttonSaveToFile
             // 
@@ -1662,25 +1682,6 @@
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
             // 
-            // buttonChangeRemoveUsers
-            // 
-            this.buttonChangeRemoveUsers.AccessibleDescription = "showProductDesc";
-            this.buttonChangeRemoveUsers.AccessibleName = "showProductDesc";
-            this.buttonChangeRemoveUsers.Image = ((System.Drawing.Image)(resources.GetObject("buttonChangeRemoveUsers.Image")));
-            this.buttonChangeRemoveUsers.Location = new System.Drawing.Point(6, 481);
-            this.buttonChangeRemoveUsers.Name = "buttonChangeRemoveUsers";
-            this.buttonChangeRemoveUsers.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            // 
-            // 
-            // 
-            this.buttonChangeRemoveUsers.RootElement.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.buttonChangeRemoveUsers.Size = new System.Drawing.Size(188, 75);
-            this.buttonChangeRemoveUsers.TabIndex = 12;
-            this.buttonChangeRemoveUsers.Text = "<html>Change/Remove<br />user information</html>";
-            this.buttonChangeRemoveUsers.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonChangeRemoveUsers.ThemeName = "TelerikMetroTouch";
-            this.buttonChangeRemoveUsers.Click += new System.EventHandler(this.ButtonChangeRemoveUsersClick);
-            // 
             // vegetablesBindingSource
             // 
             this.vegetablesBindingSource.DataSource = typeof(Logic.TypeFood);
@@ -1738,10 +1739,10 @@
             this.userStatusButtons.ResumeLayout(false);
             this.mainGroupBox.ResumeLayout(false);
             this.mainGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonChangeRemoveUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveChangeProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Current)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.type)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonChangeRemoveUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetablesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

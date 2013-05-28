@@ -51,7 +51,7 @@ namespace CalorimeterUI.View
             {
                 try
                 {
-                    string password = "gosho";//DBManager.GetPasswordByEmail(email);
+                    string password = DBManager.GetPasswordByEmail(email);
                     SendForgottenPasswordToMail(password, email);
                     MessageBox.Show("Password send. Check your email within a few minutes.");
                 }
@@ -69,21 +69,32 @@ namespace CalorimeterUI.View
 
         private void SendForgottenPasswordToMail(string password, string userEmail)
         {
-            MailMessage mail = new MailMessage(new MailAddress("calorimeter.ui@abv.bg"),
-                new MailAddress(userEmail));
-            SmtpClient smtpServer = new SmtpClient();
-            smtpServer.Port = 465;
-            smtpServer.Host = "smtp.abv.bg";
-            smtpServer.Timeout = 10000;
-            smtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpServer.UseDefaultCredentials = false;
-            smtpServer.Credentials = new NetworkCredential("calorimeter.ui@abv.bg", "viktorpavel");
-            smtpServer.EnableSsl = true;
-            
-            mail.Subject = "Password Recover.";
-            mail.Body = "Hello,\n we send you your forgotten passowrd " + password + "\nSee you soon at Calorimeter UI.";
+            string fromEmail = "Calorimeter.UI@gmail.com";
+            string fromName = "Calorimeter";
+            MailAddress fromAddress = new MailAddress(fromEmail, fromName);
+            MailAddress toAddress = new MailAddress(userEmail, "Mr./Mrs.");
 
-            smtpServer.Send(mail);
+            string fromPassword = "pavelviktor";
+            string subject = "Calorimeter password recover";
+            string body = "Hello,\n we send you your forgotten passowrd - " + password + "\nSee you soon at Calorimeter UI.";
+
+            SmtpClient smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
         }
     }
 }

@@ -57,15 +57,27 @@
                 return;
             }
 
-            if (DBManager.IsUernameFree(username))
+            if (!DBManager.IsUernameFree(username))
+            {
+                MessageBox.Show("Username is not available. Please enter another one.");
+                return;
+            }
+
+            if (!DBManager.IsEmailFree(email))
+            {
+                MessageBox.Show("Email is not available. Please enter another one.");
+                return;
+            }
+
+            try
             {
                 DBManager.RegisterUser(username, password, email, name);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Username is not available. Please enter another one.");
+                MessageBox.Show("Registration not succesfull. "+ ex.Message);
             }
         }
 

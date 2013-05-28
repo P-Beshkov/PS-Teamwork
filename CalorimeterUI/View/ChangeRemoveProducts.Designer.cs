@@ -161,6 +161,7 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
             this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,9 +177,11 @@
             // 
             // ChangeRemoveProducts
             // 
+            this.AcceptButton = this.buttonSaveToDB;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.CancelButton = this.buttonClose;
             this.ClientSize = new System.Drawing.Size(686, 486);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSaveToDB);

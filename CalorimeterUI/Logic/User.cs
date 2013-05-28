@@ -54,19 +54,19 @@
         public string Email
         {
             get { return email; }
-            set { email = Email; }
+            set { this.email = value; }
         }
 
         public UserType Type
         {
             get { return type; }
-            set { type = value; }
+            set { this.type = value; }
         }
 
         public string Nickname
         {
             get { return nickname; }
-            set { nickname = value; }
+            set { this.nickname = value; }
         }
 
         public User()
