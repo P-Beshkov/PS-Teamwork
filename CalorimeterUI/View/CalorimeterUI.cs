@@ -733,6 +733,17 @@ namespace CalorimeterUI
             form.ShowDialog();
         }
 
+        private void ButtonChangeRemoveUsersClick(object sender, EventArgs e)
+        {
+            if (this.user.Type != UserType.Admin)
+            {
+                MessageBox.Show("You are not allowed to add/change/remove user information.");
+                return;
+            }
+            ChangeRemoveUserInformation form = new ChangeRemoveUserInformation();
+            form.ShowDialog();
+        }
+
         private void CaptureScreen()
         {
             int graphX = statisticsGraph.Location.X;
@@ -790,10 +801,6 @@ namespace CalorimeterUI
                     MessageBox.Show(ioe.Message);
                 }
             }
-
-
-
-
         }
     }
 }

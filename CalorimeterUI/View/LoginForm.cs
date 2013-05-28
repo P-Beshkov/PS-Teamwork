@@ -58,5 +58,11 @@ namespace CalorimeterUI.View
                 return false;
             }
         }
+
+        private void labelForgottenPassword_Click(object sender, EventArgs e)
+        {
+            ForgottenPasswordForm form = new ForgottenPasswordForm();
+            form.ShowDialog();
+        }
     }
 }

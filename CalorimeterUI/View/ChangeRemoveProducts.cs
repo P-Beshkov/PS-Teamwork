@@ -10,22 +10,28 @@
         private DataSet dataSet = new DataSet();
         public ChangeRemoveProducts()
         {
-            InitializeComponent();        
+            InitializeComponent();
 
-            DBManager.GetProductsData(dataSet);
+            DBManager.GetProductsData(dataSet, "Products");
             dataGridView1.DataSource = dataSet;
             dataGridView1.DataMember = "Products";
         }
 
         private void ChangeRemoveProducts_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'calorimeterLocalDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.calorimeterLocalDataSet.Products);
+            this.productsTableAdapter.Fill(this.localDataSetForPorducts.Products);
         }
 
         private void BtnSaveGridDataClick(object sender, EventArgs e)
         {
-            DBManager.UpdateAdapter(dataSet, "Products");
+            try
+            {
+                DBManager.UpdateAdapter(dataSet, "Products");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while saving in database. " + ex.Message);
+            }
         }
 
         private void ButtonCloseClick(object sender, EventArgs e)

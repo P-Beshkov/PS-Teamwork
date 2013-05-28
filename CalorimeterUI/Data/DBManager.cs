@@ -14,7 +14,7 @@ namespace Data
 
         static DBManager()
         {
-            DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");            
+            DBManager.dbCon = new SqlCeConnection("Data Source=..\\..\\CalorimeterLocal.sdf");
         }
 
         internal static void UpdateDailyHistory()
@@ -34,7 +34,7 @@ namespace Data
                 int quantity = (int)reader["Quantity"];
                 if (quantity > 500)
                 {
-                    quantity -=400;
+                    quantity -= 400;
                     SqlCeCommand innerCmd = new SqlCeCommand();
                     innerCmd.Connection = dbCon;
                     innerCmd.CommandText = String.Format("UPDATE DailyHistory SET Quantity = {0} WHERE Id = {1}", quantity, id);
@@ -52,7 +52,7 @@ namespace Data
             }
 
             dbCon.Close();
-        }            
+        }
 
         internal static void UpdateHistory()
         {
@@ -271,7 +271,7 @@ namespace Data
                 @"UPDATE History SET DailyCalories = {0} WHERE Id={1}", newCalories, historyId);
             cmd.ExecuteNonQuery();
 
-            dbCon.Close();            
+            dbCon.Close();
         }
 
         internal static void AddNewFood(NutritionData item)
@@ -358,27 +358,32 @@ namespace Data
             dbCon.Dispose();
         }
 
-        internal static void GetProductsData(System.Data.DataSet dataSet)
+        internal static void GetProductsData(DataSet dataSet, string tableName)
         {
             SqlCeCommandBuilder cmdBldr;
             if (dbCon.State == ConnectionState.Closed)
             {
                 dbCon.Open();
             }
-            DBManager.dataAdapter = new SqlCeDataAdapter("Select * from Products", dbCon);
+            DBManager.dataAdapter = new SqlCeDataAdapter("Select * from " + tableName, dbCon);
             cmdBldr = new SqlCeCommandBuilder(dataAdapter);
-            dataAdapter.Fill(dataSet, "Products");
+            dataAdapter.Fill(dataSet, tableName);
             dbCon.Close();
         }
 
-        internal static void UpdateAdapter(DataSet dataSet, string srcTable)
+        internal static void UpdateAdapter(DataSet dataSet, string tableName)
         {
             if (dbCon.State == ConnectionState.Closed)
             {
                 dbCon.Open();
             }
-            dataAdapter.Update(dataSet, "Products");
+            dataAdapter.Update(dataSet, tableName);
             dbCon.Close();
+        }
+
+        internal static string GetPasswordByEmail(string email)
+        {
+            throw new NotImplementedException();
         }
     }
 }

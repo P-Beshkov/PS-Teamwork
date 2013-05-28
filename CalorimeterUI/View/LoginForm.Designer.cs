@@ -36,6 +36,7 @@
             this.labelLogin = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.labelForgottenPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelUsername
@@ -43,7 +44,7 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelUsername.Location = new System.Drawing.Point(63, 118);
+            this.labelUsername.Location = new System.Drawing.Point(94, 120);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(91, 20);
             this.labelUsername.TabIndex = 0;
@@ -54,7 +55,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.BackColor = System.Drawing.Color.Transparent;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelPassword.Location = new System.Drawing.Point(66, 152);
+            this.labelPassword.Location = new System.Drawing.Point(103, 150);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(82, 20);
             this.labelPassword.TabIndex = 1;
@@ -62,18 +63,18 @@
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(196, 119);
+            this.textBoxUsername.Location = new System.Drawing.Point(200, 120);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(130, 20);
-            this.textBoxUsername.TabIndex = 2;
+            this.textBoxUsername.TabIndex = 1;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(196, 152);
+            this.textBoxPassword.Location = new System.Drawing.Point(200, 150);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(130, 20);
-            this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.TabIndex = 2;
             // 
             // labelLogin
             // 
@@ -92,7 +93,7 @@
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCancel.Location = new System.Drawing.Point(67, 199);
+            this.buttonCancel.Location = new System.Drawing.Point(220, 210);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(110, 50);
             this.buttonCancel.TabIndex = 5;
@@ -105,14 +106,26 @@
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonLogin.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogin.Image")));
             this.buttonLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonLogin.Location = new System.Drawing.Point(216, 199);
+            this.buttonLogin.Location = new System.Drawing.Point(75, 210);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(110, 50);
-            this.buttonLogin.TabIndex = 6;
+            this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.ButtonLoginClick);
+            // 
+            // labelForgottenPassword
+            // 
+            this.labelForgottenPassword.BackColor = System.Drawing.Color.Transparent;
+            this.labelForgottenPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))));
+            this.labelForgottenPassword.ForeColor = System.Drawing.Color.White;
+            this.labelForgottenPassword.Location = new System.Drawing.Point(157, 180);
+            this.labelForgottenPassword.Name = "labelForgottenPassword";
+            this.labelForgottenPassword.Size = new System.Drawing.Size(173, 23);
+            this.labelForgottenPassword.TabIndex = 10;
+            this.labelForgottenPassword.Text = "Forgot your password?";
+            this.labelForgottenPassword.Click += new System.EventHandler(this.labelForgottenPassword_Click);
             // 
             // LoginForm
             // 
@@ -122,6 +135,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(404, 282);
+            this.Controls.Add(this.labelForgottenPassword);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelLogin);
@@ -147,6 +161,7 @@
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Label labelForgottenPassword;
 
     }
 }

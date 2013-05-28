@@ -81,6 +81,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CalorimeterLocalDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CalorimeterLocalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalorimeterLocalDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\DBManager.cs" />
     <Compile Include="Data\FileManager.cs" />
     <Compile Include="Logic\HashFunctions.cs" />
@@ -135,6 +140,18 @@
     <Compile Include="View\ChangeRemoveProducts.Designer.cs">
       <DependentUpon>ChangeRemoveProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ChangeRemoveUserInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChangeRemoveUserInformation.Designer.cs">
+      <DependentUpon>ChangeRemoveUserInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ForgottenPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ForgottenPasswordForm.Designer.cs">
+      <DependentUpon>ForgottenPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +182,12 @@
     <EmbeddedResource Include="View\ChangeRemoveProducts.resx">
       <DependentUpon>ChangeRemoveProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ChangeRemoveUserInformation.resx">
+      <DependentUpon>ChangeRemoveUserInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ForgottenPasswordForm.resx">
+      <DependentUpon>ForgottenPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +204,17 @@
     </None>
     <None Include="CalorimeterLocalDataSet.xss">
       <DependentUpon>CalorimeterLocalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CalorimeterLocalDataSet1.xsc">
+      <DependentUpon>CalorimeterLocalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CalorimeterLocalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CalorimeterLocalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CalorimeterLocalDataSet1.xss">
+      <DependentUpon>CalorimeterLocalDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Logic\CalorimeterDiagram.cd" />
     <EntityDeploy Include="Model1.edmx">
@@ -255,6 +289,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\notvalid20px.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\user-information.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\mail.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Content Include="TODO List.txt" />
