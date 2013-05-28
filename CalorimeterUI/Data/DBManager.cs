@@ -182,10 +182,21 @@ namespace Data
             SqlCeCommand cmd = new SqlCeCommand();
             cmd.Connection = dbCon;
             string encryptedPassword = RijndaelEncryptDecrypt.Encrypt(newPassword, encDecKey);
+            //cmd.CommandText = String.Format(
+            //    @"ALTER TABLE History NOCHECK CONSTRAINT UserName");
+            //cmd.ExecuteNonQuery();
+
+            //cmd.CommandText = String.Format(
+            //    @"UPDATE History SET UserName = '{0}' WHERE UserName = '{1}'",newUserName,username);
+            //cmd.ExecuteNonQuery();
+            
             cmd.CommandText = String.Format(
                 @"UPDATE Users SET UserName='{0}', Password='{1}', Name='{2}', Email='{3}' Where UserName='{4}'",
                 newUserName, encryptedPassword, newName, newEmail, username);
+            cmd.ExecuteNonQuery();
 
+            //cmd.CommandText = String.Format(
+            //    @"ALTER TABLE History CHECK CONSTRAINT UserName");
             cmd.ExecuteNonQuery();
             dbCon.Close();
         }

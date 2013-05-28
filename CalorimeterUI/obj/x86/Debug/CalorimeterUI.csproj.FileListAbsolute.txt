@@ -121,3 +121,4 @@ D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ForgottenPa
 C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ChangeRemoveUserInformation.resources
 C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.ForgottenPasswordForm.resources
 C:\Users\Viktor\Desktop\git new\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.UserInformation.resources
+D:\School\PS-Teamwork\CalorimeterUI\obj\x86\Debug\CalorimeterUI.View.UserInformation.resources

@@ -594,6 +594,10 @@ namespace CalorimeterUI
 
         private void UserNameClick(object sender, EventArgs e)
         {
+            if (this.user == null)
+            {
+                return;
+            }
             UserInformation form = new UserInformation(this.user);
             if (form.ShowDialog() == DialogResult.OK)
             {
