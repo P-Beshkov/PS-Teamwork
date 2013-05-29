@@ -54,6 +54,7 @@ namespace CalorimeterUI.View
                     string password = DBManager.GetPasswordByEmail(email);
                     SendForgottenPasswordToMail(password, email);
                     MessageBox.Show("Password send. Check your email within a few minutes.");
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
