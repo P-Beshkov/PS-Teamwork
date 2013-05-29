@@ -18,6 +18,10 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="History" EntitySet="History" />
           </AssociationSet>
+          <AssociationSet Name="Update user's nickname" Association="Model1.Store.Update user's nickname">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="History" EntitySet="History" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="DailyHistory">
           <Key>
@@ -56,7 +60,9 @@
           </Key>
           <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Type" Type="nvarchar" MaxLength="20" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <Association Name="DailyHistory_History">
           <End Role="History" Type="Model1.Store.History" Multiplicity="1" />
@@ -72,6 +78,20 @@
         </Association>
         <Association Name="History_Users">
           <End Role="Users" Type="Model1.Store.Users" Multiplicity="1" />
+          <End Role="History" Type="Model1.Store.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Update user's nickname">
+          <End Role="Users" Type="Model1.Store.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="History" Type="Model1.Store.History" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -140,8 +160,10 @@
           </Key>
           <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="History" Relationship="Model1.History_Users" FromRole="Users1" ToRole="History1" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="DailyHistory_History">
           <End Type="Model1.History" Role="History1" Multiplicity="1" />
@@ -211,6 +233,8 @@
           <EntitySetMapping Name="UsersSet">
             <EntityTypeMapping TypeName="Model1.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Logic.User">
+    <Position X="0.5" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAgAAAAAAQAAAAFAAACAQACAgAAAwA=</HashCode>
+      <FileName>Logic\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Logic.NutritionData">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAAAAQAAAAAAAAAAAAFAAAAAACAACAAAAA=</HashCode>
+      <FileName>Logic\NutritionData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="Logic.EatenData">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAgAACAAAAA=</HashCode>
+      <FileName>Logic\User.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Logic.DailyHistory">
+    <Position X="3.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Logic\User.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Logic.TypeFood">
+    <Position X="5.5" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAIAAAAAAAAAAAAAAAIAAGQAAABAAAAACIAAAA=</HashCode>
+      <FileName>Logic\TypeFood.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Logic.UserType">
+    <Position X="5.5" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\UserType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

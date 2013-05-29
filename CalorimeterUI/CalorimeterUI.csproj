@@ -242,6 +242,10 @@
     <None Include="CalorimeterLocalDataSet2.xss">
       <DependentUpon>CalorimeterLocalDataSet2.xsd</DependentUpon>
     </None>
+    <None Include="Diagrams\CalorimeterUI.cd" />
+    <None Include="Diagrams\DBManager.cd" />
+    <None Include="Diagrams\Forms.cd" />
+    <None Include="Diagrams\UserAndHelpingClasses.cd" />
     <None Include="Logic\CalorimeterDiagram.cd" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
