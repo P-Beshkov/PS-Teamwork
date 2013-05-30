@@ -54,8 +54,10 @@
     </Key>
     <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="History" Relationship="Model1.History_Users" FromRole="Users1" ToRole="History1" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="DailyHistory_History">
     <End Type="Model1.History" Role="History1" Multiplicity="1" />

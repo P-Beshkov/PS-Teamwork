@@ -52,9 +52,10 @@
             this.labelRegister.AutoSize = true;
             this.labelRegister.BackColor = System.Drawing.Color.Transparent;
             this.labelRegister.Font = new System.Drawing.Font("Monotype Corsiva", 45F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.labelRegister.Location = new System.Drawing.Point(30, 9);
+            this.labelRegister.Location = new System.Drawing.Point(40, 11);
+            this.labelRegister.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRegister.Name = "labelRegister";
-            this.labelRegister.Size = new System.Drawing.Size(400, 72);
+            this.labelRegister.Size = new System.Drawing.Size(498, 92);
             this.labelRegister.TabIndex = 0;
             this.labelRegister.Text = "R E G I S T E R";
             // 
@@ -63,9 +64,10 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelUsername.Location = new System.Drawing.Point(108, 130);
+            this.labelUsername.Location = new System.Drawing.Point(144, 160);
+            this.labelUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(87, 20);
+            this.labelUsername.Size = new System.Drawing.Size(108, 25);
             this.labelUsername.TabIndex = 1;
             this.labelUsername.Text = "Username:";
             // 
@@ -74,26 +76,29 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.BackColor = System.Drawing.Color.Transparent;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelPassword.Location = new System.Drawing.Point(113, 160);
+            this.labelPassword.Location = new System.Drawing.Point(148, 197);
+            this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(82, 20);
+            this.labelPassword.Size = new System.Drawing.Size(104, 25);
             this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Password:";
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(200, 130);
+            this.textBoxUsername.Location = new System.Drawing.Point(267, 160);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(130, 20);
+            this.textBoxUsername.Size = new System.Drawing.Size(172, 22);
             this.textBoxUsername.TabIndex = 2;
             this.textBoxUsername.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(200, 160);
+            this.textBoxPassword.Location = new System.Drawing.Point(267, 197);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '•';
-            this.textBoxPassword.Size = new System.Drawing.Size(130, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(172, 22);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             // 
@@ -103,9 +108,10 @@
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCancel.Location = new System.Drawing.Point(220, 300);
+            this.buttonCancel.Location = new System.Drawing.Point(293, 369);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(110, 50);
+            this.buttonCancel.Size = new System.Drawing.Size(147, 62);
             this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,9 +122,10 @@
             this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonRegister.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegister.Image")));
             this.buttonRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRegister.Location = new System.Drawing.Point(80, 300);
+            this.buttonRegister.Location = new System.Drawing.Point(107, 369);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(110, 50);
+            this.buttonRegister.Size = new System.Drawing.Size(147, 62);
             this.buttonRegister.TabIndex = 7;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,26 +137,29 @@
             this.labelRepeatPassord.AutoSize = true;
             this.labelRepeatPassord.BackColor = System.Drawing.Color.Transparent;
             this.labelRepeatPassord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelRepeatPassord.Location = new System.Drawing.Point(57, 190);
+            this.labelRepeatPassord.Location = new System.Drawing.Point(83, 234);
+            this.labelRepeatPassord.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRepeatPassord.Name = "labelRepeatPassord";
-            this.labelRepeatPassord.Size = new System.Drawing.Size(138, 20);
+            this.labelRepeatPassord.Size = new System.Drawing.Size(169, 25);
             this.labelRepeatPassord.TabIndex = 7;
             this.labelRepeatPassord.Text = "Repeat password:";
             // 
             // textBoxRepeatPassword
             // 
-            this.textBoxRepeatPassword.Location = new System.Drawing.Point(200, 190);
+            this.textBoxRepeatPassword.Location = new System.Drawing.Point(267, 234);
+            this.textBoxRepeatPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRepeatPassword.Name = "textBoxRepeatPassword";
             this.textBoxRepeatPassword.PasswordChar = '•';
-            this.textBoxRepeatPassword.Size = new System.Drawing.Size(130, 20);
+            this.textBoxRepeatPassword.Size = new System.Drawing.Size(172, 22);
             this.textBoxRepeatPassword.TabIndex = 4;
             this.textBoxRepeatPassword.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(200, 100);
+            this.textBoxName.Location = new System.Drawing.Point(267, 123);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(130, 20);
+            this.textBoxName.Size = new System.Drawing.Size(172, 22);
             this.textBoxName.TabIndex = 1;
             this.textBoxName.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             // 
@@ -158,9 +168,10 @@
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelName.Location = new System.Drawing.Point(135, 100);
+            this.labelName.Location = new System.Drawing.Point(180, 123);
+            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(55, 20);
+            this.labelName.Size = new System.Drawing.Size(70, 25);
             this.labelName.TabIndex = 10;
             this.labelName.Text = "Name:";
             // 
@@ -169,9 +180,10 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.BackColor = System.Drawing.Color.Transparent;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelEmail.Location = new System.Drawing.Point(143, 220);
+            this.labelEmail.Location = new System.Drawing.Point(184, 271);
+            this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(52, 20);
+            this.labelEmail.Size = new System.Drawing.Size(66, 25);
             this.labelEmail.TabIndex = 11;
             this.labelEmail.Text = "Email:";
             // 
@@ -181,25 +193,28 @@
             this.labelRepeatEmail.BackColor = System.Drawing.Color.Transparent;
             this.labelRepeatEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.labelRepeatEmail.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.labelRepeatEmail.Location = new System.Drawing.Point(88, 250);
+            this.labelRepeatEmail.Location = new System.Drawing.Point(121, 308);
+            this.labelRepeatEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRepeatEmail.Name = "labelRepeatEmail";
-            this.labelRepeatEmail.Size = new System.Drawing.Size(107, 20);
+            this.labelRepeatEmail.Size = new System.Drawing.Size(131, 25);
             this.labelRepeatEmail.TabIndex = 12;
             this.labelRepeatEmail.Text = "Repeat email:";
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(200, 220);
+            this.textBoxEmail.Location = new System.Drawing.Point(267, 271);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(130, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(172, 22);
             this.textBoxEmail.TabIndex = 5;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             // 
             // textBoxRepeatEmail
             // 
-            this.textBoxRepeatEmail.Location = new System.Drawing.Point(200, 250);
+            this.textBoxRepeatEmail.Location = new System.Drawing.Point(267, 308);
+            this.textBoxRepeatEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRepeatEmail.Name = "textBoxRepeatEmail";
-            this.textBoxRepeatEmail.Size = new System.Drawing.Size(130, 20);
+            this.textBoxRepeatEmail.Size = new System.Drawing.Size(172, 22);
             this.textBoxRepeatEmail.TabIndex = 6;
             this.textBoxRepeatEmail.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             // 
@@ -207,20 +222,21 @@
             // 
             this.notValidImage.BackColor = System.Drawing.Color.Transparent;
             this.notValidImage.Image = ((System.Drawing.Image)(resources.GetObject("notValidImage.Image")));
-            this.notValidImage.Location = new System.Drawing.Point(411, 354);
+            this.notValidImage.Location = new System.Drawing.Point(548, 436);
+            this.notValidImage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.notValidImage.Name = "notValidImage";
-            this.notValidImage.Size = new System.Drawing.Size(32, 28);
+            this.notValidImage.Size = new System.Drawing.Size(43, 34);
             this.notValidImage.TabIndex = 13;
             this.notValidImage.Visible = false;
             // 
             // RegisterForm
             // 
             this.AcceptButton = this.buttonRegister;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(455, 391);
+            this.ClientSize = new System.Drawing.Size(607, 481);
             this.Controls.Add(this.notValidImage);
             this.Controls.Add(this.textBoxRepeatEmail);
             this.Controls.Add(this.textBoxEmail);
@@ -238,6 +254,7 @@
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.labelRegister);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
